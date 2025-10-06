@@ -19,6 +19,11 @@ used for commercial gain.
 
 ## Screenshots
 
+<img src="https://github.com/individual55/MakuTweaker/blob/main/images/screenshots/1.png" alt="1">
+<img src="https://github.com/individual55/MakuTweaker/blob/main/images/screenshots/2.png" alt="2">
+<img src="https://github.com/individual55/MakuTweaker/blob/main/images/screenshots/3.png" alt="3">
+<img src="https://github.com/individual55/MakuTweaker/blob/main/images/screenshots/4.png" alt="4">
+
 ## 🔨 Building from Source
 
 If you want to build the program yourself:
