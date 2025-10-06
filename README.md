@@ -45,7 +45,7 @@ Before building, make sure you have installed:
 
 src\MakuTweaker\bin\Release
 
-**Copy the `src/MakuTweaker/loc` folder into the 
+Copy the `src/MakuTweaker/loc` folder into the 
 `Release` Folder so that the program can find all necessary resources.
 - This folder contains, among other things, a **`languages` folder** with JSON 
 files for multi-language support.
