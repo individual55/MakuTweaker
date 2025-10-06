@@ -19,18 +19,18 @@ used for commercial gain.
 
 ## Screenshots
 
-# 🔨 Building from Source
+## 🔨 Building from Source
 
 If you want to build the program yourself:
 
-## 🧩 Requirements
+### 🧩 Requirements
 Before building, make sure you have installed:
 - **.NET 8 SDK** or later
 - **C# language tools**
 - **WPF (Windows Presentation Foundation)** support (included with .NET Desktop SDK)
 - A compatible IDE such as **Visual Studio 2022** or **Rider**
 
-## ☑ Build steps
+### ☑ Build steps
 
 1. Download or copy **only the `src` folder** from this repository.
 2. Open the solution (`.sln`) file located in the `src` folder using your IDE.
@@ -45,7 +45,7 @@ src\MakuTweaker\bin\Release
 - This folder contains, among other things, a **`languages` folder** with JSON 
 files for multi-language support.
 
-# ❓ FAQ / Notes
+## ❓ FAQ / Notes
 Q: Why does it seem hardcoded / poorly structured?
 A: The majority of source code in this respository, comes directly from the original MakuTweaker author.
 This version preserves the original structure, so 
@@ -55,7 +55,7 @@ It isn't a mistake of this open-source version - it reflects how the original au
 ## 💡 Credits
 
 - **Nikitori**
-- **MakuAdarii*
+- **MakuAdarii**
 
 Huge thanks to:  
 
@@ -64,5 +64,3 @@ Huge thanks to:
 - [ModernWpf.MessageBox.Mica] (https://www.nuget.org/packages/ModernWpf.MessageBox.Mica/0.5.3)  
 - [ModernWpf] (https://github.com/Kinnara/ModernWpf)  
 - [Newtonsoft.Json] (https://github.com/JamesNK/Newtonsoft.Json) 
-
-# License :  MIT
