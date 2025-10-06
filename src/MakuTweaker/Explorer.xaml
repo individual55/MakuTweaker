@@ -1,0 +1,120 @@
+﻿<Page
+	x:Class="MakuTweakerNew.Explorer" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:MakuTweakerNew" xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF" xmlns:ui="http://schemas.modernwpf.com/2019"
+	Title="Explorer">
+    <Grid>
+        <ScrollViewer
+			VerticalScrollBarVisibility="Auto"
+			HorizontalScrollBarVisibility="Hidden">
+            <StackPanel>
+                <TextBlock
+					Name="lab"
+					HorizontalAlignment="Left"
+					Margin="24,11,0,7"
+					TextWrapping="Wrap"
+					Text="Explorer and Desktop"
+					VerticalAlignment="Top"
+					FontSize="32"
+					FontFamily="Segoe UI Semibold" />
+                <ui:ToggleSwitch
+					Name="e1"
+					Header="Hide Non-Removable Library Folders"
+					Margin="24,7,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="ToggleSwitch_Toggled" />
+                <ui:ToggleSwitch
+					Name="e2"
+					Header="Show Hidden Files and Folders"
+					Margin="24,7,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="e2_Toggled" />
+                <ui:ToggleSwitch
+					Name="e3"
+					Header="Show File Extensions"
+					Margin="24,7,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="e3_Toggled" />
+                <ui:ToggleSwitch
+					Name="e4"
+					Header="Open the This PC Page in Explorer instead of Home"
+					Margin="24,7,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="e4_Toggled" />
+                <ui:ToggleSwitch
+					Name="e5"
+					Header="Hide the Gallery Section"
+					Margin="24,7,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="e5_Toggled" />
+                <ui:ToggleSwitch
+					Name="e6"
+					Header="Show 'This PC' on the Desktop"
+					Margin="24,7,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="e6_Toggled" />
+                <ui:ToggleSwitch
+					Name="e7"
+					Header="Remove the '- Shortcut' Ending From New Shortcuts"
+					Margin="24,7,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="e7_Toggled" />
+                <TextBlock
+					Name="e8"
+					HorizontalAlignment="Left"
+					Margin="24,7,0,0"
+					TextWrapping="Wrap"
+					Text="Fix Dublicate Drives in Explorer"
+					VerticalAlignment="Top"
+					FontSize="16" />
+                <controls:Button
+					Name="fix"
+					Margin="24,5,613,5"
+					Content="Fix"
+					Height="28"
+					MinWidth="110"
+					MaxWidth="110"
+					HorizontalAlignment="Left"
+					Width="110"
+					Click="fix_Click" />
+                <TextBlock
+					Name="e9"
+					HorizontalAlignment="Left"
+					Margin="24,7,0,0"
+					TextWrapping="Wrap"
+					Text="Hide Drives in This PC"
+					VerticalAlignment="Top"
+					FontSize="16" />
+                <controls:Button
+					Name="hide"
+					Margin="24,5,613,0"
+					Content="Choose"
+					Height="28"
+					MinWidth="110"
+					MaxWidth="110"
+					HorizontalAlignment="Left"
+					Width="110"
+					Click="hide_Click" />
+                <controls:Button
+					Name="showall"
+					Content="Show All"
+					Height="28"
+					MinWidth="135"
+					MaxWidth="135"
+					Width="135"
+					HorizontalAlignment="Left"
+					VerticalAlignment="Top"
+					Margin="144,-28,0,0"
+					Click="showall_Click" />
+                <Rectangle
+					Height="15"
+					Width="100" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

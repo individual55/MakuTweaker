@@ -1,0 +1,166 @@
+﻿<Page
+	x:Class="MakuTweakerNew.Personalization" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:MakuTweakerNew" xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF" xmlns:ui="http://schemas.modernwpf.com/2019"
+	Title="Personalization">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock
+					Name="label"
+					HorizontalAlignment="Left"
+					Margin="24,11,0,0"
+					TextWrapping="Wrap"
+					Text="Personalization"
+					VerticalAlignment="Top"
+					FontSize="32"
+					FontFamily="Segoe UI Semibold" />
+                <TextBlock
+					Name="l1"
+					HorizontalAlignment="Left"
+					Margin="24,14,0,0"
+					TextWrapping="Wrap"
+					Text="Default Name for New Files and New Folders"
+					VerticalAlignment="Top"
+					FontSize="16" />
+                <controls:TextBox
+					Name="newname"
+					Margin="24,5,424,0"
+					MaxLength="40"
+					Watermark="New File"
+					Height="31"
+					VerticalAlignment="Top" />
+                <controls:Button
+					Name="apN"
+					Margin="0,-35,310,0"
+					Content="Apply"
+					Height="36"
+					VerticalAlignment="Top"
+					HorizontalAlignment="Right"
+					Width="106"
+					Click="apN_Click" />
+                <controls:Button
+					Name="stN"
+					Margin="0,-36,194,0"
+					Content="Standard"
+					VerticalAlignment="Top"
+					Height="36"
+					HorizontalAlignment="Right"
+					Width="107"
+					Click="stN_Click" />
+                <TextBlock
+					Name="l2"
+					HorizontalAlignment="Left"
+					Margin="24,9,0,0"
+					TextWrapping="Wrap"
+					Text="Change Selection Colors"
+					VerticalAlignment="Top"
+					FontSize="16" />
+                <ComboBox
+					Name="color"
+					Margin="24,5,0,0"
+					FontSize="14"
+					MinWidth="177"
+					MaxWidth="177"
+					HorizontalAlignment="Left"
+					Width="177"
+					Height="25"
+					VerticalAlignment="Top">
+                    <ComboBoxItem
+						Name="c1"
+						Content=" Standard" />
+                    <ComboBoxItem
+						Name="c2"
+						Content=" Cyan" />
+                    <ComboBoxItem
+						Name="c3"
+						Content=" Purple" />
+                    <ComboBoxItem
+						Name="c4"
+						Content=" Green" />
+                    <ComboBoxItem
+						Name="c5"
+						Content=" Orange" />
+                    <ComboBoxItem
+						Name="c6"
+						Content=" Red" />
+                    <ComboBoxItem
+						Name="c7"
+						Content=" Blue" />
+                    <ComboBoxItem
+						Name="c8"
+						Content=" Black" />
+                </ComboBox>
+                <controls:Button
+					Name="apC"
+					Margin="206,-30,0,0"
+					Content="Apply"
+					Height="30"
+					VerticalAlignment="Top"
+					HorizontalAlignment="Left"
+					Width="106"
+					Click="apC_Click" />
+                <ui:ToggleSwitch
+					Name="p1"
+					Header="Enable Hidden Themes in Windows 11"
+					Margin="24,13,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="p1_Toggled" />
+                <ui:ToggleSwitch
+					Name="p2"
+					Header="Small Window Buttons"
+					Margin="24,8,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="p2_Toggled" />
+                <ui:ToggleSwitch
+					Name="p3"
+					Header="Disable Blur on The Lock Screen"
+					Margin="24,7,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="p3_Toggled" />
+                <ui:ToggleSwitch
+					Name="p4"
+					Header="Disable Transparency"
+					Margin="24,7,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="p4_Toggled" />
+                <ui:ToggleSwitch
+					Name="p5"
+					Header="Enable Dark theme"
+					Margin="24,7,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="p5_Toggled" />
+                <ui:ToggleSwitch
+					Name="p6"
+					Header="Verbose"
+					Margin="24,7,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="p6_Toggled" />
+                <ui:ToggleSwitch
+					Name="sr2"
+					Header="Disable Windows Logo in Bootloader"
+					Margin="24,10,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="sr2_Toggled" />
+                <ui:ToggleSwitch
+					Name="sr3"
+					Header="Disable Animation in Bootloader"
+					Margin="24,10,0,0"
+					VerticalAlignment="Top"
+					FontSize="16"
+					Toggled="sr3_Toggled" />
+                <Rectangle
+					HorizontalAlignment="Left"
+					Height="17"
+					Margin="3,0,0,0"
+					VerticalAlignment="Top"
+					Width="67" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

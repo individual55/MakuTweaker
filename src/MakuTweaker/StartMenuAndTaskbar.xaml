@@ -1,0 +1,45 @@
+﻿<Page
+	x:Class="MakuTweakerNew.StartMenuAndTaskbar" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:MakuTweakerNew" xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF" xmlns:ui="http://schemas.modernwpf.com/2019"
+	Title="Desktop">
+    <Grid>
+        <StackPanel>
+            <TextBlock
+				Name="label"
+				HorizontalAlignment="Left"
+				Margin="24,11,0,0"
+				TextWrapping="Wrap"
+				Text="Start Menu and Taskbar"
+				VerticalAlignment="Top"
+				FontSize="32"
+				FontFamily="Segoe UI Semibold" />
+            <ui:ToggleSwitch
+				Name="st1"
+				Header="Hide the Task View and Widgets Buttons"
+				Margin="24,14,0,0"
+				VerticalAlignment="Top"
+				FontSize="16"
+				Toggled="st1_Toggled" />
+            <ui:ToggleSwitch
+				Name="st2"
+				Header="Huge Window Thumbnails in the Taskbar on Hover"
+				Margin="24,10,0,0"
+				VerticalAlignment="Top"
+				FontSize="16"
+				Toggled="st2_Toggled" />
+            <ui:ToggleSwitch
+				Name="st3"
+				Header="Reduce the Thumbnail Appearance Time in the Taskbar"
+				Margin="24,10,0,0"
+				VerticalAlignment="Top"
+				FontSize="16"
+				Toggled="st3_Toggled" />
+            <ui:ToggleSwitch
+				Name="st5"
+				Header="Disable Online Search in Start Menu via Bing"
+				Margin="24,10,0,0"
+				VerticalAlignment="Top"
+				FontSize="16"
+				Toggled="st5_Toggled" />
+        </StackPanel>
+    </Grid>
+</Page>
