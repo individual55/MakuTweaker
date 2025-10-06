@@ -47,7 +47,7 @@ src\MakuTweaker\bin\Release
 
 Copy the `src/MakuTweaker/loc` folder into the 
 `Release` Folder so that the program can find all necessary resources.
-- This folder contains, among other things, a **`languages` folder** with JSON 
+- This folder contains, JSON 
 files for multi-language support.
 
 ## ❓ FAQ / Notes
