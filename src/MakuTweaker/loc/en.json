@@ -1,0 +1,344 @@
+{
+  "categories": {
+    "base": {
+      "catname": {
+        "expl": "Explorer & Desktop",
+        "stask": "Start Menu and Taskbar",
+        "wu": "Windows Updates",
+        "uwp": "Remove UWP Apps",
+        "sat": "Shutdown Timer",
+        "quick": "Quick Windows Setup",
+        "act": "Windows Activation",
+        "cm": "Context Menu",
+        "sr": "System and Recovery",
+        "oth": "App Installation",
+        "per": "Personalization",
+        "tel": "Telemetry"
+      },
+      "lowtabs": {
+        "rexp": "Restart Explorer",
+        "set": "Settings & About"
+      },
+      "def": {
+        "statusdef": "Information About The Last Action in MakuTweaker...",
+        "on": "On",
+        "off": "Off",
+        "rebnotify": "The Function You applied requires a Reboot.",
+        "rebnotifyexplorer": "The Function You Applied Requires a Restart of Explorer.",
+        "rebnotifysfc": "After Progress Reaches The End, Reboot Your Device!"
+      }
+    },
+    "expl": {
+      "main": {
+        "label": "Explorer & Desktop",
+        "e1": "Hide Non-Removable Library Folders",
+        "e2": "Show Hidden Files and Folders",
+        "e3": "Show File Extensions",
+        "e4": "Open The \"This PC\" Page in Explorer Instead of \"Home\"",
+        "e5": "Hide The \"Gallery\" Section",
+        "e6": "Show \"This PC\" on The Desktop",
+        "e7": "Remove The \"-Shortcut\" Ending From New Shortcuts",
+        "e8": "Fix Duplicate Drives in Explorer",
+        "e8b": "Fix",
+        "e9": "Hide Drives in This PC",
+        "choose": "Choose",
+        "showall": "Show All"
+      },
+      "status": {
+        "e8": "MakuTweaker Has Fixed The Drive Duplication In File Explorer.",
+
+        "hdInfo1": "Choose The Drives You Want To Hide.",
+        "hdInfo2": "Note that The Drive Can Still Be Accessed by Entering The Drive Letter and a Colon in The Explorer Address Bar.",
+        "hide": "Hide Selected Drives",
+        "cc": "Cancel"
+      }
+    },
+    "stask": {
+      "main": {
+        "label": "Start Menu & Taskbar",
+        "st1": "Hide The Task View and Widgets buttons",
+        "st2": "Huge Window Thumbnails in The Taskbar on Hover",
+        "st3": "Reduce The Thumbnail Appearance Time in The Taskbar",
+        "st4": "Remove Ads From Start Menu and Search on The Taskbar",
+        "st5": "Disable Online Search in Start via Bing"
+      }
+    },
+    "wu": {
+      "main": {
+        "label": "Windows Updates",
+        "wu1": "Disable Windows Update",
+        "wu2": "Block Updates On a Specific Version of Windows",
+        "wu3": "Disable Driver Installation via Windows Update",
+        "wu4": "Disable Bloatware Reinstallation After a System Update",
+        "wu5": "Pause Windows Update Service",
+        "wu6": "Disable Reserved Storage for Updates",
+        "wu5b": "Pause",
+        "wu6b": "Block"
+      },
+      "status": {
+        "wu4": "You Have Successfully Blocked Windows Update on a Specific Version.",
+        "wu5": "You Can Always Go To The Windows Update Tab And Click *Resume Updates* At Any Time."
+      }
+    },
+    "uwp": {
+      "main": {
+        "label": "Remove UWP Apps",
+        "info1": "Select The UWP apps you want to remove.",
+        "info2": "Please note: These apps will not be removed for all users.",
+        "u3": "Messaging",
+        "u5": "Technical Support",
+        "u6": "Feedback Hub",
+        "u9": "Your Phone",
+        "u10": "Maps",
+        "u13": "People, Mail, Calendar",
+        "u15": "Media Player",
+        "u16": "Movies and TV",
+        "u17": "Camera",
+        "u18": "News",
+        "u19": "Weather",
+        "u20": "Sticky Notes",
+        "u22": "Sound Recorder",
+        "u27": "Alarms & Clock",
+        "mode1": "Only Bloatware",
+        "mode2": "Show Popular Apps",
+        "mode3": "Show Necessary Apps",
+        "b": "Start Removing UWP",
+        "chk": "Checking Installed UWP Apps | ",
+        "is": "is Installed...",
+        "isnt": "isn't Installed...",
+        "comp": "Checking Completed!",
+        "skipped": "Checking skipped...",
+        "skip": "Skip",
+
+        "suredialogT1": "You have chosen to uninstall",
+        "suredialogT2": "using MakuTweaker.",
+        "suredialogT3": "You should be aware that this application can no longer be restored to the system,\nand work related to these components may not be correct.",
+        "suredialogT4": "To continue, type ILOVEMAKUTWEAKER in the textbox, and click OK.",
+        "suredialogNS": "Cancel"
+      },
+      "status": {
+        "noapps": "You have not selected any applications.",
+        "started": "Removing Selected UWP Apps...",
+        "complete": "UWP Applications Have Been Successfully Removed!"
+      }
+    },
+    "sat": {
+      "main": {
+        "label": "Shutdown Timer",
+        "minho": "Minutes / Hours: ",
+        "os": "0s",
+        "oned": "1d",
+        "tenM": "10 Minutes",
+        "threeM": "30 Minutes",
+        "oneH": "1 Hour",
+        "twoH": "2 Hours",
+        "fourH": "4 Hours",
+        "sixH": "6 Hours",
+        "info": "Enter The Number of Minutes\nAfter Which The System Will Shutdown.\nPress The *Shutdown* Button to Start The Timer You Set.",
+        "b1": "Start Shutdown Timer",
+        "b2": "Cancel Shutdown Timer",
+        "set": "Launch This Page Instead of The Main"
+      }
+    },
+    "quick": {
+      "main": {
+        "label": "Quick Windows Setup",
+        "b": "Start Quick Setup",
+        "info": "Use Checkboxes To Select The Settings\nTo Be Applied For Windows Quick Setup.",
+        "t1": "Show Hidden Files And Folders",
+        "t2": "Show File Extensions",
+        "t3": "Open \"This PC\" Page In Explorer Instead Of \"Home\"",
+        "t4": "Fix Disk Duplication In Explorer",
+        "t5": "Show \"This PC\" On Desktop",
+        "t6": "Remove The \"-Shortcut\" Ending From New Shortcuts",
+        "t8": "Hide The Task View And Widgets Button",
+        "t9": "Remove Ads In Start Menu And Taskbar Search",
+        "t10": "Disable Online Search In Start Via Bing",
+        "t11": "Pause Windows Update Service",
+        "t12": "Disable Smart Screen",
+        "t13": "Disable Sticky Keys",
+        "t14": "Enable Clipboard",
+        "t15": "Remove Context Menu Delay",
+        "t16": "Set Chkdsk Timeout to 1 Minute",
+        "t17": "Install DirectPlay",
+        "t18": "Install .NET Framework 2.0, 3.0, 3.5",
+        "t19": "Clear Windows Update Cache",
+        "t20": "Disable Automatic BitLocker Encryption"
+      }
+    },
+    "act": {
+      "main": {
+        "label": "Windows Activation",
+        "step1": "Step 1: Select KMS server\n(Try Another If Activation Fails!)",
+        "step2": "Step 2: Select Windows Edition",
+        "step3": "Step 2: Apply Activation",
+        "hwid": "Automatic Activation (HWID)",
+        "kms": "Manual Activation (KMS)",
+        "offi": "Automatic Office Activation",
+        "button20": "Apply"
+      },
+      "status": {
+        "inprog": "Activating... This may take a while on weak PCs.",
+        "err": "Activation Error!",
+        "alrd": "The System has been Already Activated!",
+        "success": "Activation сompleted Successfully!",
+        "unk": "Unknown Activation Error!",
+        "eval": "You have the Evaluation Edition of Windows Installed, which cannot be activated. To activate Windows, you need to have a regular version of Windows.",
+        "nocon": "You're not connected. Connect to the Internet to activate Windows",
+        "srv": "The Server for Activation Was Selected Successfully!",
+        "edit": "You Have Successfully Selected The System Edition For Activation!",
+        "error": "Failed to activate Windows. Check the internet connection, and check if you have selected the right edition.",
+        "kmserr": "KMS Server activation error, try another one and try again.",
+        "keyerr": "You have selected the wrong edition. Select the correct one and try again.",
+        "hwerr": "Windows cannot be activated using the HWID method. To activate Windows, use the Manual KMS Activation method.",
+        "offierr": "Office cannot be activated using the Ohook method. Please reinstall Office and try again."
+      }
+    },
+    "cm": {
+      "main": {
+        "label": "Context Menu",
+        "t1": "Enable The Old Context Menu",
+        "o8": "Remove Context Menu Delay",
+        "t2": "Scan with Microsoft Defender",
+        "t3": "Open in Terminal",
+        "t4": "Add to Favorites",
+        "t5": "Share",
+        "t6": "Restore previous versions",
+        "t7": "Add to library",
+        "t8": "Send to",
+        "t9": "Give access to",
+        "t10": "Copy as path",
+        "t11": "Pin to Start menu",
+        "t12": "Pin to Taskbar",
+        "t13": "Open in new tab",
+        "t14": "NVIDIA Control Panel"
+      }
+    },
+    "sr": {
+      "main": {
+        "label": "System & Recovery",
+        "b1": "Install",
+        "b2": "Repair",
+        "b3": "Reset",
+        "b4": "Clean",
+        "b5": "Enable",
+        "sr1l": "Install DirectPlay",
+        "sr2l": "Install .NET Framework 2.0, 3.0, 3.5",
+        "sr3l": "Repair System Using SFC",
+        "sr4l": "Repair System Using DISM",
+        "sr5l": "Reset Outdated Components and WinSXS Cache",
+        "sr6l": "Clean TEMP Folder",
+        "sr7l": "Clean Windows Update Cache",
+        "sr8l": "Enable Local Group Policy Editor",
+        "sr1": "Enable Old OS Bootloader",
+        "sr2": "Disable Windows Logo in Bootloader",
+        "sr3": "Disable Animation in Bootloader",
+        "sr4": "Additional Options on Each Boot",
+        "sr5": "Apply Compact OS System Compression",
+        "sr6": "Disable BitLocker Automatic Encryption",
+        "sr7": "Disable Core Isolation / Memory Integrity",
+        "sr8": "Disable Hibernation",
+        "sr9": "Disable Virtualization-based Security",
+        "sr10": "Disable Sleep & Screen timeout",
+        "sr11": "Disable Page File",
+        "pwsh": "Enable Third-Party PowerShell Scripts"
+      },
+      "status": {
+        "sr8": "You Have Successfully Enabled The Local Group Policy Editor.",
+        "uacwarn": "When the *Disable User Account Control (UAC)* option is enabled, Drag-and-Drop on the taskbar stops working in Windows 11. MakuTweaker is not related to this issue. Are you sure you want to continue?"
+      }
+    },
+    "oth": {
+      "main": {
+        "label": "App Installation",
+        "o1": "Disable Smart Screen",
+        "o2": "Disable User Account Control",
+        "o3": "Disable Sticky Keys",
+        "o4": "Enable Clipboard",
+        "o5": "Enable Super-Detailed System Information",
+        "o9": "Set Chkdsk Timeout to 1 Minute",
+        "o10": "Make a Report of The Battery Characteristics",
+        "o11": "Enable Old Windows Photo Viewer",
+        "o11b": "Enable",
+        "o10b": "Report"
+      },
+      "status": {
+        "o1b": "You Have Successfully Made a Report Of The Battery Characteristics.",
+        "o2b": "Right-Click On The Image, Then Select 'Open With' And Choose The Old Photo Viewer."
+      }
+    },
+    "app": {
+      "main": {
+        "label": "App Installation",
+        "winget": "Install WinGet",
+        "start": "Start Installation",
+        "stop": "Cancel Installation",
+        "skip": "Skip App",
+        "toofastD1": "The app installation finished too quickly.\nMost likely, you already have the latest version of ",
+        "toofastD2": "\n\nIf not, try updating the 'App Installer' from the Microsoft Store.",
+        "wgerr": "Failed to install apps because WinGet is not installed.\nUse the button below to install it.",
+        "apperr1": "Failed to install ",
+        "apperr2": ". This app will be skipped.\nError: "
+      },
+      "status": {
+        "inst": "Installing selected apps...",
+        "instC": "Installation cancelled.",
+        "instS": "Installation completed!",
+        "havent": "You haven't selected any apps to install."
+      }
+    },
+    "per": {
+      "main": {
+        "label": "Personalization",
+        "p1l": "Default Name For New Folders and New Files",
+        "p2l": "Change Selection Color",
+        "p3": "Enable Windows 11 Hidden Themes",
+        "p4": "Small Window Buttons",
+        "p5": "Disable Blur on The Lock Screen",
+        "p6": "Enable The Old Alt Tab View Like in Windows XP",
+        "p7": "Disable transparency",
+        "p8": "Enable dark theme",
+        "newname": "New File",
+        "c1": "Standard",
+        "c2": "Cyan",
+        "c3": "Purple",
+        "c4": "Green",
+        "c5": "Orange",
+        "c6": "Red",
+        "c7": "Blue",
+        "c8": "Black",
+        "b1": "Apply",
+        "b2": "Standard"
+      },
+      "status": {
+        "apN": "You Have Successfully Changed The Default Name For New Files And Folders.",
+        "stN": "You Have Successfully Restored The Default Name For New Files And Folders.",
+        "apC": "You Have Successfully Changed The Highlight Color."
+      }
+    },
+    "tel": {
+      "main": {
+        "label": "Telemetry",
+        "t1": "Disable All Telemetry",
+        "t2": "Disable App Diagnostics",
+        "t3": "Disable Collection And Publication Of User Activity Data",
+        "t4": "Disable System Performance Data Collection",
+        "t5": "Disable Keystroke Data Collection",
+        "t6": "Disable Voice Data Updates"
+      }
+    },
+    "ab": {
+      "main": {
+        "lang": "Program Language",
+        "th": "Program Theme",
+        "sys": "System Default",
+        "l": "Light",
+        "d": "Dark",
+        "label": "Settings",
+        "credL": "Idea and Development:\r\nProgram Icon:\r\nSpecial Thanks:",
+        "credN": "Mark Adderly, Nikitori629\r\nNikitori629\r\nSergey Tkachenko, Massgrave",
+        "atop": "Official Website"
+      }
+    }
+  }
+}

@@ -1,0 +1,343 @@
+{
+  "categories": {
+    "base": {
+      "catname": {
+        "expl": "Explorer & Desktop",
+        "stask": "Startmenü und Taskleiste",
+        "wu": "Windows Updates",
+        "uwp": "UWP-Apps Entfernen",
+        "sat": "Herunterfahr-Timer",
+        "quick": "Schnelle Windows-Einrichtung",
+        "act": "Windows-Aktivierung",
+        "cm": "Kontextmenü",
+        "sr": "System und Wiederherstellung",
+        "oth": "Verschiedenes",
+        "per": "Personalisierung",
+        "tel": "Telemetrie"
+      },
+      "lowtabs": {
+        "rexp": "Explorer neu starten",
+        "set": "Einstellungen & Über"
+      },
+      "def": {
+        "statusdef": "Informationen zur letzten Aktion in MakuTweaker...",
+        "on": "Ein",
+        "off": "Aus",
+        "rebnotify": "Die von Ihnen angewendete Funktion erfordert einen Neustart.",
+        "rebnotifyexplorer": "Die von Ihnen angewendete Funktion erfordert einen Neustart des Explorers.",
+        "rebnotifysfc": "Starten Sie Ihr Gerät neu, nachdem der Fortschritt abgeschlossen ist!"
+      }
+    },
+    "expl": {
+      "main": {
+        "label": "Explorer & Desktop",
+        "e1": "Nicht entfernbaren Bibliotheksordner verbergen",
+        "e2": "Versteckte Dateien und Ordner anzeigen",
+        "e3": "Dateierweiterungen anzeigen",
+        "e4": "Die Seite \"Dieser PC\" anstelle von \"Startseite\" im Explorer öffnen",
+        "e5": "Die Sektion \"Galerie\" verbergen",
+        "e6": "„Dieser PC“ auf dem Desktop anzeigen",
+        "e7": "Die Endung „-Verknüpfung“ von neuen Verknüpfungen entfernen",
+        "e8": "Doppelte Laufwerke im Explorer beheben",
+        "e8b": "Beheben",
+        "e9": "Laufwerke in 'Dieser PC' ausblenden",
+        "choose": "Wählen",
+        "showall": "Alle anzeigen"
+      },
+      "status": {
+        "e8": "MakuTweaker hat die Laufwerksduplizierung im Datei-Explorer behoben.",
+        "hdInfo1": "Wählen Sie die Laufwerke aus, die Sie ausblenden möchten.",
+        "hdInfo2": "Beachten Sie, dass das Laufwerk weiterhin zugänglich ist, indem Sie den Laufwerksbuchstaben und einen Doppelpunkt in die Adressleiste des Explorers eingeben.",
+        "hide": "Ausgewählte Laufwerke ausblenden",
+        "cc": "Abbrechen"
+      }
+    },
+    "stask": {
+      "main": {
+        "label": "Startmenü & Taskleiste",
+        "st1": "Die Schaltflächen für die Taskansicht und Widgets verbergen",
+        "st2": "Große Fenster-Thumbnails in der Taskleiste beim Hover",
+        "st3": "Die Thumbnail-Anzeigedauer in der Taskleiste reduzieren",
+        "st4": "Werbung aus dem Startmenü und der Suche in der Taskleiste entfernen",
+        "st5": "Online-Suche im Startmenü über Bing deaktivieren"
+      }
+    },
+    "wu": {
+      "main": {
+        "label": "Windows Updates",
+        "wu1": "Windows Update deaktivieren",
+        "wu2": "Updates auf einer bestimmten Windows-Version blockieren",
+        "wu3": "Treiberinstallation über Windows Update deaktivieren",
+        "wu4": "Bloatware-Nachinstallation nach einem System-Update deaktivieren",
+        "wu5": "Windows Update-Dienst pausieren",
+        "wu6": "Reservierten Speicher für Updates deaktivieren",
+        "wu5b": "Pausieren",
+        "wu6b": "Blockieren"
+      },
+      "status": {
+        "wu4": "Sie haben Windows Update auf einer bestimmten Version erfolgreich blockiert.",
+        "wu5": "Sie können jederzeit zum Windows Update-Tab gehen und auf *Updates fortsetzen* klicken."
+      }
+    },
+    "uwp": {
+      "main": {
+        "label": "UWP-Apps Entfernen",
+        "info1": "Wählen Sie die UWP-Apps aus, die Sie entfernen möchten.",
+        "info2": "Bitte beachten Sie: Diese Apps werden nicht für alle Benutzer entfernt.",
+        "u3": "Nachrichten",
+        "u5": "Technischer Support",
+        "u6": "Feedback Hub",
+        "u9": "Ihr Handy",
+        "u10": "Karten",
+        "u13": "Personen, Mail, Kalender",
+        "u15": "Media Player",
+        "u16": "Filme und TV",
+        "u17": "Kamera",
+        "u18": "Nachrichten",
+        "u19": "Wetter",
+        "u20": "Sticky Notes",
+        "u22": "Tonaufnahmegerät",
+        "u27": "Wecker und Uhr",
+        "mode1": "Nur Bloatware",
+        "mode2": "Beliebte Apps anzeigen",
+        "mode3": "Notwendige Apps anzeigen",
+        "b": "UWP entfernen",
+        "chk": "Installierte UWP-Apps werden überprüft | ",
+        "is": "ist installiert...",
+        "isnt": "ist nicht installiert...",
+        "comp": "Überprüfung abgeschlossen!",
+        "skipped": "Überprüfung übersprungen...",
+        "skip": "Überspringen",
+
+        "suredialogT1": "Sie haben gewählt, zu deinstallieren",
+        "suredialogT2": "mit MakuTweaker.",
+        "suredialogT3": "Sie sollten sich bewusst sein, dass diese Anwendung nicht mehr ins System wiederhergestellt werden kann,\nund Arbeiten im Zusammenhang mit diesen Komponenten möglicherweise nicht korrekt sind.",
+        "suredialogT4": "Um fortzufahren, geben Sie ILOVEMAKUTWEAKER in das Textfeld ein und klicken Sie auf OK.",
+        "suredialogNS": "Abbrechen"
+      },
+      "status": {
+        "noapps": "Sie haben keine Anwendungen ausgewählt.",
+        "started": "Ausgewählte UWP-Apps werden entfernt...",
+        "complete": "UWP-Anwendungen wurden erfolgreich entfernt!"
+      }
+    },
+    "sat": {
+      "main": {
+        "label": "Herunterfahr-Timer",
+        "minho": "Minuten / Stunden: ",
+        "os": "0s",
+        "oned": "1d",
+        "tenM": "10 Minuten",
+        "threeM": "30 Minuten",
+        "oneH": "1 Stunde",
+        "twoH": "2 Stunden",
+        "fourH": "4 Stunden",
+        "sixH": "6 Stunden",
+        "info": "Geben Sie die Anzahl der Minuten ein,\nnach denen das System heruntergefahren wird.\nDrücken Sie die *Herunterfahren*-Schaltfläche, um den Timer zu starten.",
+        "b1": "Herunterfahr-Timer starten",
+        "b2": "Herunterfahr-Timer abbrechen",
+        "set": "Diese Seite statt der Hauptseite öffnen"
+      }
+    },
+    "quick": {
+      "main": {
+        "label": "Schnelle Windows-Einrichtung",
+        "b": "Schnelle Einrichtung starten",
+        "info": "Verwenden Sie Kontrollkästchen,\num die anzuwendenden Einstellungen auszuwählen.",
+        "t1": "Verborgene Dateien und Ordner anzeigen",
+        "t2": "Dateierweiterungen anzeigen",
+        "t3": "Die Seite \"Dieser PC\" im Explorer statt \"Startseite\" öffnen",
+        "t4": "Festplatten-Duplikate im Explorer beheben",
+        "t5": "\"Dieser PC\" auf dem Desktop anzeigen",
+        "t6": "-Verknüpfung\"-Endung von neuen Verknüpfungen entfernen",
+        "t8": "Schaltflächen für die Aufgabenansicht und Widgets ausblenden",
+        "t9": "Werbung im Startmenü und in der Taskleistensuche entfernen",
+        "t10": "Online-Suche im Startmenü über Bing deaktivieren",
+        "t11": "Windows Update-Dienst pausieren",
+        "t12": "SmartScreen deaktivieren",
+        "t13": "Sticky Keys deaktivieren",
+        "t14": "Zwischenablage aktivieren",
+        "t15": "Verzögerung des Kontextmenüs entfernen",
+        "t16": "Chkdsk-Timeout auf 1 Minute setzen",
+        "t17": "DirectPlay installieren",
+        "t18": ".NET Framework 2.0, 3.0, 3.5 installieren",
+        "t19": "Windows Update-Cache löschen",
+        "t20": "Automatische BitLocker-Verschlüsselung deaktivieren"
+      }
+    },
+    "act": {
+      "main": {
+        "label": "Windows-Aktivierung",
+        "step1": "Schritt 1: KMS-Server wählen\n(Bei Fehler anderen versuchen!)",
+        "step2": "Schritt 2: Wählen Sie die Windows-Edition",
+        "step3": "Schritt 2: Aktivierung anwenden",
+        "hwid": "Automatische Aktivierung (HWID)",
+        "kms": "Manuelle Aktivierung (KMS)",
+        "offi": "Automatische Office-Aktivierung",
+        "button20": "Anwenden"
+      },
+      "status": {
+        "inprog": "Aktiviert... Dies kann auf schwachen PCs eine Weile dauern.",
+        "err": "Aktivierungsfehler!",
+        "alrd": "Das System wurde bereits aktiviert!",
+        "success": "Aktivierung erfolgreich abgeschlossen!",
+        "unk": "Unbekannter Aktivierungsfehler!",
+        "eval": "Sie haben die Evaluierungsausgabe von Windows installiert, die nicht aktiviert werden kann. Um Windows zu aktivieren, müssen Sie eine reguläre Version von Windows haben.",
+        "nocon": "Sie sind nicht verbunden. Stellen Sie eine Verbindung zum Internet her, um Windows zu aktivieren.",
+        "srv": "Der Server für die Aktivierung wurde erfolgreich ausgewählt!",
+        "edit": "Sie haben erfolgreich die Systemedition für die Aktivierung ausgewählt!",
+        "error": "Die Aktivierung von Windows ist fehlgeschlagen. Überprüfen Sie die Internetverbindung und ob Sie die richtige Edition ausgewählt haben.",
+        "kmserr": "KMS-Server-Aktivierungsfehler, versuchen Sie einen anderen und probieren Sie es erneut.",
+        "keyerr": "Sie haben die falsche Edition ausgewählt. Wählen Sie die richtige aus und versuchen Sie es erneut.",
+        "hwerr": "Windows kann nicht mit der HWID-Methode aktiviert werden. Verwenden Sie zur Aktivierung die Methode Manuelle KMS-Aktivierung.",
+        "offierr": "Office kann nicht mit der Ohook-Methode aktiviert werden. Bitte installieren Sie Office neu und versuchen Sie es erneut."
+      }
+    },
+    "cm": {
+      "main": {
+        "label": "Kontextmenü",
+        "t1": "Altes Kontextmenü aktivieren",
+        "o8": "Verzögerung des Kontextmenüs entfernen",
+        "t2": "Mit Microsoft Defender scannen",
+        "t3": "Im Terminal öffnen",
+        "t4": "Zu Favoriten hinzufügen",
+        "t5": "Teilen",
+        "t6": "Vorherige Versionen wiederherstellen",
+        "t7": "Zur Bibliothek hinzufügen",
+        "t8": "Senden an",
+        "t9": "Zugriff gewähren",
+        "t10": "Pfad kopieren",
+        "t11": "An das Startmenü anheften",
+        "t12": "An die Taskleiste anheften",
+        "t13": "In neuem Tab öffnen",
+        "t14": "NVIDIA Systemsteuerung"
+      }
+    },
+    "sr": {
+      "main": {
+        "label": "System & Wiederherstellung",
+        "b1": "Installieren",
+        "b2": "Reparieren",
+        "b3": "Zurücksetzen",
+        "b4": "Bereinigen",
+        "b5": "Aktivieren",
+        "sr1l": "DirectPlay installieren",
+        "sr2l": ".NET Framework 2.0, 3.0, 3.5 installieren",
+        "sr3l": "System mit SFC reparieren",
+        "sr4l": "System mit DISM reparieren",
+        "sr5l": "Veraltete Komponenten und WinSXS-Cache zurücksetzen",
+        "sr6l": "TEMP-Ordner bereinigen",
+        "sr7l": "Windows Update-Cache bereinigen",
+        "sr8l": "Lokalen Gruppenrichtlinien-Editor aktivieren",
+        "sr1": "Alten OS-Bootloader aktivieren",
+        "sr2": "Windows-Logo im Bootloader deaktivieren",
+        "sr3": "Animation im Bootloader deaktivieren",
+        "sr4": "Zusätzliche Optionen bei jedem Boot",
+        "sr5": "Komprimierung des Systems mit Compact OS anwenden",
+        "sr6": "BitLocker automatische Verschlüsselung deaktivieren",
+        "sr7": "Kernisolierung / Speicherintegrität deaktivieren",
+        "sr8": "Ruhezustand deaktivieren",
+        "sr9": "Virtualisierungsbasierte Sicherheit deaktivieren",
+        "sr10": "Ruhemodus- und Bildschirmabschalt-Timer deaktivieren",
+        "sr11": "Auslagerungsdatei deaktivieren",
+        "pwsh": "Drittanbieter-PowerShell-Skripte aktivieren"
+      },
+      "status": {
+        "sr8": "Sie haben den lokalen Gruppenrichtlinien-Editor erfolgreich aktiviert.",
+        "uacwarn": "Wenn die Option Benutzerkontensteuerung (UAC) deaktivieren aktiviert ist, funktioniert das Ziehen und Ablegen in der Taskleiste unter Windows 11 nicht mehr. MakuTweaker hat mit diesem Problem nichts zu tun. Möchten Sie wirklich fortfahren?"
+      }
+    },
+    "oth": {
+      "main": {
+        "label": "Verschiedenes",
+        "o1": "Smart Screen deaktivieren",
+        "o2": "Benutzerkontensteuerung deaktivieren",
+        "o3": "Sticky Keys deaktivieren",
+        "o4": "Zwischenablage aktivieren",
+        "o5": "Super-detaillierte Systeminformationen aktivieren",
+        "o9": "Chkdsk-Timeout auf 1 Minute setzen",
+        "o10": "Bericht der Batterie-Eigenschaften erstellen",
+        "o11": "Alten Windows-Foto-Viewer aktivieren",
+        "o11b": "Aktivieren",
+        "o10b": "Bericht"
+      },
+      "status": {
+        "o1b": "Sie haben erfolgreich einen Bericht der Batterie-Eigenschaften erstellt.",
+        "o2b": "Klicken Sie mit der rechten Maustaste auf das Bild, wählen Sie 'Öffnen mit' und wählen Sie den alten Foto-Viewer."
+      }
+    },
+    "app": {
+      "main": {
+        "label": "App-Installation",
+        "winget": "WinGet installieren",
+        "start": "Installation starten",
+        "stop": "Installation abbrechen",
+        "skip": "App überspringen",
+        "toofastD1": "Die App-Installation wurde zu schnell abgeschlossen.\nWahrscheinlich ist bereits die neueste Version von ",
+        "toofastD2": "\n\nFalls nicht, versuchen Sie, den 'App-Installer' im Microsoft Store zu aktualisieren.",
+        "wgerr": "Die Apps konnten nicht installiert werden, da WinGet nicht installiert ist.\nVerwenden Sie die Schaltfläche unten, um es zu installieren.",
+        "apperr1": "Konnte nicht installieren ",
+        "apperr2": ". Diese App wird übersprungen.\nFehler: "
+      },
+      "status": {
+        "inst": "Ausgewählte Apps werden installiert...",
+        "instC": "Installation abgebrochen.",
+        "instS": "Installation abgeschlossen!",
+        "havent": "Sie haben keine Apps zur Installation ausgewählt."
+      }
+    },
+    "per": {
+      "main": {
+        "label": "Personalisierung",
+        "p1l": "Standardname für neue Ordner und Dateien",
+        "p2l": "Auswahlfarbe ändern",
+        "p3": "Versteckte Windows 11-Themen aktivieren",
+        "p4": "Kleine Fenster-Schaltflächen",
+        "p5": "Unschärfe auf dem Sperrbildschirm deaktivieren",
+        "p6": "Die alte Alt-Tab-Ansicht wie in Windows XP aktivieren",
+        "p7": "Transparenz deaktivieren",
+        "p8": "Dunkles Design aktivieren",
+        "newname": "Neue Datei",
+        "c1": "Standard",
+        "c2": "Cyan",
+        "c3": "Lila",
+        "c4": "Grün",
+        "c5": "Orange",
+        "c6": "Rot",
+        "c7": "Blau",
+        "c8": "Schwarz",
+        "b1": "Anwenden",
+        "b2": "Standard"
+      },
+      "status": {
+        "apN": "Sie haben den Standardnamen für neue Dateien und Ordner erfolgreich geändert.",
+        "stN": "Sie haben den Standardnamen für neue Dateien und Ordner erfolgreich wiederhergestellt.",
+        "apC": "Sie haben die Hervorhebungsfarbe erfolgreich geändert."
+      }
+    },
+    "tel": {
+      "main": {
+        "label": "Telemetrie",
+        "t1": "Alle Telemetrie deaktivieren",
+        "t2": "App-Diagnose deaktivieren",
+        "t3": "Erhebung und Veröffentlichung von Nutzerdaten deaktivieren",
+        "t4": "Systemleistungsdaten-Erhebung deaktivieren",
+        "t5": "Tastatureingabe-Daten sammeln deaktivieren",
+        "t6": "Sprachdaten-Updates deaktivieren"
+      }
+    },
+    "ab": {
+      "main": {
+        "lang": "Programmsprache",
+        "th": "Programmschema",
+        "sys": "Systemstandard",
+        "l": "Hell",
+        "d": "Dunkel",
+        "label": "Einstellungen",
+        "credL": "Idee und Entwicklung:\r\nProgrammsymbol:\r\nBesonderer Dank:",
+        "credN": "Mark Adderly, Nikitori629\r\nNikitori629\r\nSergey Tkachenko, Massgrave",
+        "atop": "Offizielle Website"
+      }
+    }
+  }
+}

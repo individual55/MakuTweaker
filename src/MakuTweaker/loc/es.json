@@ -1,0 +1,343 @@
+{
+  "categories": {
+    "base": {
+      "catname": {
+        "expl": "Explorador y Escritorio",
+        "stask": "Menú Inicio y Barra de Tareas",
+        "wu": "Actualizaciones de Windows",
+        "uwp": "Eliminar Aplicaciones UWP",
+        "sat": "Temporizador de Apagado",
+        "quick": "Configuración Rápida de Windows",
+        "act": "Activación de Windows",
+        "cm": "Menú Contextual",
+        "sr": "Sistema y Recuperación",
+        "oth": "Misceláneo",
+        "per": "Personalización",
+        "tel": "Telemetría"
+      },
+      "lowtabs": {
+        "rexp": "Reiniciar Explorador",
+        "set": "Configuraciones y Acerca de"
+      },
+      "def": {
+        "statusdef": "Información sobre la Última Acción en MakuTweaker...",
+        "on": "Activado",
+        "off": "Desactivado",
+        "rebnotify": "La función que aplicaste requiere un reinicio.",
+        "rebnotifyexplorer": "La función que aplicaste requiere un reinicio del Explorador.",
+        "rebnotifysfc": "¡Reinicia tu dispositivo cuando el progreso haya terminado!"
+      }
+    },
+    "expl": {
+      "main": {
+        "label": "Explorador y Escritorio",
+        "e1": "Ocultar Carpetas de Biblioteca No Extraíbles",
+        "e2": "Mostrar Archivos y Carpetas Ocultos",
+        "e3": "Mostrar Extensiones de Archivo",
+        "e4": "Abrir la Página de \"Este Equipo\" en el Explorador en Lugar de \"Inicio\"",
+        "e5": "Ocultar la Sección \"Galería\"",
+        "e6": "Mostrar \"Este Equipo\" en el Escritorio",
+        "e7": "Eliminar el Sufijo \"-Acceso Directo\" de los Nuevos Accesos Directos",
+        "e8": "Corregir Unidades Duplicadas en el Explorador",
+        "e8b": "Corregir",
+        "e9": "Ocultar unidades en 'Este equipo'",
+        "choose": "Elegir",
+        "showall": "Mostrar todo"
+      },
+      "status": {
+        "e8": "MakuTweaker ha corregido la duplicación de unidades en el Explorador de archivos.",
+        "hdInfo1": "Elige las unidades que deseas ocultar.",
+        "hdInfo2": "Ten en cuenta que aún se puede acceder a la unidad ingresando su letra seguida de dos puntos en la barra de direcciones del Explorador.",
+        "hide": "Ocultar unidades seleccionadas",
+        "cc": "Cancelar"
+      }
+    },
+    "stask": {
+      "main": {
+        "label": "Menú Inicio y Barra de Tareas",
+        "st1": "Ocultar los Botones de Vista de Tareas y Widgets",
+        "st2": "Miniaturas Grandes de Ventanas en la Barra de Tareas al Pasar el Ratón",
+        "st3": "Reducir el Tiempo de Aparición de las Miniaturas en la Barra de Tareas",
+        "st4": "Eliminar Anuncios del Menú Inicio y Búsqueda en la Barra de Tareas",
+        "st5": "Desactivar Búsquedas en Línea en Inicio a través de Bing"
+      }
+    },
+    "wu": {
+      "main": {
+        "label": "Actualizaciones de Windows",
+        "wu1": "Desactivar Actualizaciones de Windows",
+        "wu2": "Bloquear Actualizaciones en una Versión Específica de Windows",
+        "wu3": "Desactivar Instalación de Controladores a través de Windows Update",
+        "wu4": "Desactivar la Reinstalación de Programas Basura Después de una Actualización del Sistema",
+        "wu5": "Pausar el Servicio de Actualización de Windows",
+        "wu6": "Deshabilitar el Almacenamiento Reservado para Actualizaciones",
+        "wu5b": "Pausar",
+        "wu6b": "Bloquear"
+      },
+      "status": {
+        "wu4": "Has bloqueado exitosamente las actualizaciones de Windows en una versión específica.",
+        "wu5": "Siempre puedes ir a la pestaña de Actualizaciones de Windows y hacer clic en *Reanudar Actualizaciones* en cualquier momento."
+      }
+    },
+    "uwp": {
+      "main": {
+        "label": "Eliminar Aplicaciones UWP",
+        "info1": "Selecciona las aplicaciones UWP que deseas eliminar.",
+        "info2": "Nota: Estas aplicaciones no se eliminarán para todos los usuarios.",
+        "u3": "Mensajería",
+        "u5": "Soporte Técnico",
+        "u6": "Centro de Opiniones",
+        "u9": "Tu Teléfono",
+        "u10": "Mapas",
+        "u13": "Personas, Correo, Calendario",
+        "u15": "Reproductor Multimedia",
+        "u16": "Películas y TV",
+        "u17": "Cámara",
+        "u18": "Noticias",
+        "u19": "Clima",
+        "u20": "Notas Adhesivas",
+        "u22": "Grabadora de sonido",
+        "u27": "Alarmas y Reloj",
+        "mode1": "Solo Bloatware",
+        "mode2": "Mostrar aplicaciones populares",
+        "mode3": "Mostrar aplicaciones necesarias",
+        "b": "Iniciar Eliminación de UWP",
+        "chk": "Comprobando Aplicaciones UWP Instaladas | ",
+        "is": "está instalado...",
+        "isnt": "no está instalado...",
+        "comp": "¡Comprobación Completada!",
+        "skipped": "Comprobación omitida...",
+        "skip": "Omitir",
+
+        "suredialogT1": "Has elegido desinstalar",
+        "suredialogT2": "usando MakuTweaker.",
+        "suredialogT3": "Debes saber que esta aplicación no podrá restaurarse al sistema,\ny el trabajo relacionado con estos componentes puede no ser correcto.",
+        "suredialogT4": "Para continuar, escribe ILOVEMAKUTWEAKER en el cuadro de texto y haz clic en Aceptar.",
+        "suredialogNS": "Cancelar"
+      },
+      "status": {
+        "noapps": "No has seleccionado ninguna aplicación.",
+        "started": "Eliminando aplicaciones UWP seleccionadas...",
+        "complete": "¡Las aplicaciones UWP se han eliminado con éxito!"
+      }
+    },
+    "sat": {
+      "main": {
+        "label": "Temporizador de Apagado",
+        "minho": "Minutos / Horas: ",
+        "os": "0s",
+        "oned": "1d",
+        "tenM": "10 Minutos",
+        "threeM": "30 Minutos",
+        "oneH": "1 Hora",
+        "twoH": "2 Horas",
+        "fourH": "4 Horas",
+        "sixH": "6 Horas",
+        "info": "Introduce el número de minutos\ndespués de los cuales el sistema se apagará.\nPresiona el botón *Apagar* para iniciar el temporizador que configuraste.",
+        "b1": "Iniciar Temporizador de Apagado",
+        "b2": "Cancelar Temporizador de Apagado",
+        "set": "Abrir Esta Página en Lugar de la Principal"
+      }
+    },
+    "quick": {
+      "main": {
+        "label": "Configuración Rápida de Windows",
+        "b": "Iniciar Configuración Rápida",
+        "info": "Usa las casillas de verificación para\nseleccionar las configuraciones a aplicar.",
+        "t1": "Mostrar Archivos y Carpetas Ocultos",
+        "t2": "Mostrar Extensiones de Archivos",
+        "t3": "Abrir la Página \"Este Equipo\" en Explorador en Lugar de \"Inicio\"",
+        "t4": "Corregir Duplicación de Discos en el Explorador",
+        "t5": "Mostrar \"Este Equipo\" en el Escritorio",
+        "t6": "Eliminar el Sufijo \"-Acceso Directo\" de los Nuevos Accesos Directos",
+        "t8": "Ocultar el Botón de Vista de Tareas y Widgets",
+        "t9": "Eliminar Anuncios del Menú Inicio y de la Búsqueda en la Barra de Tareas",
+        "t10": "Desactivar la Búsqueda en Línea en Inicio a través de Bing",
+        "t11": "Pausar el Servicio de Actualización de Windows",
+        "t12": "Desactivar SmartScreen",
+        "t13": "Desactivar Teclas Adhesivas",
+        "t14": "Habilitar Portapapeles",
+        "t15": "Eliminar el Retardo del Menú Contextual",
+        "t16": "Establecer el Tiempo de Espera de Chkdsk a 1 Minuto",
+        "t17": "Instalar DirectPlay",
+        "t18": "Instalar .NET Framework 2.0, 3.0, 3.5",
+        "t19": "Limpiar la Caché de Actualización de Windows",
+        "t20": "Desactivar el Cifrado Automático de BitLocker"
+      }
+    },
+    "act": {
+      "main": {
+        "label": "Activación de Windows",
+        "step1": "Paso 1: Seleccionar Servidor KMS\n(Prueba Otro Si la Activación Falla)",
+        "step2": "Paso 2: Seleccionar Edición de Windows",
+        "step3": "Paso 2: Aplicar Activación",
+        "hwid": "Activación Automática (HWID)",
+        "kms": "Activación Manual (KMS)",
+        "offi": "Activación automática de Office",
+        "button20": "Aplicar"
+      },
+      "status": {
+        "inprog": "Activando... Esto puede tardar en PCs lentos.",
+        "err": "¡Error de Activación!",
+        "alrd": "¡El Sistema Ya Está Activado!",
+        "success": "¡Activación completada con éxito!",
+        "unk": "¡Error de Activación Desconocido!",
+        "eval": "Tienes instalada la Edición de Evaluación de Windows, que no puede ser activada. Para activar Windows, necesitas una versión regular de Windows.",
+        "nocon": "No estás conectado. Conéctate a Internet para activar Windows",
+        "srv": "¡El Servidor para Activación Fue Seleccionado Exitosamente!",
+        "edit": "¡Has Seleccionado la Edición del Sistema para Activación Exitosamente!",
+        "error": "Error al activar Windows. Verifica la conexión a internet y asegúrate de haber seleccionado la edición correcta.",
+        "kmserr": "Error de activación del Servidor KMS, prueba con otro y vuelve a intentarlo.",
+        "keyerr": "Seleccionaste la edición incorrecta. Selecciona la correcta y vuelve a intentarlo.",
+        "hwerr": "Windows no se puede activar utilizando el método HWID. Para activar Windows, utilice el método de Activación manual KMS.",
+        "offierr": "Office no se puede activar utilizando el método Ohook. Reinstale Office e inténtelo de nuevo."
+      }
+    },
+    "cm": {
+      "main": {
+        "label": "Menú Contextual",
+        "t1": "Habilitar el menú contextual antiguo",
+        "o8": "Eliminar el retraso del menú contextual",
+        "t2": "Escanear con Microsoft Defender",
+        "t3": "Abrir en Terminal",
+        "t4": "Añadir a Favoritos",
+        "t5": "Compartir",
+        "t6": "Restaurar versiones anteriores",
+        "t7": "Añadir a la biblioteca",
+        "t8": "Enviar a",
+        "t9": "Dar acceso a",
+        "t10": "Copiar como ruta",
+        "t11": "Fijar al Menú Inicio",
+        "t12": "Fijar a la Barra de Tareas",
+        "t13": "Abrir en nueva pestaña",
+        "t14": "Panel de Control de NVIDIA"
+      }
+    },
+    "sr": {
+      "main": {
+        "label": "Sistema y Recuperación",
+        "b1": "Instalar",
+        "b2": "Reparar",
+        "b3": "Restablecer",
+        "b4": "Limpiar",
+        "b5": "Habilitar",
+        "sr1l": "Instalar DirectPlay",
+        "sr2l": "Instalar .NET Framework 2.0, 3.0, 3.5",
+        "sr3l": "Reparar el Sistema Usando SFC",
+        "sr4l": "Reparar el Sistema Usando DISM",
+        "sr5l": "Restablecer Componentes Obsoletos y Caché WinSXS",
+        "sr6l": "Limpiar la Carpeta TEMP",
+        "sr7l": "Limpiar la Caché de Actualización de Windows",
+        "sr8l": "Habilitar el Editor de Políticas de Grupo Local",
+        "sr1": "Habilitar el Antiguo Gestor de Arranque del SO",
+        "sr2": "Deshabilitar el Logotipo de Windows en el Gestor de Arranque",
+        "sr3": "Deshabilitar Animaciones en el Gestor de Arranque",
+        "sr4": "Opciones Adicionales en Cada Arranque",
+        "sr5": "Aplicar Compresión del Sistema Compact OS",
+        "sr6": "Deshabilitar el Cifrado Automático de BitLocker",
+        "sr7": "Desactivar aislamiento del núcleo / integridad de memoria",
+        "sr8": "Desactivar hibernación",
+        "sr9": "Desactivar la seguridad basada en virtualización",
+        "sr10": "Desactivar los temporizadores de suspensión y apagado de pantalla",
+        "sr11": "Desactivar el archivo de paginación",
+        "pwsh": "Habilitar scripts de PowerShell de terceros"
+      },
+      "status": {
+        "sr8": "Has habilitado con éxito el Editor de Políticas de Grupo Local.",
+        "uacwarn": "Al activar la opción *Desactivar el Control de Cuentas de Usuario (UAC)*, deja de funcionar el arrastrar y soltar en la barra de tareas de Windows 11. Este problema no está relacionado con MakuTweaker. ¿Está seguro de que desea continuar?"
+      }
+    },
+    "oth": {
+      "main": {
+        "label": "Varios",
+        "o1": "Deshabilitar Smart Screen",
+        "o2": "Deshabilitar el Control de Cuentas de Usuario",
+        "o3": "Deshabilitar las Teclas Adhesivas",
+        "o4": "Habilitar el Portapapeles",
+        "o5": "Habilitar Información del Sistema Superdetallada",
+        "o9": "Establecer el Tiempo de Espera de Chkdsk en 1 Minuto",
+        "o10": "Crear un Informe de las Características de la Batería",
+        "o11": "Habilitar el Visor de Fotos Antiguo de Windows",
+        "o11b": "Habilitar",
+        "o10b": "Informe"
+      },
+      "status": {
+        "o1b": "Has creado con éxito un informe de las características de la batería.",
+        "o2b": "Haz clic derecho en la imagen, luego selecciona 'Abrir con' y elige el Visor de Fotos Antiguo."
+      }
+    },
+    "app": {
+      "main": {
+        "label": "Instalación de aplicaciones",
+        "winget": "Instalar WinGet",
+        "start": "Iniciar instalación",
+        "stop": "Cancelar instalación",
+        "skip": "Saltar aplicación",
+        "toofastD1": "La instalación de la aplicación terminó demasiado rápido.\nProbablemente ya tienes la última versión de ",
+        "toofastD2": "\n\nSi no es así, intenta actualizar el 'Instalador de aplicaciones' en Microsoft Store",
+        "wgerr": "No se pudieron instalar las aplicaciones porque WinGet no está instalado.\nUtiliza el botón de abajo para instalarlo.",
+        "apperr1": "No se pudo instalar ",
+        "apperr2": ". Esta aplicación será omitida.\nError: "
+      },
+      "status": {
+        "inst": "Instalando aplicaciones seleccionadas...",
+        "instC": "Instalación cancelada.",
+        "instS": "¡Instalación completada!",
+        "havent": "No has seleccionado ninguna aplicación para instalar."
+      }
+    },
+    "per": {
+      "main": {
+        "label": "Personalización",
+        "p1l": "Nombre Predeterminado para Carpetas y Archivos Nuevos",
+        "p2l": "Cambiar el Color de Selección",
+        "p3": "Habilitar Temas Ocultos de Windows 11",
+        "p4": "Botones de Ventana Pequeños",
+        "p5": "Deshabilitar el Desenfoque en la Pantalla de Bloqueo",
+        "p6": "Habilitar la Vista Antigua de Alt+Tab Como en Windows XP",
+        "p7": "Desactivar la transparencia",
+        "p8": "Activar el tema oscuro",
+        "newname": "Nuevo Archivo",
+        "c1": "Estándar",
+        "c2": "Cian",
+        "c3": "Púrpura",
+        "c4": "Verde",
+        "c5": "Naranja",
+        "c6": "Rojo",
+        "c7": "Azul",
+        "c8": "Negro",
+        "b1": "Aplicar",
+        "b2": "Estándar"
+      },
+      "status": {
+        "apN": "Has cambiado con éxito el nombre predeterminado para carpetas y archivos nuevos.",
+        "stN": "Has restaurado con éxito el nombre predeterminado para carpetas y archivos nuevos.",
+        "apC": "Has cambiado con éxito el color de resaltado."
+      }
+    },
+    "tel": {
+      "main": {
+        "label": "Telemetría",
+        "t1": "Deshabilitar Toda la Telemetría",
+        "t2": "Deshabilitar Diagnósticos de Aplicaciones",
+        "t3": "Deshabilitar la Recolección y Publicación de Datos de Actividad del Usuario",
+        "t4": "Deshabilitar la Recolección de Datos de Rendimiento del Sistema",
+        "t5": "Deshabilitar la Recolección de Datos de Pulsaciones de Teclas",
+        "t6": "Deshabilitar Actualizaciones de Datos de Voz"
+      }
+    },
+    "ab": {
+      "main": {
+        "lang": "Idioma del Programa",
+        "th": "Tema del Programa",
+        "sys": "Predeterminado del Sistema",
+        "l": "Claro",
+        "d": "Oscuro",
+        "label": "Configuración",
+        "credL": "Idea y Desarrollo:\r\nÍcono del Programa:\r\nAgradecimientos Especiales:",
+        "credN": "Mark Adderly, Nikitori629\r\nNikitori629\r\nSergey Tkachenko, Massgrave",
+        "atop": "Sitio Web Oficial"
+      }
+    }
+  }
+}
