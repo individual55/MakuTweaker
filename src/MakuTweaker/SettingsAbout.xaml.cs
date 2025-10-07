@@ -142,7 +142,8 @@ namespace MakuTweakerNew
 
         private void Image_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            copyleft.Text = "\ud83d\udd2a\ud83d\udd2a\ud83d\udd2a\ud83d\udd2a\ud83d\udd2a / 2023 - 2025";
+            copyleft.Text = "Mark Adderly, Nikitori / 2023 - 2025 (\"Code only fo money, huh?\" - individual55)";
         }
     }
 }
+
