@@ -1,112 +1,109 @@
-﻿<Page
-	x:Class="MakuTweakerNew.SettingsAbout" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:MakuTweakerNew" xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF" xmlns:ui="http://schemas.modernwpf.com/2019"
-	Title="Explorer">
+<Page
+    x:Class="MakuTweakerNew.SettingsAbout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MakuTweakerNew"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    Title="Explorer">
     <Grid>
+        <!--  fixed bitmap scaling mode  -->
+
         <Image
-			HorizontalAlignment="Center"
-			Height="100"
-			Margin="0,166,0,0"
-			VerticalAlignment="Top"
-			Width="489"
-			Source="/MakuTweaker NEW.png"
-			MouseLeftButtonUp="Image_MouseLeftButtonUp_1"
-			MouseRightButtonUp="Image_MouseRightButtonUp" />
+            Width="489"
+            Height="100"
+            Margin="0,166,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            MouseLeftButtonUp="Image_MouseLeftButtonUp_1"
+            MouseRightButtonUp="Image_MouseRightButtonUp"
+            RenderOptions.BitmapScalingMode="HighQuality"
+            Source="/MakuTweaker NEW.png" />
         <TextBlock
-			Margin="240,234,0,0"
-			TextWrapping="Wrap"
-			Text="v4.3.0"
-			Foreground="#FF966AFF"
-			FontSize="18"
-			FontFamily="Segoe UI Semibold"
-			HorizontalAlignment="Left"
-			Width="55"
-			Height="24"
-			VerticalAlignment="Top" />
+            Margin="240,238,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Semibold"
+            FontSize="18"
+            Foreground="#FF966AFF"
+            Text="v4.3.0 (Paid code, right? - individual55)"
+            TextWrapping="Wrap" />
         <TextBlock
-			Name="credL"
-			HorizontalAlignment="Left"
-			Margin="30,285,0,0"
-			TextWrapping="Wrap"
-			Text="credL"
-			VerticalAlignment="Top"
-			FontSize="24"
-			FontFamily="Segoe UI Semibold" />
+            Name="credL"
+            Margin="30,290,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Semibold"
+            FontSize="24"
+            Text="credL"
+            TextWrapping="Wrap" />
         <TextBlock
-			Name="credN"
-			Margin="380,285,0,0"
-			TextWrapping="Wrap"
-			Text="credN"
-			VerticalAlignment="Top"
-			FontSize="24"
-			FontFamily="Segoe UI Semibold"
-			HorizontalAlignment="Left"
-			Width="1098" />
+            Name="credN"
+            Width="1098"
+            Margin="380,290,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Semibold"
+            FontSize="24"
+            Text="credN"
+            TextWrapping="Wrap" />
         <TextBlock
-			Name="label"
-			HorizontalAlignment="Left"
-			Margin="24,11,0,0"
-			TextWrapping="Wrap"
-			Text="Settings"
-			VerticalAlignment="Top"
-			FontSize="32"
-			FontFamily="Segoe UI Semibold" />
+            Name="label"
+            Margin="24,11,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Semibold"
+            FontSize="32"
+            Text="Settings"
+            TextWrapping="Wrap" />
         <TextBlock
-			Name="langL"
-			HorizontalAlignment="Left"
-			Margin="30,70,0,0"
-			TextWrapping="Wrap"
-			Text="Program Language"
-			VerticalAlignment="Top"
-			FontSize="16" />
+            Name="langL"
+            Margin="30,70,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="16"
+            Text="Program Language"
+            TextWrapping="Wrap" />
         <ComboBox
-			Name="lang"
-			HorizontalAlignment="Left"
-			Margin="30,100,0,0"
-			FontSize="14"
-			Width="177"
-			VerticalAlignment="Top"
-			MinWidth="177"
-			MaxWidth="177"
-			SelectionChanged="lang_SelectionChanged">
-            <ComboBoxItem
-				Content=" English [EN]" />
-            <ComboBoxItem
-				Content=" Русский [RU]" />
-            <ComboBoxItem
-				Content=" Українська [UA]" />
-            <ComboBoxItem
-				Content=" Español [ES]" />
-            <ComboBoxItem
-				Content=" Português [PT]" />
-            <ComboBoxItem
-				Content=" Deutsch [DE]" />
-            <ComboBoxItem
-				Content=" Қазақ тілі [KZ]" />
-            <ComboBoxItem
-				Content=" 日本語 [JP]" />
-            <ComboBoxItem
-				Content=" 中文 [CN]" />
-            <ComboBoxItem
-				Content=" हिन्दी [HI]" />
+            Name="lang"
+            Width="177"
+            MinWidth="177"
+            MaxWidth="177"
+            Margin="30,100,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="14"
+            SelectionChanged="lang_SelectionChanged">
+            <ComboBoxItem Content=" English [EN]" />
+            <ComboBoxItem Content=" Русский [RU]" />
+            <ComboBoxItem Content=" Українська [UA]" />
+            <ComboBoxItem Content=" Español [ES]" />
+            <ComboBoxItem Content=" Português [PT]" />
+            <ComboBoxItem Content=" Deutsch [DE]" />
+            <ComboBoxItem Content=" Қазақ тілі [KZ]" />
+            <ComboBoxItem Content=" 日本語 [JP]" />
+            <ComboBoxItem Content=" 中文 [CN]" />
+            <ComboBoxItem Content=" हिन्दी [HI]" />
         </ComboBox>
         <TextBlock
-			Name="copyleft"
-			HorizontalAlignment="Left"
-			Margin="30,510,0,0"
-			TextWrapping="Wrap"
-			Text="Mark Adderly, Nikitori / 2023 - 2025"
-			VerticalAlignment="Top"
-			FontSize="24"
-			FontFamily="Segoe UI Semilight" />
+            Name="copyleft"
+            Margin="30,430,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Semilight"
+            FontSize="24"
+            Text="Mark Adderly, Nikitori / 2023 - 2025"
+            TextWrapping="Wrap" />
         <TextBlock
-			Name="build"
-			HorizontalAlignment="Left"
-			Margin="30,497,0,0"
-			TextWrapping="Wrap"
-			Text="build:"
-			VerticalAlignment="Top"
-			FontSize="12"
-			FontFamily="Segoe UI" />
+            Name="build"
+            Margin="30,417,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI"
+            FontSize="12"
+            Text="build:"
+            TextWrapping="Wrap" />
     </Grid>
 </Page>
-
