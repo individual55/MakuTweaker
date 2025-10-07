@@ -3,6 +3,8 @@ using System.Windows;
 using System.Windows.Threading;
 using MakuTweakerNew.Properties;
 
+// I know the code here is bad, but if you want, I'll fix it.
+
 namespace MakuTweakerNew
 {
     public partial class App : Application
@@ -62,3 +64,4 @@ namespace MakuTweakerNew
         }
     }
 }
+
