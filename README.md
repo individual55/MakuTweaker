@@ -22,7 +22,6 @@ used for commercial gain.
 <img src="https://github.com/individual55/MakuTweaker/blob/main/images/screenshots/1.png" alt="1">
 <img src="https://github.com/individual55/MakuTweaker/blob/main/images/screenshots/2.png" alt="2">
 <img src="https://github.com/individual55/MakuTweaker/blob/main/images/screenshots/3.png" alt="3">
-<img src="https://github.com/individual55/MakuTweaker/blob/main/images/screenshots/4.png" alt="4">
 
 ## 🔨 Building from Source
 
@@ -37,11 +36,11 @@ Before building, make sure you have installed:
 
 ### ☑ Build steps
 
-1. Download or copy **only the `src` folder** from this repository.
-2. Open the solution (`.sln`) file located in the `src` folder using your IDE.
+1. Download the source code.
+2. Open the solution file (`.sln`) located in the source code folder using your IDE.
 3. Set the build configuration to **Release**.
 4. Build the project.
-5. Enjoy !
+5. Enjoy!
 
 ## ❓ FAQ / Notes
 Q: Why does it seem hardcoded / poorly structured?
@@ -57,8 +56,8 @@ It isn't a mistake of this open-source version - it reflects how the original au
 
 Huge thanks to:  
 
-- [Hardcodet NotifyIcon for WPF] (https://github.com/hardcodet/wpf-notifyicon)  
-- [MicaWPF] (https://github.com/Simnico99/MicaWPF)  
-- [ModernWpf.MessageBox.Mica] (https://www.nuget.org/packages/ModernWpf.MessageBox.Mica/0.5.3)  
-- [ModernWpf] (https://github.com/Kinnara/ModernWpf)  
-- [Newtonsoft.Json] (https://github.com/JamesNK/Newtonsoft.Json) 
+<a href="https://github.com/hardcodet/wpf-notifyicon"><strong>Hardcodet NotifyIcon for WPF</strong></a>
+<a href="https://github.com/Simnico99/MicaWPF"><strong>MicaWPF</strong></a>
+<a href="https://www.nuget.org/packages/ModernWpf.MessageBox.Mica"><strong>ModernWpf.MessageBox.Mica</strong></a>
+<a href="https://github.com/Kinnara/ModernWpf"><strong>ModernWpf</strong></a>
+<a href="https://github.com/JamesNK/Newtonsoft.Json"><strong>Newtonsoft.Json</strong></a>
