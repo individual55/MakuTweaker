@@ -41,14 +41,7 @@ Before building, make sure you have installed:
 2. Open the solution (`.sln`) file located in the `src` folder using your IDE.
 3. Set the build configuration to **Release**.
 4. Build the project.
-5. After the build complete, open the **output folder**, located at:
-
-src\MakuTweaker\bin\Release
-
-Copy the `src/MakuTweaker/loc` folder into the 
-`Release` Folder so that the program can find all necessary resources.
-- This folder contains, JSON 
-files for multi-language support.
+5. Enjoy !
 
 ## ❓ FAQ / Notes
 Q: Why does it seem hardcoded / poorly structured?
