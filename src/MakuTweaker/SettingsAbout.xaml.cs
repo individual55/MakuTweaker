@@ -54,7 +54,7 @@ namespace MakuTweakerNew
 
         private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-             // no boosty
+             // no boosty to
         }
 
         private void Image_MouseLeftButtonUp_2(object sender, MouseButtonEventArgs e)
@@ -143,5 +143,6 @@ namespace MakuTweakerNew
         }
     }
 }
+
 
 
