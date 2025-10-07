@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ver" Type="System.String" Scope="User">
-      <Value Profile="(Default)">v4.3.0</Value>
+      <Value Profile="(Default)">v4.3.0 (individual55)</Value>
     </Setting>
     <Setting Name="lang" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -252,4 +252,5 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
+
 </SettingsFile>
