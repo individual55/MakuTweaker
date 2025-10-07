@@ -54,10 +54,7 @@ namespace MakuTweakerNew
 
         private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            Process.Start(new ProcessStartInfo("https://boosty.to/adderly")
-            {
-                UseShellExecute = true
-            });
+             // no boosty
         }
 
         private void Image_MouseLeftButtonUp_2(object sender, MouseButtonEventArgs e)
@@ -142,8 +139,9 @@ namespace MakuTweakerNew
 
         private void Image_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            copyleft.Text = "Mark Adderly, Nikitori / 2023 - 2025 (\"Code only fo money, huh?\" - individual55)";
+            copyleft.Text = "Mark Adderly, Nikitori / 2023 - 2025 (\"Paid code, right?\" - individual55)";
         }
     }
 }
+
 
