@@ -41,40 +41,6 @@
 			FontFamily="Segoe UI Semibold"
 			HorizontalAlignment="Left"
 			Width="1098" />
-        <controls:Button
-			Name="web"
-			Content="Official Website"
-			Margin="30,432,452,0"
-			Height="38"
-			VerticalAlignment="Top"
-			Click="Button_Click" />
-        <Image
-			HorizontalAlignment="Left"
-			Height="74"
-			Margin="639,394,0,0"
-			VerticalAlignment="Top"
-			Source="/hand_heart_donate_icon.png"
-			Width="75"
-			Cursor="Hand"
-			MouseLeftButtonUp="Image_MouseLeftButtonUp" />
-        <Image
-			HorizontalAlignment="Left"
-			Height="74"
-			Margin="549,394,0,0"
-			VerticalAlignment="Top"
-			Source="/Telegram_2019_Logo.svg.png"
-			Width="75"
-			Cursor="Hand"
-			MouseLeftButtonUp="Image_MouseLeftButtonUp_2" />
-        <Image
-			HorizontalAlignment="Left"
-			Height="74"
-			Margin="459,394,0,0"
-			VerticalAlignment="Top"
-			Source="/You-Tube-16.png"
-			Width="75"
-			Cursor="Hand"
-			MouseLeftButtonUp="Image_MouseLeftButtonUp_3" />
         <TextBlock
 			Name="label"
 			HorizontalAlignment="Left"
@@ -143,3 +109,4 @@
 			FontFamily="Segoe UI" />
     </Grid>
 </Page>
+
