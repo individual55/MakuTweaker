@@ -1,21 +1,18 @@
-﻿using System;
+using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Markup;
 using MakuTweakerNew.Properties;
+using MicaWPF.Controls;
 
 namespace MakuTweakerNew
 {
@@ -44,11 +41,11 @@ namespace MakuTweakerNew
             isLoaded = true;
         }
 
-        // removed links
+        // Web links have been removed
 
         private void theme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-        }
+        } // <- Why is this necessary, huh?
 
         private void lang_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -98,7 +95,6 @@ namespace MakuTweakerNew
             Dictionary<string, Dictionary<string, string>> ab = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "ab");
             credL.Text = ab["main"]["credL"];
             label.Text = ab["main"]["label"];
-            web.Content = ab["main"]["atop"];
             langL.Text = ab["main"]["lang"];
             using Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MakuTweakerNew.BuildLab.txt");
             using StreamReader reader = new StreamReader(stream);
@@ -112,7 +108,7 @@ namespace MakuTweakerNew
 
         private void Image_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            copyleft.Text = "Mark Adderly, Nikitori / 2023 - 2025 (\"Paid code, right?\" - individual55)";
+            copyleft.Text = "Mark Adderly, Nikitori / 2023 - 2025";
         }
     }
 }
