@@ -12,7 +12,7 @@ original author(s) and source(s). No copyright infringement is intended. The con
 for learning, research, and informational purposes, and should not be reproduced, distributed, or 
 used for commercial gain.
 
-**This version of the source code removes web links to the authors' accounts. (They are simply not needed.)**
+**In this version of the source code, I've removed the web links to the authors' accounts.**
 
 ## 🧰 Description
 
