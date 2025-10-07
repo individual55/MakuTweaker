@@ -4,7 +4,9 @@
 Source code of <a href="https://makutweaker.en.uptodown.com/windows"><strong>MakuTweaker</strong></a>
 </p>
 
+<p align="center">
 <img src="https://github.com/individual55/MakuTweaker/blob/main/images/codepreview.png" alt="Code">
+</p>
 
 ## ⚠ Disclaimer
 This material is provided for educational purposes only. All rights and credits belong to the 
