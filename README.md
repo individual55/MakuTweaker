@@ -56,8 +56,8 @@ It isn't a mistake of this open-source version - it reflects how the original au
 
 Huge thanks to:  
 
-<a href="https://github.com/hardcodet/wpf-notifyicon"><strong>Hardcodet NotifyIcon for WPF</strong></a>
-<a href="https://github.com/Simnico99/MicaWPF"><strong>MicaWPF</strong></a>
-<a href="https://www.nuget.org/packages/ModernWpf.MessageBox.Mica"><strong>ModernWpf.MessageBox.Mica</strong></a>
-<a href="https://github.com/Kinnara/ModernWpf"><strong>ModernWpf</strong></a>
+<a href="https://github.com/hardcodet/wpf-notifyicon"><strong>Hardcodet NotifyIcon for WPF</strong></a><br>
+<a href="https://github.com/Simnico99/MicaWPF"><strong>MicaWPF</strong></a><br>
+<a href="https://www.nuget.org/packages/ModernWpf.MessageBox.Mica"><strong>ModernWpf.MessageBox.Mica</strong></a><br>
+<a href="https://github.com/Kinnara/ModernWpf"><strong>ModernWpf</strong></a><br>
 <a href="https://github.com/JamesNK/Newtonsoft.Json"><strong>Newtonsoft.Json</strong></a>
