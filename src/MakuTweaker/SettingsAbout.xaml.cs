@@ -44,34 +44,7 @@ namespace MakuTweakerNew
             isLoaded = true;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo("https://adderly.top")
-            {
-                UseShellExecute = true
-            });
-        }
-
-        private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-             // no boosty to
-        }
-
-        private void Image_MouseLeftButtonUp_2(object sender, MouseButtonEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo("https://t.me/adderly324")
-            {
-                UseShellExecute = true
-            });
-        }
-
-        private void Image_MouseLeftButtonUp_3(object sender, MouseButtonEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo("https://youtube.com/@MakuAdarii")
-            {
-                UseShellExecute = true
-            });
-        }
+        // removed links
 
         private void theme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -143,6 +116,7 @@ namespace MakuTweakerNew
         }
     }
 }
+
 
 
 
