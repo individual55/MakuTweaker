@@ -12,6 +12,8 @@ original author(s) and source(s). No copyright infringement is intended. The con
 for learning, research, and informational purposes, and should not be reproduced, distributed, or 
 used for commercial gain.
 
+**This version of the source code removes web links to the authors' accounts. (They are simply not needed.)**
+
 ## 🧰 Description
 
 > Wanted the source code? You got it.  
