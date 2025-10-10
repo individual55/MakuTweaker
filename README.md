@@ -58,10 +58,15 @@ Before building, make sure you have installed:
 
 ## ❓ FAQ / Notes
 Q: Why does it seem hardcoded / poorly structured?
+
 A: The majority of source code in this respository, comes directly from the original MakuTweaker author.
 This version preserves the original structure, so 
 some parts may look hardcoded or not ideally organized.
 It isn't a mistake of this open-source version - it reflects how the original author implemented it.
+
+Q: Will there be 5.0?
+
+A: As soon as 5.0 comes out, I will post a new version of the source code.
 
 ## 💡 Credits
 
@@ -74,4 +79,8 @@ Huge thanks to:
 <a href="https://github.com/Simnico99/MicaWPF"><strong>MicaWPF</strong></a><br>
 <a href="https://www.nuget.org/packages/ModernWpf.MessageBox.Mica"><strong>ModernWpf.MessageBox.Mica</strong></a><br>
 <a href="https://github.com/Kinnara/ModernWpf"><strong>ModernWpf</strong></a><br>
-<a href="https://github.com/JamesNK/Newtonsoft.Json"><strong>Newtonsoft.Json</strong></a>
+<a href="https://github.com/JamesNK/Newtonsoft.Json"><strong>Newtonsoft.Json</strong></a
+
+## 🔥 Motivation
+
+Yes, guys, if possible, put a star, I will be very pleased :D
