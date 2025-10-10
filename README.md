@@ -6,6 +6,8 @@
 
 <a href="https://github.com/individual55/MakuTweaker/graphs/forks">![Forks](https://img.shields.io/github/forks/individual55/MakuTweaker?style=flat)</a>
 
+<a href="https://github.com/individual55/MakuTweaker/graphs/issue s">![Issues](https://img.shields.io/github/issues/individual55/MakuTweaker?style=flat)</a>
+
 Source code of <a href="https://makutweaker.en.uptodown.com/windows"><strong>MakuTweaker</strong></a>
 
 <img src="https://github.com/individual55/MakuTweaker/blob/main/images/codepreview.png" alt="Code">
