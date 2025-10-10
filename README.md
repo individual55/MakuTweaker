@@ -83,4 +83,4 @@ Huge thanks to:
 
 ## 🔥 Motivation
 
-Yes, guys, if possible, put a star, I will be very pleased :D
+Yes, guys, if possible, star this project, I will be very pleased :D
