@@ -79,7 +79,7 @@ Huge thanks to:
 <a href="https://github.com/Simnico99/MicaWPF"><strong>MicaWPF</strong></a><br>
 <a href="https://www.nuget.org/packages/ModernWpf.MessageBox.Mica"><strong>ModernWpf.MessageBox.Mica</strong></a><br>
 <a href="https://github.com/Kinnara/ModernWpf"><strong>ModernWpf</strong></a><br>
-<a href="https://github.com/JamesNK/Newtonsoft.Json"><strong>Newtonsoft.Json</strong></a
+<a href="https://github.com/JamesNK/Newtonsoft.Json"><strong>Newtonsoft.Json</strong></a>
 
 ## 🔥 Motivation
 
