@@ -334,10 +334,10 @@
         "l": "Claro",
         "d": "Escuro",
         "label": "Configurações",
-        "credL": "Ideia e Desenvolvimento:\r\nÍcone do Programa:\r\nAgradecimentos Especiais:",
-        "credN": "Mark Adderly, Nikitori629\r\nNikitori629\r\nSergey Tkachenko, Massgrave"
+        "credL": "Ideia e Desenvolvimento:\r\nÍcone do Programa:\r\nAgradecimentos Especiais:\nDecompiled:",
+        "credN": "Mark Adderly, Nikitori629\r\nNikitori629\r\nSergey Tkachenko, Massgrave",
+        "atop": "Site Oficial"
       }
     }
   }
-
 }

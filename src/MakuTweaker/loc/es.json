@@ -68,7 +68,8 @@
         "wu1": "Desactivar Actualizaciones de Windows",
         "wu2": "Bloquear Actualizaciones en una Versión Específica de Windows",
         "wu3": "Desactivar Instalación de Controladores a través de Windows Update",
-        "wu4": "Desactivar la Reinstalación de Programas Basura Después de una Actualización del Sistema",
+        "wu4": "Desactivar la Reinstalación de 
+as Basura Después de una Actualización del Sistema",
         "wu5": "Pausar el Servicio de Actualización de Windows",
         "wu6": "Deshabilitar el Almacenamiento Reservado para Actualizaciones",
         "wu5b": "Pausar",
@@ -334,10 +335,10 @@
         "l": "Claro",
         "d": "Oscuro",
         "label": "Configuración",
-        "credL": "Idea y Desarrollo:\r\nÍcono del Programa:\r\nAgradecimientos Especiales:",
-        "credN": "Mark Adderly, Nikitori629\r\nNikitori629\r\nSergey Tkachenko, Massgrave"
+        "credL": "Idea y Desarrollo:\r\nÍcono del Programa:\r\nAgradecimientos Especiales:\nDecompiled:",
+        "credN": "Mark Adderly, Nikitori629\r\nNikitori629\r\nSergey Tkachenko, Massgrave",
+        "atop": "Sitio Web Oficial"
       }
     }
   }
-
 }

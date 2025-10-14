@@ -3,7 +3,7 @@
     "base": {
       "catname": {
         "expl": "Explorer & Desktop",
-        "stask": "Start Menu and Taskbar",
+        "stask": "Windows Components",
         "wu": "Windows Updates",
         "uwp": "Remove UWP Apps",
         "sat": "Shutdown Timer",
@@ -13,7 +13,8 @@
         "sr": "System and Recovery",
         "oth": "App Installation",
         "per": "Personalization",
-        "tel": "Telemetry"
+        "tel": "Telemetry",
+        "pci": "PC Information"
       },
       "lowtabs": {
         "rexp": "Restart Explorer",
@@ -40,22 +41,22 @@
         "e7": "Remove The \"-Shortcut\" Ending From New Shortcuts",
         "e8": "Fix Duplicate Drives in Explorer",
         "e8b": "Fix",
-        "e9": "Hide Drives in This PC",
+        "e9": "Hide Drives Letters in This PC",
         "choose": "Choose",
         "showall": "Show All"
       },
       "status": {
         "e8": "MakuTweaker Has Fixed The Drive Duplication In File Explorer.",
 
-        "hdInfo1": "Choose The Drives You Want To Hide.",
+        "hdInfo1": "Choose The Drives Letters You Want To Hide.",
         "hdInfo2": "Note that The Drive Can Still Be Accessed by Entering The Drive Letter and a Colon in The Explorer Address Bar.",
-        "hide": "Hide Selected Drives",
+        "hide": "Hide Selected Letters",
         "cc": "Cancel"
       }
     },
     "stask": {
       "main": {
-        "label": "Start Menu & Taskbar",
+        "label": "Windows Components",
         "st1": "Hide The Task View and Widgets buttons",
         "st2": "Huge Window Thumbnails in The Taskbar on Hover",
         "st3": "Reduce The Thumbnail Appearance Time in The Taskbar",
@@ -69,7 +70,6 @@
         "wu1": "Disable Windows Update",
         "wu2": "Block Updates On a Specific Version of Windows",
         "wu3": "Disable Driver Installation via Windows Update",
-        "wu4": "Disable Bloatware Reinstallation After a System Update",
         "wu5": "Pause Windows Update Service",
         "wu6": "Disable Reserved Storage for Updates",
         "wu5b": "Pause",
@@ -137,7 +137,6 @@
         "info": "Enter The Number of Minutes\nAfter Which The System Will Shutdown.\nPress The *Shutdown* Button to Start The Timer You Set.",
         "b1": "Start Shutdown Timer",
         "b2": "Cancel Shutdown Timer",
-        "set": "Launch This Page Instead of The Main"
       }
     },
     "quick": {
@@ -155,14 +154,12 @@
         "t9": "Remove Ads In Start Menu And Taskbar Search",
         "t10": "Disable Online Search In Start Via Bing",
         "t11": "Pause Windows Update Service",
-        "t12": "Disable Smart Screen",
         "t13": "Disable Sticky Keys",
         "t14": "Enable Clipboard",
         "t15": "Remove Context Menu Delay",
         "t16": "Set Chkdsk Timeout to 1 Minute",
         "t17": "Install DirectPlay",
         "t18": "Install .NET Framework 2.0, 3.0, 3.5",
-        "t19": "Clear Windows Update Cache",
         "t20": "Disable Automatic BitLocker Encryption"
       }
     },
@@ -172,9 +169,9 @@
         "step1": "Step 1: Select KMS server\n(Try Another If Activation Fails!)",
         "step2": "Step 2: Select Windows Edition",
         "step3": "Step 2: Apply Activation",
-        "hwid": "Automatic Activation (HWID)",
+        "hwid": "Activate Windows using HWID",
         "kms": "Manual Activation (KMS)",
-        "offi": "Automatic Office Activation",
+        "offi": "Activate Office using HWID",
         "button20": "Apply"
       },
       "status": {
@@ -204,9 +201,7 @@
         "t4": "Add to Favorites",
         "t5": "Share",
         "t6": "Restore previous versions",
-        "t7": "Add to library",
         "t8": "Send to",
-        "t9": "Give access to",
         "t10": "Copy as path",
         "t11": "Pin to Start menu",
         "t12": "Pin to Taskbar",
@@ -222,6 +217,7 @@
         "b3": "Reset",
         "b4": "Clean",
         "b5": "Enable",
+        "b6": "Apply",
         "sr1l": "Install DirectPlay",
         "sr2l": "Install .NET Framework 2.0, 3.0, 3.5",
         "sr3l": "Repair System Using SFC",
@@ -233,6 +229,7 @@
         "sr1": "Enable Old OS Bootloader",
         "sr2": "Disable Windows Logo in Bootloader",
         "sr3": "Disable Animation in Bootloader",
+        "etask": "Add *End Task* Button to the Taskbar",
         "sr4": "Additional Options on Each Boot",
         "sr5": "Apply Compact OS System Compression",
         "sr6": "Disable BitLocker Automatic Encryption",
@@ -241,7 +238,8 @@
         "sr9": "Disable Virtualization-based Security",
         "sr10": "Disable Sleep & Screen timeout",
         "sr11": "Disable Page File",
-        "pwsh": "Enable Third-Party PowerShell Scripts"
+        "pwsh": "Enable Third-Party PowerShell Scripts",
+        "dvrq": "Disable Xbox DVR Pop-up Overlay (ms-gamingoverlay)"
       },
       "status": {
         "sr8": "You Have Successfully Enabled The Local Group Policy Editor.",
@@ -299,14 +297,14 @@
         "p7": "Disable transparency",
         "p8": "Enable dark theme",
         "newname": "New File",
-        "c1": "Standard",
-        "c2": "Cyan",
-        "c3": "Purple",
-        "c4": "Green",
-        "c5": "Orange",
-        "c6": "Red",
-        "c7": "Blue",
-        "c8": "Black",
+        "c1": "  Standard",
+        "c2": "  Cyan",
+        "c3": "  Purple",
+        "c4": "  Green",
+        "c5": "  Orange",
+        "c6": "  Red",
+        "c7": "  Blue",
+        "c8": "  Black",
         "b1": "Apply",
         "b2": "Standard"
       },
@@ -327,18 +325,68 @@
         "t6": "Disable Voice Data Updates"
       }
     },
+    "pci": {
+    "main": {
+            "label": "PC Information",
+            "processorlabel": "CPU:",
+            "processorname": "Processor Name:",
+            "processorcores": "Number of Cores:",
+            "processorthr": "Number of Threads:",
+            "processorfreq": "Base Frequency:",
+            "processorcache": "Level 3 Cache:",
+
+            "ramlabel": "RAM:",
+            "ramtotal": "Total RAM:",
+            "ramddr": "DDR Type:",
+            "ramfreq": "Frequency:",
+
+            "mblabel": "Motherboard:",
+            "mbname": "Name:",
+            "mbver": "BIOS Version:",
+            "mbdate": "BIOS Date:",
+
+            "vlabel": "GPU:",
+            "vname": "Name:",
+            "vmem": "Total VRAM:",
+
+            "ssdl": "SSD, HDD, USB Drives",
+            "sname": "Name:",
+            "smem": "Total Capacity:",
+            "hostw": "Total Host Write:",
+
+            "sensl": "Sensors and Temperature:",
+            "tdpcpu": "CPU TDP:",
+            "tdpgpu": "GPU TDP:",
+            "celcpu": "CPU Temperature:",
+            "celgpu": "GPU Temperature:",
+            "coollerv": "CPU Fan Speed:",
+
+            "benchtitle": "Benchmark",
+            "benchbutton": "Start Benchmark",
+            "lookresulbutton": "View Other Results",
+            "benchtip": "Click *Start Benchmark* to Start the Single Core PC Test.\nHold Ctrl and Click the Button to Start the Multi-Threaded Test.",
+            "test1": "Single-core Test Completed.",
+            "test2": "Score:",
+            "test3": "Operations completed.",
+            "running": "Single-Сore Test Running...\nPlease wait 10 seconds.",
+            "running_multicore": "Multi-Threaded test running...\nPlease wait 10 seconds.",
+            "test1multi": "Multi-Threaded Test Completed.",
+            "f2tip": "Press F2 to Take a Screenshot."
+    }
+        },
     "ab": {
       "main": {
-        "lang": "Program Language",
+        "lang": "Language",
         "th": "Program Theme",
         "sys": "System Default",
         "l": "Light",
         "d": "Dark",
+        "st": "Style",
         "label": "Settings",
-        "credL": "Idea and Development:\r\nProgram Icon:\r\nSpecial Thanks:",
-        "credN": "Mark Adderly, Nikitori629\r\nNikitori629\r\nSergey Tkachenko, Massgrave"
+        "credL": "Idea and Development:\r\nProgram Icon:\r\nSpecial Thanks:\nDecompiled:",
+        "credN": "Mark Adderly, Nikitori629\r\nNikitori629\r\nSergey Tkachenko, Massgrave",
+        "atop": "Official Website"
       }
     }
   }
-
 }

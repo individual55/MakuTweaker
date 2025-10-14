@@ -334,10 +334,10 @@
         "l": "Hell",
         "d": "Dunkel",
         "label": "Einstellungen",
-        "credL": "Idee und Entwicklung:\r\nProgrammsymbol:\r\nBesonderer Dank:",
-        "credN": "Mark Adderly, Nikitori629\r\nNikitori629\r\nSergey Tkachenko, Massgrave"
+        "credL": "Idee und Entwicklung:\r\nProgrammsymbol:\r\nBesonderer Dank:\nDecompiled:",
+        "credN": "Mark Adderly, Nikitori629\r\nNikitori629\r\nSergey Tkachenko, Massgrave",
+        "atop": "Offizielle Website"
       }
     }
   }
-
 }
