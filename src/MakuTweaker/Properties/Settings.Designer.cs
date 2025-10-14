@@ -1,4 +1,4 @@
-namespace MakuTweakerNew.Properties {
+﻿namespace MakuTweakerNew.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -15,7 +15,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("v4.3.0")]
         public string ver {
             get {
                 return ((string)(this["ver"]));
@@ -231,7 +231,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool e1 {
             get {
                 return ((bool)(this["e1"]));
@@ -243,7 +243,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool e2 {
             get {
                 return ((bool)(this["e2"]));
@@ -255,7 +255,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool e3 {
             get {
                 return ((bool)(this["e3"]));
@@ -267,7 +267,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool e4 {
             get {
                 return ((bool)(this["e4"]));
@@ -279,7 +279,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool e5 {
             get {
                 return ((bool)(this["e5"]));
@@ -291,7 +291,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool e6 {
             get {
                 return ((bool)(this["e6"]));
@@ -303,7 +303,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool e7 {
             get {
                 return ((bool)(this["e7"]));
@@ -315,7 +315,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool st1 {
             get {
                 return ((bool)(this["st1"]));
@@ -327,7 +327,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool st2 {
             get {
                 return ((bool)(this["st2"]));
@@ -339,7 +339,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool st3 {
             get {
                 return ((bool)(this["st3"]));
@@ -351,7 +351,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool st4 {
             get {
                 return ((bool)(this["st4"]));
@@ -363,7 +363,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool st5 {
             get {
                 return ((bool)(this["st5"]));
@@ -375,7 +375,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool wu1 {
             get {
                 return ((bool)(this["wu1"]));
@@ -387,7 +387,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool wu2 {
             get {
                 return ((bool)(this["wu2"]));
@@ -399,7 +399,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool wu3 {
             get {
                 return ((bool)(this["wu3"]));
@@ -411,7 +411,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2312")]
         public int wu4 {
             get {
                 return ((int)(this["wu4"]));
@@ -423,7 +423,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm1 {
             get {
                 return ((bool)(this["cm1"]));
@@ -435,7 +435,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm2 {
             get {
                 return ((bool)(this["cm2"]));
@@ -447,7 +447,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm3 {
             get {
                 return ((bool)(this["cm3"]));
@@ -459,7 +459,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm4 {
             get {
                 return ((bool)(this["cm4"]));
@@ -471,7 +471,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm5 {
             get {
                 return ((bool)(this["cm5"]));
@@ -483,7 +483,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm6 {
             get {
                 return ((bool)(this["cm6"]));
@@ -495,7 +495,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm7 {
             get {
                 return ((bool)(this["cm7"]));
@@ -507,7 +507,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm8 {
             get {
                 return ((bool)(this["cm8"]));
@@ -519,7 +519,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm9 {
             get {
                 return ((bool)(this["cm9"]));
@@ -531,7 +531,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm10 {
             get {
                 return ((bool)(this["cm10"]));
@@ -543,7 +543,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm11 {
             get {
                 return ((bool)(this["cm11"]));
@@ -555,7 +555,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm12 {
             get {
                 return ((bool)(this["cm12"]));
@@ -567,7 +567,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm13 {
             get {
                 return ((bool)(this["cm13"]));
@@ -579,7 +579,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm14 {
             get {
                 return ((bool)(this["cm14"]));
@@ -591,7 +591,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool o1 {
             get {
                 return ((bool)(this["o1"]));
@@ -603,7 +603,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool o2 {
             get {
                 return ((bool)(this["o2"]));
@@ -615,7 +615,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool o3 {
             get {
                 return ((bool)(this["o3"]));
@@ -627,7 +627,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool o4 {
             get {
                 return ((bool)(this["o4"]));
@@ -639,7 +639,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool o5 {
             get {
                 return ((bool)(this["o5"]));
@@ -651,7 +651,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool o6 {
             get {
                 return ((bool)(this["o6"]));
@@ -663,7 +663,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool o7 {
             get {
                 return ((bool)(this["o7"]));
@@ -675,7 +675,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool o8 {
             get {
                 return ((bool)(this["o8"]));
@@ -687,7 +687,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool o9 {
             get {
                 return ((bool)(this["o9"]));
@@ -699,8 +699,8 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public bool	 o10 {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool o10 {
             get {
                 return ((bool)(this["o10"]));
             }
@@ -711,7 +711,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool p1 {
             get {
                 return ((bool)(this["p1"]));
@@ -723,7 +723,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool sr1 {
             get {
                 return ((bool)(this["sr1"]));
@@ -735,7 +735,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool sr2 {
             get {
                 return ((bool)(this["sr2"]));
@@ -747,7 +747,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool sr3 {
             get {
                 return ((bool)(this["sr3"]));
@@ -759,7 +759,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool sr4 {
             get {
                 return ((bool)(this["sr4"]));
@@ -771,7 +771,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool sr5 {
             get {
                 return ((bool)(this["sr5"]));
@@ -783,7 +783,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool sr6 {
             get {
                 return ((bool)(this["sr6"]));
@@ -795,7 +795,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool sr7 {
             get {
                 return ((bool)(this["sr7"]));
@@ -807,7 +807,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool sr8 {
             get {
                 return ((bool)(this["sr8"]));
@@ -819,7 +819,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool t1 {
             get {
                 return ((bool)(this["t1"]));
@@ -831,7 +831,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool t2 {
             get {
                 return ((bool)(this["t2"]));
@@ -843,7 +843,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool t3 {
             get {
                 return ((bool)(this["t3"]));
@@ -855,7 +855,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool t4 {
             get {
                 return ((bool)(this["t4"]));
@@ -867,7 +867,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool t5 {
             get {
                 return ((bool)(this["t5"]));
@@ -879,7 +879,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool t6 {
             get {
                 return ((bool)(this["t6"]));
@@ -891,7 +891,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int s1 {
             get {
                 return ((int)(this["s1"]));
@@ -903,7 +903,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int s2 {
             get {
                 return ((int)(this["s2"]));
@@ -927,7 +927,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int p3 {
             get {
                 return ((int)(this["p3"]));
@@ -939,7 +939,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool cm15 {
             get {
                 return ((bool)(this["cm15"]));
@@ -951,7 +951,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool p4 {
             get {
                 return ((bool)(this["p4"]));
@@ -963,7 +963,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool isE8Hidden {
             get {
                 return ((bool)(this["isE8Hidden"]));
@@ -975,7 +975,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool wu6 {
             get {
                 return ((bool)(this["wu6"]));
@@ -999,7 +999,7 @@ namespace MakuTweakerNew.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool powercfgsl {
             get {
                 return ((bool)(this["powercfgsl"]));
@@ -1008,6 +1008,41 @@ namespace MakuTweakerNew.Properties {
                 this["powercfgsl"] = value;
             }
         }
-       
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Light")]
+        public string theme {
+            get {
+                return ((string)(this["theme"]));
+            }
+            set {
+                this["theme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Tabbed")]
+        public string style {
+            get {
+                return ((string)(this["style"]));
+            }
+            set {
+                this["style"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool sr9 {
+            get {
+                return ((bool)(this["sr9"]));
+            }
+            set {
+                this["sr9"] = value;
+            }
+        }
     }
 }

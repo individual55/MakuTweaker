@@ -251,7 +251,14 @@
     <Setting Name="powercfgsl" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="theme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Light</Value>
+    </Setting>
+    <Setting Name="style" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Tabbed</Value>
+    </Setting>
+    <Setting Name="sr9" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
-
 </SettingsFile>
-
