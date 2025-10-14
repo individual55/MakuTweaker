@@ -2,15 +2,15 @@
 
 <img src="images/logo.png" alt="MakuTweaker">
 
-<a href="https://github.com/individual55/MakuTweaker/releases">![Release](https://img.shields.io/github/v/release/individual55/MakuTweaker?style=flat)</a>
+<a href="https://github.com/individual55/MakuTweaker/releases">![Releases](https://img.shields.io/github/v/release/individual55/MakuTweaker?style=flat)</a>
 
-<a href="https://github.com/individual55/MakuTweaker/graphs/contributors">![Contribuors](https://img.shields.io/github/contributors/individual55/MakuTweaker?style=flat)</a>
+<a href="https://github.com/individual55/MakuTweaker/graphs/contributors">![Contributors](https://img.shields.io/github/contributors/individual55/MakuTweaker?style=flat)</a>
 
-<a href="https://github.com/individual55/MakuTweaker/network/members">![Fors](https://img.shields.io/github/forks/individual55/MakuTweaker?style=flat)</a>
+<a href="https://github.com/individual55/MakuTweaker/network/members">![Forks](https://img.shields.io/github/forks/individual55/MakuTweaker?style=flat)</a>
 
-<a href="https://github.com/individual55/MakuTweaker/issues">![Isses](https://img.shields.io/github/issues/individual55/MakuTweaker?style=flat)</a>
+<a href="https://github.com/individual55/MakuTweaker/issues">![Issues](https://img.shields.io/github/issues/individual55/MakuTweaker?style=flat)</a>
 
-<a href="https://github.com/individual55/MakuTweaker/stargazers">![Stargaers](https://img.shields.io/github/stars/individual55/MakuTweaker?style=flat)</a>
+<a href="https://github.com/individual55/MakuTweaker/stargazers">![Stargazers](https://img.shields.io/github/stars/individual55/MakuTweaker?style=flat)</a>
 
 Source code of <a href="https://makutweaker.en.uptodown.com/windows"><strong>MakuTweaker</strong></a>
 
