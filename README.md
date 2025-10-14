@@ -14,7 +14,7 @@
 
 Source code of <a href="https://makutweaker.en.uptodown.com/windows"><strong>MakuTweaker</strong></a>
 
-<img src="https://github.com/individual55/MakuTweaker/blob/main/images/codepreview.png" alt="Code">
+<img src="images/codepreview.png" alt="Code">
 
 </div>
 
@@ -33,9 +33,9 @@ used for commercial gain.
 
 ## Screenshots
 
-<img src="https://github.com/individual55/MakuTweaker/blob/main/images/screenshots/1.png" alt="1">
-<img src="https://github.com/individual55/MakuTweaker/blob/main/images/screenshots/2.png" alt="2">
-<img src="https://github.com/individual55/MakuTweaker/blob/main/images/screenshots/3.png" alt="3">
+<img src="images/screenshots/1.png" alt="1">
+<img src="iamges/screenshots/2.png" alt="2">
+<img src="images/screenshots/3.png" alt="3">
 
 ## 🔨 Building from Source
 
