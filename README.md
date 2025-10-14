@@ -64,10 +64,6 @@ This version preserves the original structure, so
 some parts may look hardcoded or not ideally organized.
 It isn't a mistake of this open-source version - it reflects how the original author implemented it.
 
-Q: Will there be 5.0?
-
-A: As soon as 5.0 comes out, I will post a new version of the source code.
-
 ## 💡 Credits
 
 - **Nikitori**
@@ -76,10 +72,13 @@ A: As soon as 5.0 comes out, I will post a new version of the source code.
 Huge thanks to:  
 
 <a href="https://github.com/hardcodet/wpf-notifyicon"><strong>Hardcodet NotifyIcon for WPF</strong></a><br>
+<a href="https://github.com/LibreHardwareMonitor/LibreHardwareMonitor"><strong>LibreHardwareMonitor</strong></a>
 <a href="https://github.com/Simnico99/MicaWPF"><strong>MicaWPF</strong></a><br>
 <a href="https://www.nuget.org/packages/ModernWpf.MessageBox.Mica"><strong>ModernWpf.MessageBox.Mica</strong></a><br>
 <a href="https://github.com/Kinnara/ModernWpf"><strong>ModernWpf</strong></a><br>
+<a href="https://github.com/amerkoleci/Vortice.Windows"><strong>Vortice.Windows</strong></a><br>
 <a href="https://github.com/JamesNK/Newtonsoft.Json"><strong>Newtonsoft.Json</strong></a>
+
 
 ## 🔥 Motivation
 
