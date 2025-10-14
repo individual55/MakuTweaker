@@ -1,31 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Markup;
 using MakuTweakerNew.Properties;
 using Microsoft.Win32;
 
 namespace MakuTweakerNew
 {
-    /// <summary>
-    /// Логика взаимодействия для ContextMenu.xaml
-    /// </summary>
     public partial class ContextMenu : Page
     {
         private MainWindow mw = (MainWindow)Application.Current.MainWindow;
 
-        private bool isLoaded;
+        private bool isLoaded = false;
 
         public ContextMenu()
         {
@@ -235,28 +222,6 @@ namespace MakuTweakerNew
             mw.RebootNotify(2);
         }
 
-        private void t7_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (!isLoaded)
-            {
-                return;
-            }
-            Settings.Default.cm7 = t7.IsOn;
-            if (t7.IsOn)
-            {
-                try
-                {
-                    Registry.ClassesRoot.DeleteSubKey("Folder\\ShellEx\\ContextMenuHandlers\\Library Location");
-                    return;
-                }
-                catch
-                {
-                    return;
-                }
-            }
-            Registry.ClassesRoot.CreateSubKey("Folder\\ShellEx\\ContextMenuHandlers\\Library Location").SetValue("", "{3dad6c5d-2167-4cae-9914-f99e41c12cfa}");
-        }
-
         private void t8_Toggled(object sender, RoutedEventArgs e)
         {
             if (!isLoaded)
@@ -277,36 +242,6 @@ namespace MakuTweakerNew
             else
             {
                 Registry.ClassesRoot.CreateSubKey("AllFilesystemObjects\\shellex\\ContextMenuHandlers\\SendTo").SetValue("", "{7BA4C740-9E81-11CF-99D3-00AA004AE837}");
-            }
-            mw.RebootNotify(2);
-        }
-
-        private void t9_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (!isLoaded)
-            {
-                return;
-            }
-            Settings.Default.cm9 = t9.IsOn;
-            if (t9.IsOn)
-            {
-                try
-                {
-                    Registry.LocalMachine.CreateSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Blocked").SetValue("{f81e9010-6ea4-11ce-a7ff-00aa003ca9f6}", "");
-                }
-                catch
-                {
-                }
-            }
-            else
-            {
-                try
-                {
-                    Registry.LocalMachine.DeleteSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Blocked");
-                }
-                catch
-                {
-                }
             }
             mw.RebootNotify(2);
         }
@@ -456,9 +391,9 @@ namespace MakuTweakerNew
 
         private void LoadLang()
         {
-            string language = Settings.Default.lang ?? "en";
-            Dictionary<string, Dictionary<string, string>> cm = MainWindow.Localization.LoadLocalization(language, "cm");
-            Dictionary<string, Dictionary<string, string>> basel = MainWindow.Localization.LoadLocalization(language, "base");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> cm = MainWindow.Localization.LoadLocalization(languageCode, "cm");
+            Dictionary<string, Dictionary<string, string>> basel = MainWindow.Localization.LoadLocalization(languageCode, "base");
             label.Text = cm["main"]["label"];
             t15.Header = cm["main"]["t1"];
             t1.Header = cm["main"]["o8"];
@@ -467,9 +402,7 @@ namespace MakuTweakerNew
             t4.Header = cm["main"]["t4"];
             t5.Header = cm["main"]["t5"];
             t6.Header = cm["main"]["t6"];
-            t7.Header = cm["main"]["t7"];
             t8.Header = cm["main"]["t8"];
-            t9.Header = cm["main"]["t9"];
             t10.Header = cm["main"]["t10"];
             t11.Header = cm["main"]["t11"];
             t12.Header = cm["main"]["t12"];
@@ -481,9 +414,7 @@ namespace MakuTweakerNew
             t4.OffContent = basel["def"]["off"];
             t5.OffContent = basel["def"]["off"];
             t6.OffContent = basel["def"]["off"];
-            t7.OffContent = basel["def"]["off"];
             t8.OffContent = basel["def"]["off"];
-            t9.OffContent = basel["def"]["off"];
             t10.OffContent = basel["def"]["off"];
             t11.OffContent = basel["def"]["off"];
             t12.OffContent = basel["def"]["off"];
@@ -496,9 +427,7 @@ namespace MakuTweakerNew
             t4.OnContent = basel["def"]["on"];
             t5.OnContent = basel["def"]["on"];
             t6.OnContent = basel["def"]["on"];
-            t7.OnContent = basel["def"]["on"];
             t8.OnContent = basel["def"]["on"];
-            t9.OnContent = basel["def"]["on"];
             t10.OnContent = basel["def"]["on"];
             t11.OnContent = basel["def"]["on"];
             t12.OnContent = basel["def"]["on"];
@@ -513,9 +442,7 @@ namespace MakuTweakerNew
             t3.IsOn = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Blocked")?.GetValue("{9F156763-7844-4DC4-B2B1-901F640F5155}")?.Equals("") == true;
             t5.IsOn = Registry.ClassesRoot.OpenSubKey("AllFilesystemObjects\\shellex\\ContextMenuHandlers\\ModernSharing") == null;
             t6.IsOn = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Blocked")?.GetValue("{596AB062-B4D2-4215-9F74-E9109B0A8153}")?.Equals("") == true;
-            t7.IsOn = Registry.ClassesRoot.OpenSubKey("Folder\\ShellEx\\ContextMenuHandlers\\Library Location") == null;
             t8.IsOn = Registry.ClassesRoot.OpenSubKey("AllFilesystemObjects\\shellex\\ContextMenuHandlers\\SendTo")?.GetValue("")?.Equals("") == true;
-            t9.IsOn = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Blocked")?.GetValue("{f81e9010-6ea4-11ce-a7ff-00aa003ca9f6}")?.Equals("") == true;
             t10.IsOn = Registry.ClassesRoot.OpenSubKey("AllFilesystemObjects\\shellex\\ContextMenuHandlers\\CopyAsPathMenu") == null;
             t11.IsOn = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Classes\\Folder\\shellex\\ContextMenuHandlers\\PintoStartScreen") == null || Registry.ClassesRoot.CreateSubKey("exefile\\shellex\\ContextMenuHandlers\\PintoStartScreen")?.GetValue("")?.Equals("") == true;
             t12.IsOn = Registry.ClassesRoot.OpenSubKey("*\\shellex\\ContextMenuHandlers\\{90AA3A4E-1CBA-4233-B8BB-535773D48449}") == null;

@@ -1,25 +1,18 @@
-﻿using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Markup;
-using MakuTweakerNew;
 using MakuTweakerNew.Properties;
-using MicaWPF.Controls;
 using Microsoft.Win32;
-using ModernWpf.Controls;
 
 namespace MakuTweakerNew
 {
     public partial class SysAndRec : System.Windows.Controls.Page
     {
-        private bool isLoaded;
+        private bool isLoaded = false;
 
         private MainWindow mw = (MainWindow)System.Windows.Application.Current.MainWindow;
 
@@ -30,31 +23,12 @@ namespace MakuTweakerNew
             sr4.IsOn = Settings.Default.sr4;
             sr5.IsOn = Settings.Default.sr5;
             t13.IsOn = Settings.Default.powercfgsl;
-            pv.IsEnabled = !Settings.Default.b10;
-            dp.IsEnabled = !Settings.Default.b1;
-            dnet.IsEnabled = !Settings.Default.b2;
             sfc.IsEnabled = !Settings.Default.b3;
             dism.IsEnabled = !Settings.Default.b4;
-            sxs.IsEnabled = !Settings.Default.b5;
             temp.IsEnabled = !Settings.Default.b6;
-            lgp.IsEnabled = !Settings.Default.b8;
-            pwsh.IsEnabled = !Settings.Default.pwsh;
             checkReg();
-            if (checkWinEd() == "Core" || checkWinEd() == "CoreSingleLanguage" || checkWinEd() == "CoreCountrySpecific" || checkWinEd() == "CoreN")
-            {
-                sr8L.Visibility = Visibility.Visible;
-                lgp.Visibility = Visibility.Visible;
-            }
             LoadLang();
             isLoaded = true;
-        }
-
-        private string checkWinEd()
-        {
-            string keyPath = "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion";
-            string valueName = "EditionID";
-            using RegistryKey key = Registry.LocalMachine.OpenSubKey(keyPath);
-            return key.GetValue(valueName).ToString();
         }
 
         private int checkWinVer()
@@ -131,27 +105,13 @@ namespace MakuTweakerNew
                 Settings.Default.sr6 = sr6.IsOn;
                 if (sr6.IsOn)
                 {
-                    Process.Start("cmd.exe", "/c REG ADD HKLM\\SYSTEM\\CurrentControlSet\\Control\\BitLocker /v PreventDeviceEncryption /t REG_DWORD /d 1 /f");
+                    Registry.LocalMachine.CreateSubKey("SYSTEM\\CurrentControlSet\\Control\\BitLocker").SetValue("PreventDeviceEncryption", 1, RegistryValueKind.DWord);
                 }
                 else
                 {
-                    Process.Start("cmd.exe", "/c REG ADD HKLM\\SYSTEM\\CurrentControlSet\\Control\\BitLocker /v PreventDeviceEncryption /t REG_DWORD /d 0 /f");
+                    Registry.LocalMachine.CreateSubKey("SYSTEM\\CurrentControlSet\\Control\\BitLocker").SetValue("PreventDeviceEncryption", 0, RegistryValueKind.DWord);
                 }
             }
-        }
-
-        private void dp_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("cmd.exe", "/C dism /online /Enable-Feature /FeatureName:DirectPlay /All");
-            dp.IsEnabled = false;
-            Settings.Default.b1 = !dp.IsEnabled;
-        }
-
-        private void dnet_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("powershell.exe", "/C Add-WindowsCapability -Online -Name NetFx3~~~~\"");
-            dnet.IsEnabled = false;
-            Settings.Default.b2 = !dnet.IsEnabled;
         }
 
         private void sfc_Click(object sender, RoutedEventArgs e)
@@ -170,42 +130,11 @@ namespace MakuTweakerNew
             Settings.Default.b4 = !dism.IsEnabled;
         }
 
-        private void sxs_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("cmd.exe", "/C dism /Online /Cleanup-Image /StartComponentCleanup /ResetBase");
-            mw.RebootNotify(3);
-            sxs.IsEnabled = false;
-            Settings.Default.b5 = !sxs.IsEnabled;
-        }
-
         private void temp_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("cmd.exe", "/k del /q /f %temp%");
             temp.IsEnabled = false;
             Settings.Default.b6 = !temp.IsEnabled;
-        }
-
-        private void lgp_Click(object sender, RoutedEventArgs e)
-        {
-            Dictionary<string, Dictionary<string, string>> sr = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "sr");
-            string batContent = "\r\n            pushd \"%~dp0\"\r\n\r\n            dir /b %SystemRoot%\\servicing\\Packages\\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum >List.txt \r\n            dir /b %SystemRoot%\\servicing\\Packages\\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum >>List.txt \r\n\r\n            for /f %%i in ('findstr /i . List.txt 2^>nul') do dism /online /norestart /add-package:\"%SystemRoot%\\servicing\\Packages\\%%i\"";
-            string tempBatFilePath = Path.Combine(Path.GetTempPath(), "script.bat");
-            File.WriteAllText(tempBatFilePath, batContent);
-            Process process = new Process();
-            process.StartInfo.FileName = "cmd.exe";
-            process.StartInfo.Arguments = "/c \"" + tempBatFilePath + "\"";
-            process.StartInfo.UseShellExecute = true;
-            process.StartInfo.CreateNoWindow = false;
-            mw.ChSt(sr["status"]["sr8"]);
-            try
-            {
-                process.Start();
-            }
-            catch
-            {
-            }
-            lgp.IsEnabled = false;
-            Settings.Default.b8 = !lgp.IsEnabled;
         }
 
         private void t9_Toggled(object sender, RoutedEventArgs e)
@@ -226,30 +155,19 @@ namespace MakuTweakerNew
 
         private void LoadLang()
         {
-            string language = Settings.Default.lang ?? "en";
-            Dictionary<string, Dictionary<string, string>> sr = MainWindow.Localization.LoadLocalization(language, "sr");
-            Dictionary<string, Dictionary<string, string>> basel = MainWindow.Localization.LoadLocalization(language, "base");
-            Dictionary<string, Dictionary<string, string>> oth = MainWindow.Localization.LoadLocalization(language, "oth");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> sr = MainWindow.Localization.LoadLocalization(languageCode, "sr");
+            Dictionary<string, Dictionary<string, string>> basel = MainWindow.Localization.LoadLocalization(languageCode, "base");
+            Dictionary<string, Dictionary<string, string>> oth = MainWindow.Localization.LoadLocalization(languageCode, "oth");
+            Dictionary<string, Dictionary<string, string>> stask = MainWindow.Localization.LoadLocalization(languageCode, "stask");
             label.Text = sr["main"]["label"];
-            l1.Text = sr["main"]["sr1l"];
-            l2.Text = sr["main"]["sr2l"];
             l3.Text = sr["main"]["sr3l"];
             l4.Text = sr["main"]["sr4l"];
-            l5.Text = sr["main"]["sr5l"];
             l6.Text = sr["main"]["sr6l"];
-            l8.Text = oth["main"]["o11"];
             l9.Text = oth["main"]["o10"];
-            sr8L.Text = sr["main"]["sr8l"];
-            l10.Text = sr["main"]["pwsh"];
-            dp.Content = sr["main"]["b1"];
-            dnet.Content = sr["main"]["b1"];
             sfc.Content = sr["main"]["b2"];
             dism.Content = sr["main"]["b2"];
-            sxs.Content = sr["main"]["b3"];
             temp.Content = sr["main"]["b4"];
-            lgp.Content = sr["main"]["b5"];
-            pv.Content = oth["main"]["o11b"];
-            pwsh.Content = oth["main"]["o11b"];
             report.Content = oth["main"]["o10b"];
             sr1.Header = sr["main"]["sr1"];
             sr4.Header = sr["main"]["sr4"];
@@ -264,6 +182,7 @@ namespace MakuTweakerNew
             t15.Header = oth["main"]["o2"];
             t16.Header = oth["main"]["o3"];
             t18.Header = sr["main"]["sr9"];
+            st5.Header = stask["main"]["st5"];
             sr1.OffContent = basel["def"]["off"];
             sr4.OffContent = basel["def"]["off"];
             sr5.OffContent = basel["def"]["off"];
@@ -277,6 +196,7 @@ namespace MakuTweakerNew
             t15.OffContent = basel["def"]["off"];
             t16.OffContent = basel["def"]["off"];
             t18.OffContent = basel["def"]["off"];
+            st5.OffContent = basel["def"]["off"];
             sr1.OnContent = basel["def"]["on"];
             sr4.OnContent = basel["def"]["on"];
             sr5.OnContent = basel["def"]["on"];
@@ -290,6 +210,7 @@ namespace MakuTweakerNew
             t15.OnContent = basel["def"]["on"];
             t16.OnContent = basel["def"]["on"];
             t18.OnContent = basel["def"]["on"];
+            st5.OnContent = basel["def"]["on"];
         }
 
         private void checkReg()
@@ -303,6 +224,7 @@ namespace MakuTweakerNew
             t15.IsOn = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System", writable: true)?.GetValue("EnableLUA")?.Equals(0) == true;
             t16.IsOn = Registry.CurrentUser.OpenSubKey("Control Panel\\Accessibility\\StickyKeys", writable: true)?.GetValue("Flags")?.Equals("506") == true || Registry.CurrentUser.OpenSubKey("Control Panel\\Accessibility\\ToggleKeys", writable: true)?.GetValue("Flags")?.Equals("58") == true || Registry.CurrentUser.OpenSubKey("Control Panel\\Accessibility\\Keyboard Response", writable: true)?.GetValue("Flags")?.Equals("122") == true;
             t18.IsOn = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\Control\\DeviceGuard")?.GetValue("EnableVirtualizationBasedSecurity")?.Equals(0) == true;
+            st5.IsOn = Registry.CurrentUser.OpenSubKey("Software\\Policies\\Microsoft\\Windows\\Explorer", writable: true)?.GetValue("DisableSearchBoxSuggestions")?.Equals(1) == true;
         }
 
         private void t10_Toggled(object sender, RoutedEventArgs e)
@@ -385,65 +307,43 @@ namespace MakuTweakerNew
                 {
                     Registry.LocalMachine.CreateSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System").SetValue("EnableSmartScreen", 0);
                     Registry.LocalMachine.CreateSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer").SetValue("SmartScreenEnabled", "Off", RegistryValueKind.String);
+                    Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Attachments").SetValue("SaveZoneInformation", 1, RegistryValueKind.DWord);
                 }
                 else
                 {
                     Registry.LocalMachine.CreateSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System").SetValue("EnableSmartScreen", 1);
                     Registry.LocalMachine.CreateSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer").SetValue("SmartScreenEnabled", "Warn", RegistryValueKind.String);
+                    Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Attachments").SetValue("SaveZoneInformation", 0, RegistryValueKind.DWord);
                 }
             }
         }
 
         private void t15_Toggled(object sender, RoutedEventArgs e)
         {
-            Dictionary<string, Dictionary<string, string>> sr = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "sr");
-            if (isLoaded)
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> sr = MainWindow.Localization.LoadLocalization(languageCode, "sr");
+            if (!isLoaded)
             {
-                if (checkWinVer() >= 22621 && t15.IsOn && System.Windows.Forms.MessageBox.Show(sr["status"]["uacwarn"], "MakuTweaker", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                return;
+            }
+            if (checkWinVer() >= 22621 && t15.IsOn)
+            {
+                DialogResult res = System.Windows.Forms.MessageBox.Show(sr["status"]["uacwarn"], "MakuTweaker", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (res == DialogResult.No)
                 {
                     t15.IsOn = false;
-                }
-                else if (t15.IsOn)
-                {
-                    Registry.LocalMachine.CreateSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System").SetValue("EnableLUA", 0);
-                    Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Attachments")?.SetValue("SaveZoneInformation", 1, RegistryValueKind.DWord);
-                    Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Associations")?.SetValue("LowRiskFileTypes", ".exe;.msi;.bat;", RegistryValueKind.String);
-                }
-                else
-                {
-                    Registry.LocalMachine.CreateSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System").SetValue("EnableLUA", 1);
+                    return;
                 }
             }
-        }
-
-        private void pv_Click(object sender, RoutedEventArgs e)
-        {
-            Dictionary<string, Dictionary<string, string>> oth = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "oth");
-            try
+            if (t15.IsOn)
             {
-                using (RegistryKey key = Registry.ClassesRoot.CreateSubKey("Applications\\photoviewer.dll\\shell\\open"))
-                {
-                    key.SetValue("MuiVerb", "@photoviewer.dll,-3043");
-                }
-                using (RegistryKey key2 = Registry.ClassesRoot.CreateSubKey("Applications\\photoviewer.dll\\shell\\open\\command"))
-                {
-                    key2.SetValue("", "%SystemRoot%\\System32\\rundll32.exe \"%ProgramFiles%\\Windows Photo Viewer\\PhotoViewer.dll\", ImageViewer_Fullscreen %1", RegistryValueKind.String);
-                }
-                using (RegistryKey key3 = Registry.LocalMachine.CreateSubKey("SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations"))
-                {
-                    key3.SetValue(".bmp", "PhotoViewer.FileAssoc.Tiff");
-                    key3.SetValue(".gif", "PhotoViewer.FileAssoc.Tiff");
-                    key3.SetValue(".jpeg", "PhotoViewer.FileAssoc.Tiff");
-                    key3.SetValue(".jpg", "PhotoViewer.FileAssoc.Tiff");
-                    key3.SetValue(".png", "PhotoViewer.FileAssoc.Tiff");
-                }
-                pv.IsEnabled = false;
-                Settings.Default.b10 = true;
-                mw.ChSt(oth["status"]["o2b"]);
+                Registry.LocalMachine.CreateSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System").SetValue("EnableLUA", 0);
+                Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Attachments")?.SetValue("SaveZoneInformation", 1, RegistryValueKind.DWord);
+                Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Associations")?.SetValue("LowRiskFileTypes", ".exe;.msi;.bat;", RegistryValueKind.String);
             }
-            catch (Exception ex)
+            else
             {
-                System.Windows.MessageBox.Show("Ошибка: " + ex.Message);
+                Registry.LocalMachine.CreateSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System").SetValue("EnableLUA", 1);
             }
         }
 
@@ -469,22 +369,23 @@ namespace MakuTweakerNew
 
         private void report_Click(object sender, RoutedEventArgs e)
         {
-            Dictionary<string, Dictionary<string, string>> oth = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "oth");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> oth = MainWindow.Localization.LoadLocalization(languageCode, "oth");
             Microsoft.Win32.SaveFileDialog saveFileDialog1 = new Microsoft.Win32.SaveFileDialog();
             saveFileDialog1.Filter = "HTML (*.html)|*.html";
             saveFileDialog1.Title = "Microsoft Battery Report";
             saveFileDialog1.FileName = "battery-report.html";
+
             if (saveFileDialog1.ShowDialog() == true)
             {
                 string reportPath = saveFileDialog1.FileName;
+
                 try
                 {
                     Process.Start("cmd.exe", "/c powercfg /batteryreport /output \"" + reportPath + "\"");
                     mw.ChSt(oth["status"]["o1b"]);
                 }
-                catch
-                {
-                }
+                catch { }
             }
         }
 
@@ -504,19 +405,32 @@ namespace MakuTweakerNew
             }
         }
 
-        private void t17_Toggled(object sender, RoutedEventArgs e)
+        private void st5_Toggled(object sender, RoutedEventArgs e)
         {
-        }
-
-        private void pwsh_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo("powershell", "-Command Set-ExecutionPolicy RemoteSigned -Force")
+            if (!isLoaded)
             {
-                CreateNoWindow = true,
-                UseShellExecute = false
-            });
-            pwsh.IsEnabled = false;
-            Settings.Default.pwsh = !pwsh.IsEnabled;
+                return;
+            }
+
+            Settings.Default.st5 = st5.IsOn;
+            if (st5.IsOn)
+            {
+                try
+                {
+                    Registry.CurrentUser.CreateSubKey("Software\\Policies\\Microsoft\\Windows\\Explorer").SetValue("DisableSearchBoxSuggestions", 1);
+                    return;
+                }
+                catch
+                {
+                    return;
+                }
+            }
+
+            try
+            {
+                Registry.CurrentUser.CreateSubKey("Software\\Policies\\Microsoft\\Windows\\Explorer").SetValue("DisableSearchBoxSuggestions", 0);
+            }
+            catch { }
         }
     }
 }

@@ -1,143 +1,146 @@
 ﻿<Page
-	x:Class="MakuTweakerNew.Act" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:MakuTweakerNew" xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF" xmlns:ui="http://schemas.modernwpf.com/2019"
-	Title="Desktop">
+    x:Class="MakuTweakerNew.Act"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MakuTweakerNew"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    Title="Desktop">
+
     <Grid>
         <TextBlock
-			Name="label"
-			HorizontalAlignment="Left"
-			Margin="24,11,0,0"
-			TextWrapping="Wrap"
-			Text="Windows Activation"
-			VerticalAlignment="Top"
-			FontSize="32"
-			FontFamily="Segoe UI Semibold" />
+            Name="label"
+            Margin="24,11,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Semibold"
+            FontSize="32"
+            Text="Windows Activation"
+            TextWrapping="Wrap" />
         <TextBlock
-			Name="mact1"
-			HorizontalAlignment="Left"
-			Margin="25,294,0,0"
-			TextWrapping="Wrap"
-			Text="Step 1: Select KMS Server (Try Another If Activation Fails)s"
-			VerticalAlignment="Top"
-			FontSize="24"
-			FontFamily="Segoe UI Semilight"
-			Width="585" />
+            Name="mact1"
+            Width="585"
+            Margin="25,302,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Semilight"
+            FontSize="24"
+            Text="Select KMS Server (Try Another If Activation Fails)RRRRRRRRRRRs"
+            TextWrapping="Wrap" />
         <ComboBox
-			Name="mact2"
-			Margin="25,366,0,0"
-			FontSize="14"
-			VerticalAlignment="Top"
-			MinWidth="177"
-			MaxWidth="177"
-			HorizontalAlignment="Left"
-			Width="177"
-			Height="30">
-            <ComboBoxItem
-				Content=" kms.digiboy.ir"
-				IsSelected="True" />
-            <ComboBoxItem
-				Content=" kms.ddns.net" />
-            <ComboBoxItem
-				Content=" k.zpale.com" />
-            <ComboBoxItem
-				Content=" mvg.zpale.com" />
+            Name="mact2"
+            Width="177"
+            Height="30"
+            MinWidth="177"
+            MaxWidth="177"
+            Margin="25,374,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="14">
+            <ComboBoxItem Content=" kms.digiboy.ir" IsSelected="True" />
+            <ComboBoxItem Content=" kms.ddns.net" />
+            <ComboBoxItem Content=" k.zpale.com" />
+            <ComboBoxItem Content=" mvg.zpale.com" />
         </ComboBox>
         <controls:Button
-			Name="mact3"
-			Margin="211,366,0,0"
-			Content="Apply"
-			Height="30"
-			VerticalAlignment="Top"
-			HorizontalAlignment="Left"
-			Width="106"
-			Click="mact3_Click" />
+            Name="mact3"
+            Width="106"
+            Height="30"
+            Margin="211,374,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="mact3_Click"
+            Content="Apply" />
         <TextBlock
-			Name="mact6"
-			HorizontalAlignment="Left"
-			Margin="25,410,0,0"
-			TextWrapping="Wrap"
-			Text="Step 3: Apply Activation"
-			VerticalAlignment="Top"
-			FontSize="24"
-			FontFamily="Segoe UI Semilight"
-			Width="644" />
+            Name="mact6"
+            Width="644"
+            Margin="25,418,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Semilight"
+            FontSize="24"
+            Text="Apply Activation"
+            TextWrapping="Wrap" />
         <controls:Button
-			Name="mact7"
-			Margin="26,447,0,0"
-			Content="Apply"
-			Height="30"
-			VerticalAlignment="Top"
-			HorizontalAlignment="Left"
-			Width="106"
-			Click="mact7_Click" />
+            Name="mact7"
+            Width="106"
+            Height="30"
+            Margin="26,455,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="mact7_Click"
+            Content="Apply" />
         <TextBlock
-			Name="hwid"
-			HorizontalAlignment="Left"
-			Margin="25,69,0,0"
-			TextWrapping="Wrap"
-			Text="Automatic Activation (HWID)"
-			VerticalAlignment="Top"
-			FontSize="24"
-			FontFamily="Segoe UI Semibold"
-			Width="585" />
+            Name="hwid"
+            Width="585"
+            Margin="25,69,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Semibold"
+            FontSize="24"
+            Text="Automatic Activation (HWID)"
+            TextWrapping="Wrap" />
         <controls:Button
-			Name="autoact"
-			Margin="25,109,0,0"
-			Content="Apply"
-			Height="30"
-			VerticalAlignment="Top"
-			HorizontalAlignment="Left"
-			Width="106"
-			Click="Button_Click" />
+            Name="autoact"
+            Width="106"
+            Height="30"
+            Margin="25,109,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Button_Click"
+            Content="Apply" />
         <TextBlock
-			Name="mact9"
-			HorizontalAlignment="Left"
-			Margin="26,260,0,0"
-			TextWrapping="Wrap"
-			Text="Manual Activation (KMS)"
-			VerticalAlignment="Top"
-			FontSize="24"
-			FontFamily="Segoe UI Semibold"
-			Width="584"
-			Height="34" />
+            Name="mact9"
+            Width="584"
+            Height="34"
+            Margin="26,268,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Semibold"
+            FontSize="24"
+            Text="Manual Activation (KMS)"
+            TextWrapping="Wrap" />
         <ui:ProgressBar
-			Name="p"
-			Visibility="Visible"
-			Margin="26,531,0,0"
-			VerticalAlignment="Top"
-			Width="665"
-			HorizontalAlignment="Left"
-			Height="12"
-			Maximum="20"
-			Opacity="0"
-			IsIndeterminate="True" />
+            Name="p"
+            Width="665"
+            Height="12"
+            Margin="26,571,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsIndeterminate="True"
+            Maximum="20"
+            Opacity="0"
+            Visibility="Visible" />
         <TextBlock
-			Name="t"
-			HorizontalAlignment="Left"
-			Margin="26,510,0,0"
-			TextWrapping="Wrap"
-			Text="Activating Windows... This may take a while on weak PCs."
-			VerticalAlignment="Top"
-			FontSize="12"
-			FontFamily="Segoe UI"
-			Opacity="0" />
+            Name="t"
+            Margin="26,550,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI"
+            FontSize="12"
+            Opacity="0"
+            Text="Activating Windows... This may take a while on weak PCs."
+            TextWrapping="Wrap" />
         <TextBlock
-			Name="offi"
-			HorizontalAlignment="Left"
-			Margin="25,154,0,0"
-			TextWrapping="Wrap"
-			Text="Automatic Office Activation"
-			VerticalAlignment="Top"
-			FontSize="24"
-			FontFamily="Segoe UI Semibold"
-			Width="585" />
+            Name="offi"
+            Width="585"
+            Margin="25,154,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Semibold"
+            FontSize="24"
+            Text="Automatic Office Activation"
+            TextWrapping="Wrap" />
         <controls:Button
-			Name="autooffact"
-			Margin="25,194,0,0"
-			Content="Apply"
-			Height="30"
-			VerticalAlignment="Top"
-			HorizontalAlignment="Left"
-			Width="106"
-			Click="autooffact_Click" />
+            Name="autooffact"
+            Width="106"
+            Height="30"
+            Margin="25,194,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="autooffact_Click"
+            Content="Apply" />
     </Grid>
 </Page>

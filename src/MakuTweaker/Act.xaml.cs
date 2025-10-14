@@ -2,24 +2,16 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Media;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
+using System.Windows.Markup;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MakuTweakerNew.Properties;
 using Microsoft.Win32;
-using Path = System.IO.Path;
 
 namespace MakuTweakerNew
 {
@@ -34,11 +26,11 @@ namespace MakuTweakerNew
         public Act()
         {
             InitializeComponent();
+            LoadLang();
         }
 
         private async void HWIDAct()
         {
-            _ = 1;
             try
             {
                 mw.Category.IsEnabled = false;
@@ -84,7 +76,8 @@ namespace MakuTweakerNew
             }
             catch
             {
-                Dictionary<string, Dictionary<string, string>> act2 = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "act");
+                string languageCode2 = Settings.Default.lang ?? "en";
+                Dictionary<string, Dictionary<string, string>> act2 = MainWindow.Localization.LoadLocalization(languageCode2, "act");
                 mw.ChSt(act2["status"]["err"]);
                 MessageBox.Show(act2["status"]["hwerr"], "MakuTweaker", MessageBoxButton.OK, MessageBoxImage.Hand);
                 PostActAnim();
@@ -103,7 +96,8 @@ namespace MakuTweakerNew
         private async Task<string> ExecuteCommandAsync(string cmdContent)
         {
             string tempCmdFile = Path.Combine(Path.GetTempPath(), "hwid.cmd");
-            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "MakuTweakerNew.HWID_Activation_Log.txt");
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            Path.Combine(desktopPath, "HWID_Activation_Log.txt");
             await File.WriteAllTextAsync(tempCmdFile, cmdContent);
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
@@ -273,7 +267,8 @@ namespace MakuTweakerNew
 
         private void mact3_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "act");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> act = MainWindow.Localization.LoadLocalization(languageCode, "act");
             switch (mact2.SelectedIndex)
             {
                 case 0:
@@ -320,7 +315,8 @@ namespace MakuTweakerNew
                 {
                     text3 = text3 + "\n\nError:\n" + text2;
                 }
-                if (text3.ToLower().Contains("error"))
+                string text4 = text3.ToLower();
+                if (text4.Contains("error"))
                 {
                     base.Dispatcher.Invoke(delegate
                     {
@@ -352,22 +348,20 @@ namespace MakuTweakerNew
             });
         }
 
-        private void mact5_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
         private async void mact7_Click(object sender, RoutedEventArgs e)
         {
             mw.Category.IsEnabled = false;
             mw.ABCB.IsEnabled = false;
             ManualActAnim();
-            MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "act");
+            string languageCode = Settings.Default.lang ?? "en";
+            MainWindow.Localization.LoadLocalization(languageCode, "act");
             string keyPath = "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion";
             string valueName = "EditionID";
             string ed = "Enterprise";
             using (RegistryKey key = Registry.LocalMachine.OpenSubKey(keyPath))
             {
-                ed = key.GetValue(valueName).ToString();
+                object value = key.GetValue(valueName);
+                ed = value.ToString();
             }
             switch (ed)
             {
@@ -461,7 +455,8 @@ namespace MakuTweakerNew
 
         private void LoadLang()
         {
-            Dictionary<string, Dictionary<string, string>> act = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "act");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> act = MainWindow.Localization.LoadLocalization(languageCode, "act");
             label.Text = act["main"]["label"];
             hwid.Text = act["main"]["hwid"];
             autoact.Content = act["main"]["button20"];
@@ -483,7 +478,6 @@ namespace MakuTweakerNew
 
         private async void OffiAct()
         {
-            _ = 1;
             try
             {
                 mw.Category.IsEnabled = false;
@@ -512,7 +506,8 @@ namespace MakuTweakerNew
             }
             catch
             {
-                Dictionary<string, Dictionary<string, string>> act2 = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "act");
+                string languageCode2 = Settings.Default.lang ?? "en";
+                Dictionary<string, Dictionary<string, string>> act2 = MainWindow.Localization.LoadLocalization(languageCode2, "act");
                 mw.ChSt(act2["status"]["err"]);
                 MessageBox.Show(act2["status"]["offierr"], "MakuTweaker", MessageBoxButton.OK, MessageBoxImage.Hand);
                 PostOffiActAnim();
@@ -521,4 +516,5 @@ namespace MakuTweakerNew
             }
         }
     }
+
 }

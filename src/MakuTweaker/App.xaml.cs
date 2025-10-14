@@ -11,6 +11,12 @@ namespace MakuTweakerNew
     {
         private readonly string logFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            Environment.SetEnvironmentVariable("LHM_NO_RING0", "1");
+            base.OnStartup(e);
+        }
+
         public App()
         {
             base.DispatcherUnhandledException += OnDispatcherUnhandledException;
@@ -44,10 +50,10 @@ namespace MakuTweakerNew
                 try
                 {
                     Directory.CreateDirectory(logFolder);
-                    string path = Path.Combine(logFolder, $"makutw-crash_{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.txt");
+                    string logFilePath = Path.Combine(logFolder, $"makutw-crash_{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.txt");
                     string chatMessage = "If MakuTweaker crashed through no fault of your own, please report this crash in the chat:\r\nhttps://t.me/adderlychat\n\nЕсли MakuTweaker крашнулся не по вашей вине, то, пожалуйста, сообщите об этом краше в чат:\r\nhttps://t.me/adderlychat";
                     errorDetails = errorDetails + "\n\n" + chatMessage;
-                    File.WriteAllText(path, errorDetails);
+                    File.WriteAllText(logFilePath, errorDetails);
                     MessageBox.Show("Unfortunately, MakuTweaker Has Crashed! :(\n\nError: " + logException.Message + "\n\nCrash Log Saved To Desktop.", "MakuTweaker Crash", MessageBoxButton.OK, MessageBoxImage.Hand);
                 }
                 catch

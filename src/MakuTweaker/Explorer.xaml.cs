@@ -1,18 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
+using System.Windows.Markup;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MakuTweakerNew.Properties;
 using Microsoft.Win32;
 
@@ -22,7 +13,7 @@ namespace MakuTweakerNew
     {
         private MainWindow mw = (MainWindow)Application.Current.MainWindow;
 
-        private bool isLoaded;
+        private bool isLoaded = false;
 
         public Explorer()
         {
@@ -295,7 +286,8 @@ namespace MakuTweakerNew
 
         private void fix_Click(object sender, RoutedEventArgs e)
         {
-            Dictionary<string, Dictionary<string, string>> expl = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "expl");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> expl = MainWindow.Localization.LoadLocalization(languageCode, "expl");
             try
             {
                 Registry.LocalMachine.DeleteSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace\\DelegateFolders\\{F5FB2C77-0E2F-4A16-A381-3E560C68BC83}");
@@ -353,9 +345,9 @@ namespace MakuTweakerNew
 
         private void LoadLang(string lang)
         {
-            string language = Settings.Default.lang ?? "en";
-            Dictionary<string, Dictionary<string, string>> expl = MainWindow.Localization.LoadLocalization(language, "expl");
-            Dictionary<string, Dictionary<string, string>> main = MainWindow.Localization.LoadLocalization(language, "base");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> expl = MainWindow.Localization.LoadLocalization(languageCode, "expl");
+            Dictionary<string, Dictionary<string, string>> main = MainWindow.Localization.LoadLocalization(languageCode, "base");
             lab.Text = expl["main"]["label"];
             e1.Header = expl["main"]["e1"];
             e2.Header = expl["main"]["e2"];

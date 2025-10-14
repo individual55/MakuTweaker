@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -17,41 +16,34 @@ using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using Hardcodet.Wpf.TaskbarNotification;
-using MakuTweakerNew;
 using MakuTweakerNew.Properties;
 using MicaWPF.Controls;
 using MicaWPF.Core.Enums;
-using MicaWPF.Core.Helpers;
 using MicaWPF.Core.Services;
 using Microsoft.Win32;
-using ModernWpf.Controls;
+using ModernWpf;
 using ModernWpf.Media.Animation;
 using Newtonsoft.Json;
 
 namespace MakuTweakerNew
 {
-    public partial class MainWindow : MicaWindow
+    public partial class MainWindow : MicaWindow, IComponentConnector
     {
-        private NavigationTransitionInfo _transitionInfo;
-
-        private DispatcherTimer ExpRestart;
-
-        private bool isAnimating;
-
         public static class Localization
         {
             public static Dictionary<string, Dictionary<string, string>> LoadLocalization(string language, string category)
             {
-                string jsonFile = System.IO.Path.Combine(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "loc"), language + ".json");
+                string localizationFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "loc");
+                string jsonFile = Path.Combine(localizationFolder, language + ".json");
                 if (!File.Exists(jsonFile))
                 {
                     Settings.Default.lang = "en";
                     throw new FileNotFoundException("Cannot find a " + jsonFile + " localization file.\nPlease reinstall MakuTweaker.\nLanguage has been changed to English.");
                 }
-                Dictionary<string, Dictionary<string, Dictionary<string, Dictionary<string, string>>>> localizationData = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, Dictionary<string, string>>>>>(File.ReadAllText(jsonFile));
+                string jsonContent = File.ReadAllText(jsonFile);
+                Dictionary<string, Dictionary<string, Dictionary<string, Dictionary<string, string>>>> localizationData = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, Dictionary<string, string>>>>>(jsonContent);
                 if (localizationData.ContainsKey("categories"))
                 {
                     Dictionary<string, Dictionary<string, Dictionary<string, string>>> categories = localizationData["categories"];
@@ -65,13 +57,19 @@ namespace MakuTweakerNew
             }
         }
 
+        private NavigationTransitionInfo _transitionInfo = null;
+
+        private DispatcherTimer ExpRestart;
+
+        private bool isAnimating = false;
 
         public MainWindow()
         {
             InitializeComponent();
             if (checkWinVer() < 14393)
             {
-                if (System.Windows.Forms.MessageBox.Show("Your version of Windows is not supported. To use MakuTweaker, update your system to Windows 10 1607 or higher. Do you want to download MakuTweaker Legacy Windows Edition?\n\nВаша версия Windows неподдерживается. Для использования MakuTweaker, обновитесь до Windows 10 1607 или выше. Вы хотите скачать MakuTweaker для старых Windows?", "MakuTweaker", MessageBoxButtons.YesNo, MessageBoxIcon.Hand) == System.Windows.Forms.DialogResult.Yes)
+                DialogResult old = System.Windows.Forms.MessageBox.Show("Your version of Windows is not supported. To use MakuTweaker, update your system to Windows 10 1607 or higher. Do you want to download MakuTweaker Legacy Windows Edition?\n\nВаша версия Windows неподдерживается. Для использования MakuTweaker, обновитесь до Windows 10 1607 или выше. Вы хотите скачать MakuTweaker для старых Windows?", "MakuTweaker", MessageBoxButtons.YesNo, MessageBoxIcon.Hand);
+                if (old == System.Windows.Forms.DialogResult.Yes)
                 {
                     Process.Start(new ProcessStartInfo("https://adderly.top/mt")
                     {
@@ -80,141 +78,100 @@ namespace MakuTweakerNew
                 }
                 System.Windows.Application.Current.Shutdown();
             }
-            
-            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MakuTweakerNew.BuildLab.txt"))
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            using (Stream stream = assembly.GetManifestResourceStream("MakuTweakerNew.BuildLab.txt"))
             {
                 using StreamReader reader = new StreamReader(stream);
-                reader.ReadToEnd();
+                string buildVersion = reader.ReadToEnd();
             }
-            
-            if (MicaWPFServiceUtility.ThemeService.CurrentTheme.ToString() == "Light")
-            {
-                base.Dispatcher.Invoke(delegate
-                {
-                    Separator.Stroke = new SolidColorBrush(Colors.Black);
-                });
-            }
-            else
-            {
-                base.Dispatcher.Invoke(delegate
-                {
-                    Separator.Stroke = new SolidColorBrush(Colors.White);
-                });
-            }
-            
-            WindowsTheme currentTheme = WindowsThemeHelper.GetCurrentWindowsTheme();
-            Dispatcher.Invoke(delegate
-            {
-                if (currentTheme.ToString() == "Light")
-                {
-                    Separator.Stroke = new SolidColorBrush(Colors.Black);
-                    base.Foreground = new SolidColorBrush(Colors.Black);
-                    MainFrame.Foreground = base.Foreground;
-                }
-                else
-                {
-                    Separator.Stroke = new SolidColorBrush(Colors.White);
-                    base.Foreground = new SolidColorBrush(Colors.White);
-                    MainFrame.Foreground = base.Foreground;
-                }
-            });
-            
-            MicaWPFServiceUtility.ThemeService.ThemeChanged.Subscribe(delegate (WindowsTheme windowsTheme)
-            {
-                string themeString = windowsTheme.ToString();
-                Dispatcher.Invoke(delegate
-                {
-                    if (themeString == "Light")
-                    {
-                        Separator.Stroke = new SolidColorBrush(Colors.Black);
-                        base.Foreground = new SolidColorBrush(Colors.Black);
-                        MainFrame.Foreground = base.Foreground;
-                    }
-                    else
-                    {
-                        Separator.Stroke = new SolidColorBrush(Colors.White);
-                        base.Foreground = new SolidColorBrush(Colors.White);
-                        MainFrame.Foreground = base.Foreground;
-                    }
-                });
-            });
-            
             ExpTimer();
             if (Settings.Default.firRun)
             {
-                string lang = CultureInfo.CurrentCulture.Name;
+                string systemLanguage = CultureInfo.CurrentCulture.Name;
+                string text = systemLanguage;
+                string lang = text;
                 if (lang == null)
                 {
-                    goto IL_0304;
+                    goto IL_0183;
                 }
                 if (lang.StartsWith("uk-"))
                 {
                     Settings.Default.lang = "ua";
                     Settings.Default.langSI = 2;
                 }
-                else if (lang.StartsWith("ru-"))
-                {
-                    Settings.Default.lang = "ru";
-                    Settings.Default.langSI = 1;
-                }
-                else if (lang.StartsWith("en-"))
-                {
-                    Settings.Default.lang = "en";
-                    Settings.Default.langSI = 0;
-                }
-                else if (lang.StartsWith("es-"))
-                {
-                    Settings.Default.lang = "es";
-                    Settings.Default.langSI = 3;
-                }
-                else if (lang.StartsWith("pt-"))
-                {
-                    Settings.Default.lang = "pt";
-                    Settings.Default.langSI = 4;
-                }
-                else if (lang.StartsWith("de-"))
-                {
-                    Settings.Default.lang = "de";
-                    Settings.Default.langSI = 5;
-                }
-                else if (lang.StartsWith("kk-"))
-                {
-                    Settings.Default.lang = "kz";
-                    Settings.Default.langSI = 6;
-                }
-                else if (lang.StartsWith("ja-"))
-                {
-                    Settings.Default.lang = "jp";
-                    Settings.Default.langSI = 7;
-                }
-                else if (lang.StartsWith("zh-"))
-                {
-                    Settings.Default.lang = "cn";
-                    Settings.Default.langSI = 8;
-                }
                 else
                 {
-                    if (!lang.StartsWith("hi-"))
+                    string lang2 = lang;
+                    if (lang2.StartsWith("ru-"))
                     {
-                        goto IL_0304;
+                        Settings.Default.lang = "ru";
+                        Settings.Default.langSI = 1;
                     }
-                    Settings.Default.lang = "hi";
-                    Settings.Default.langSI = 9;
+                    else
+                    {
+                        string lang3 = lang;
+                        if (!lang3.StartsWith("en-"))
+                        {
+                            goto IL_0183;
+                        }
+                        Settings.Default.lang = "en";
+                        Settings.Default.langSI = 0;
+                    }
                 }
-                goto IL_031e;
+                goto IL_01a1;
             }
-            goto IL_0333;
-        IL_0304:
+            string themeString = Settings.Default.theme;
+            WindowsTheme parsedTheme;
+            if (string.IsNullOrEmpty(themeString) || themeString == "Auto")
+            {
+                WindowsTheme systemTheme = MicaWPFServiceUtility.ThemeService.CurrentTheme;
+                ApplyTheme(systemTheme);
+                Settings.Default.theme = ((systemTheme == WindowsTheme.Dark) ? "Dark" : "Light");
+                Settings.Default.Save();
+            }
+            else if (Enum.TryParse<WindowsTheme>(themeString, out parsedTheme))
+            {
+                ApplyTheme(parsedTheme);
+            }
+            else
+            {
+                ApplyTheme(MicaWPFServiceUtility.ThemeService.CurrentTheme);
+            }
+            goto IL_02a5;
+        IL_0183:
             Settings.Default.lang = "en";
             Settings.Default.langSI = 0;
-            goto IL_031e;
-        IL_031e:
-            Settings.Default.firRun = false;
-            Settings.Default.Save();
-            goto IL_0333;
-        IL_0333:
+            goto IL_01a1;
+        IL_02a5:
             LoadLang(Settings.Default.lang);
             CheckForUpd();
+            return;
+        IL_01a1:
+            Settings.Default.firRun = false;
+            WindowsTheme currentSystemTheme = MicaWPFServiceUtility.ThemeService.CurrentTheme;
+            Settings.Default.theme = ((currentSystemTheme == WindowsTheme.Dark) ? "Dark" : "Light");
+            Settings.Default.firRun = false;
+            Settings.Default.Save();
+            ApplyTheme(currentSystemTheme);
+            Settings.Default.Save();
+            goto IL_02a5;
+        }
+
+        private void ApplyTheme(WindowsTheme theme)
+        {
+            MicaWPFServiceUtility.ThemeService.ChangeTheme(theme);
+            if (theme == WindowsTheme.Dark)
+            {
+                ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark;
+                base.Foreground = System.Windows.Media.Brushes.White;
+                Separator.Stroke = System.Windows.Media.Brushes.White;
+            }
+            else
+            {
+                ThemeManager.Current.ApplicationTheme = ApplicationTheme.Light;
+                base.Foreground = System.Windows.Media.Brushes.Black;
+                Separator.Stroke = System.Windows.Media.Brushes.Black;
+            }
         }
 
         private void ExpTimer()
@@ -262,25 +219,28 @@ namespace MakuTweakerNew
                     MainFrame.Navigate(typeof(Personalization), null, _transitionInfo);
                     break;
                 case 5:
-                    MainFrame.Navigate(typeof(MakuTweakerNew.ContextMenu), null, _transitionInfo);
+                    MainFrame.Navigate(typeof(ContextMenu), null, _transitionInfo);
                     break;
                 case 6:
                     MainFrame.Navigate(typeof(Telemetry), null, _transitionInfo);
                     break;
                 case 7:
-                    MainFrame.Navigate(typeof(StartMenuAndTaskbar), null, _transitionInfo);
+                    MainFrame.Navigate(typeof(WindowsComponents), null, _transitionInfo);
                     break;
                 case 8:
                     MainFrame.Navigate(typeof(Act), null, _transitionInfo);
                     break;
                 case 9:
-                    MainFrame.Navigate(typeof(Other), null, _transitionInfo);
+                    MainFrame.Navigate(typeof(AppInstall), null, _transitionInfo);
                     break;
                 case 10:
                     MainFrame.Navigate(typeof(QuickSet), null, _transitionInfo);
                     break;
                 case 11:
                     MainFrame.Navigate(typeof(SAT), null, _transitionInfo);
+                    break;
+                case 12:
+                    MainFrame.Navigate(typeof(PCI), null, _transitionInfo);
                     break;
             }
             Settings.Default.lastPage = Category.SelectedIndex;
@@ -309,6 +269,8 @@ namespace MakuTweakerNew
             {
                 Category.SelectedIndex = Settings.Default.lastPage;
             }
+            Enum.TryParse<BackdropType>(Settings.Default.style, out var bd);
+            MicaWPFServiceUtility.ThemeService.EnableBackdrop(this, bd);
         }
 
         public async void ChSt(string st)
@@ -335,7 +297,8 @@ namespace MakuTweakerNew
         {
             try
             {
-                Dictionary<string, Dictionary<string, string>> basel = Localization.LoadLocalization(Settings.Default.lang ?? "en", "base");
+                string languageCode = Settings.Default.lang ?? "en";
+                Dictionary<string, Dictionary<string, string>> basel = Localization.LoadLocalization(languageCode, "base");
                 c1.Content = basel["catname"]["expl"];
                 c2.Content = basel["catname"]["wu"];
                 c3.Content = basel["catname"]["sr"];
@@ -348,6 +311,7 @@ namespace MakuTweakerNew
                 c10.Content = basel["catname"]["oth"];
                 c11.Content = basel["catname"]["quick"];
                 c12.Content = basel["catname"]["sat"];
+                c13.Content = basel["catname"]["pci"];
                 rexplorer.Label = basel["lowtabs"]["rexp"];
                 settingsButton.Label = basel["lowtabs"]["set"];
             }
@@ -361,13 +325,9 @@ namespace MakuTweakerNew
 
         private void AnimY(UIElement element, double durationMilliseconds, double from, double to)
         {
-            if (element.RenderTransform != null && element.RenderTransform is TranslateTransform transform)
+            double currentY = 16.0;
+            if ((element.RenderTransform != null && element.RenderTransform is TranslateTransform { Y: var currentY2 }) || element.RenderTransform == null || element.RenderTransform is MatrixTransform { Matrix: { OffsetY: var currentY3 } })
             {
-                _ = transform.Y;
-            }
-            else if (element.RenderTransform != null && element.RenderTransform is MatrixTransform { Matrix: var matrix })
-            {
-                _ = matrix.OffsetY;
             }
             DoubleAnimation moveDownAnimation = new DoubleAnimation
             {
@@ -383,13 +343,15 @@ namespace MakuTweakerNew
             {
                 element.RenderTransform = new TranslateTransform();
             }
-            ((TranslateTransform)element.RenderTransform).BeginAnimation(TranslateTransform.YProperty, moveDownAnimation);
+            TranslateTransform translateTransform = (TranslateTransform)element.RenderTransform;
+            translateTransform.BeginAnimation(TranslateTransform.YProperty, moveDownAnimation);
         }
 
         public void RebootNotify(int mode)
         {
             string message = string.Empty;
-            Dictionary<string, Dictionary<string, string>> basel = Localization.LoadLocalization(Settings.Default.lang ?? "en", "base");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> basel = Localization.LoadLocalization(languageCode, "base");
             Icon trayIcon = new Icon(GetResourceStream("MakuTweakerNew.MakuT.ico"));
             TaskbarIcon _trayIcon = new TaskbarIcon
             {
@@ -420,7 +382,13 @@ namespace MakuTweakerNew
 
         private Stream GetResourceStream(string resourceName)
         {
-            return Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName) ?? throw new FileNotFoundException("Ресурс " + resourceName + " не найден.");
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Stream resourceStream = assembly.GetManifestResourceStream(resourceName);
+            if (resourceStream == null)
+            {
+                throw new FileNotFoundException("Ресурс " + resourceName + " не найден.");
+            }
+            return resourceStream;
         }
 
         private void settingsButton_Click(object sender, RoutedEventArgs e)
@@ -443,13 +411,12 @@ namespace MakuTweakerNew
 
         public void expk()
         {
-            Process process = new Process();
-            process.StartInfo = new ProcessStartInfo
-            {
-                FileName = "taskkill",
-                Arguments = "/F /IM explorer.exe"
-            };
-            process.Start();
+            Process proc = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "taskkill";
+            startInfo.Arguments = "/F /IM explorer.exe";
+            proc.StartInfo = startInfo;
+            proc.Start();
         }
 
         private void ExpRestart_Tick(object sender, EventArgs e)
@@ -469,16 +436,20 @@ namespace MakuTweakerNew
             int ThisBuild = int.Parse(new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("MakuTweakerNew.BuildNumber.txt")).ReadToEnd().Trim());
             string url = "https://raw.githubusercontent.com/AdderlyMark/MakuTweaker/refs/heads/main/ver.json";
             using HttpClient client = new HttpClient();
-            _ = 1;
             try
             {
-                HttpResponseMessage obj = await client.GetAsync(url);
-                obj.EnsureSuccessStatusCode();
-                string jsonString = await obj.Content.ReadAsStringAsync();
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                string jsonString = await response.Content.ReadAsStringAsync();
                 try
                 {
                     Dictionary<string, string> jsonData = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
-                    if (!jsonData.ContainsKey("build") || int.Parse(jsonData["build"]) <= ThisBuild)
+                    if (!jsonData.ContainsKey("build"))
+                    {
+                        return;
+                    }
+                    string lb = jsonData["build"];
+                    if (int.Parse(lb) <= ThisBuild)
                     {
                         return;
                     }
@@ -498,7 +469,7 @@ namespace MakuTweakerNew
                     }
                     _trayIcon.TrayBalloonTipClicked += delegate
                     {
-                        Process.Start(new ProcessStartInfo("https://adderly.top/mt")
+                        Process.Start(new ProcessStartInfo("https://adderly.top/makutweaker")
                         {
                             UseShellExecute = true
                         });
@@ -538,4 +509,5 @@ namespace MakuTweakerNew
             return 19045;
         }
     }
+
 }

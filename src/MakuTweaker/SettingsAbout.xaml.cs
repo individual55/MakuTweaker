@@ -1,18 +1,16 @@
-using System;
-using System.CodeDom.Compiler;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Markup;
+using System.Windows.Media;
 using MakuTweakerNew.Properties;
-using MicaWPF.Controls;
+using MicaWPF.Core.Enums;
+using MicaWPF.Core.Services;
+using Microsoft.Win32;
+using ModernWpf;
 
 namespace MakuTweakerNew
 {
@@ -27,25 +25,106 @@ namespace MakuTweakerNew
         public SettingsAbout()
         {
             InitializeComponent();
-            credN.Text = "Mark Adderly, Nikitori\nNikitori\nMassgrave";
+            credN.Text = "Mark Adderly\nNikitori\nNikitori, Massgrave\nindividual55";
             lang.SelectedIndex = Settings.Default.langSI;
             relang();
-            if (isDevBuild)
+
+            if (checkWinVer() < 22000)
             {
-                build.Visibility = Visibility.Visible;
+                style.Visibility = Visibility.Collapsed;
+                styleL.Visibility = Visibility.Collapsed;
             }
-            else
+
+            WindowsTheme current = MicaWPFServiceUtility.ThemeService.CurrentTheme;
+            theme.SelectedIndex = (current == WindowsTheme.Dark) ? 1 : 0;
+            switch (Settings.Default.style)
             {
-                build.Visibility = Visibility.Collapsed;
+                case "Mica":
+                    style.SelectedIndex = 0;
+                    break;
+                case "Tabbed":
+                    style.SelectedIndex = 1;
+                    break;
+                case "Acrylic":
+                    style.SelectedIndex = 2;
+                    break;
+                case "None":
+                    style.SelectedIndex = 3;
+                    break;
             }
             isLoaded = true;
+        }
+
+        private int checkWinVer()
+        {
+            string keyPath = "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion";
+            string valueName = "CurrentBuild";
+            using (RegistryKey key = Registry.LocalMachine.OpenSubKey(keyPath))
+            {
+                if (key != null)
+                {
+                    object value = key.GetValue(valueName);
+                    if (value != null && int.TryParse(value.ToString(), out var build))
+                    {
+                        return build;
+                    }
+                }
+            }
+            return 19045;
         }
 
         // Web links have been removed
 
         private void theme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-        } // <- Why is this necessary, huh?
+            if (isLoaded)
+            {
+                switch (theme.SelectedIndex)
+                {
+                    case 0:
+                        Settings.Default.theme = "Light";
+                        MicaWPFServiceUtility.ThemeService.ChangeTheme(WindowsTheme.Light);
+                        ThemeManager.Current.ApplicationTheme = ApplicationTheme.Light;
+                        mw.Foreground = Brushes.Black;
+                        mw.Separator.Stroke = Brushes.Black;
+                        break;
+                    case 1:
+                        Settings.Default.theme = "Dark";
+                        MicaWPFServiceUtility.ThemeService.ChangeTheme(WindowsTheme.Dark);
+                        ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark;
+                        mw.Foreground = Brushes.White;
+                        mw.Separator.Stroke = Brushes.White;
+                        break;
+                }
+                Settings.Default.Save();
+            }
+        }
+
+        private void style_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (isLoaded)
+            {
+                switch (style.SelectedIndex)
+                {
+                    case 0:
+                        MicaWPFServiceUtility.ThemeService.EnableBackdrop(mw);
+                        Settings.Default.style = "Mica";
+                        break;
+                    case 1:
+                        MicaWPFServiceUtility.ThemeService.EnableBackdrop(mw, BackdropType.Tabbed);
+                        Settings.Default.style = "Tabbed";
+                        break;
+                    case 2:
+                        MicaWPFServiceUtility.ThemeService.EnableBackdrop(mw, BackdropType.Acrylic);
+                        Settings.Default.style = "Acrylic";
+                        break;
+                    case 3:
+                        MicaWPFServiceUtility.ThemeService.EnableBackdrop(mw, BackdropType.None);
+                        Settings.Default.style = "None";
+                        break;
+                }
+            }
+        }
 
         private void lang_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -92,18 +171,18 @@ namespace MakuTweakerNew
 
         private void relang()
         {
-            Dictionary<string, Dictionary<string, string>> ab = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "ab");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> ab = MainWindow.Localization.LoadLocalization(languageCode, "ab");
+            Dictionary<string, Dictionary<string, string>> b = MainWindow.Localization.LoadLocalization(languageCode, "base");
             credL.Text = ab["main"]["credL"];
             label.Text = ab["main"]["label"];
             langL.Text = ab["main"]["lang"];
-            using Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MakuTweakerNew.BuildLab.txt");
-            using StreamReader reader = new StreamReader(stream);
-            build.Text = (isDevBuild ? ("shh... тише будь | build: " + reader.ReadToEnd()) : ("build: " + reader.ReadToEnd()));
-        }
-
-        private void Image_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
-        {
-            build.Visibility = Visibility.Visible;
+            styleL.Text = ab["main"]["st"];
+            l.Content = " " + ab["main"]["l"];
+            d.Content = " " + ab["main"]["d"];
+            themeL.Text = ab["main"]["th"];
+            off.Content = " " + b["def"]["off"];
+            Assembly assembly = Assembly.GetExecutingAssembly();
         }
 
         private void Image_MouseRightButtonUp(object sender, MouseButtonEventArgs e)

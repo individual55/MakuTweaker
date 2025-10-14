@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Markup;
 using MakuTweakerNew.Properties;
 using Microsoft.Win32;
 using ModernWpf.Controls;
@@ -20,11 +10,11 @@ namespace MakuTweakerNew
 {
     public partial class Telemetry : System.Windows.Controls.Page
     {
-        private bool isLoaded;
+        private bool isLoaded = false;
 
         private bool isNotify = true;
 
-        private bool isbycheck;
+        private bool isbycheck = false;
 
         private MainWindow mw = (MainWindow)Application.Current.MainWindow;
 
@@ -259,9 +249,9 @@ namespace MakuTweakerNew
 
         private void LoadLang()
         {
-            string language = Settings.Default.lang ?? "en";
-            Dictionary<string, Dictionary<string, string>> tel = MainWindow.Localization.LoadLocalization(language, "tel");
-            Dictionary<string, Dictionary<string, string>> basel = MainWindow.Localization.LoadLocalization(language, "base");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> tel = MainWindow.Localization.LoadLocalization(languageCode, "tel");
+            Dictionary<string, Dictionary<string, string>> basel = MainWindow.Localization.LoadLocalization(languageCode, "base");
             label.Text = tel["main"]["label"];
             t1.Header = tel["main"]["t1"];
             t2.Header = tel["main"]["t2"];
@@ -298,13 +288,14 @@ namespace MakuTweakerNew
                     {
                         RegistryKey? registryKey4 = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Policies\\Microsoft\\Windows NT\\CurrentVersion\\Software Protection Platform");
                         isOn = ((registryKey4 != null && registryKey4.GetValue("NoGenTicket")?.Equals(1) == true) ? 1 : 0);
-                        goto IL_0131;
+                        goto IL_0132;
                     }
                 }
             }
             isOn = 0;
-            goto IL_0131;
-        IL_0131:
+            goto IL_0132;
+
+        IL_0132:
             toggleSwitch.IsOn = (byte)isOn != 0;
             t2.IsOn = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\appDiagnostics")?.GetValue("Value")?.ToString() == "Deny";
             ToggleSwitch toggleSwitch2 = t3;

@@ -1,126 +1,117 @@
 ﻿<Page
-	x:Class="MakuTweakerNew.ContextMenu" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:MakuTweakerNew" xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF" xmlns:ui="http://schemas.modernwpf.com/2019"
-	Title="Context Menu">
+    x:Class="MakuTweakerNew.ContextMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MakuTweakerNew"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    Title="Context Menu">
     <Grid>
-        <ScrollViewer
-			VerticalScrollBarVisibility="Auto"
-			HorizontalScrollBarVisibility="Auto">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <TextBlock
-					Name="label"
-					HorizontalAlignment="Left"
-					Margin="24,11,0,0"
-					TextWrapping="Wrap"
-					Text="Context Menu"
-					VerticalAlignment="Top"
-					FontSize="32"
-					FontFamily="Segoe UI Semibold" />
+                    Name="label"
+                    Margin="24,11,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontFamily="Segoe UI Semibold"
+                    FontSize="32"
+                    Text="Context Menu"
+                    TextWrapping="Wrap" />
                 <ui:ToggleSwitch
-					Name="t15"
-					Header="Enable Old Context Menu"
-					Margin="24,14,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t15_Toggled" />
+                    Name="t15"
+                    Margin="24,14,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Enable Old Context Menu"
+                    Toggled="t15_Toggled" />
                 <ui:ToggleSwitch
-					Name="t1"
-					Header="Remove Context Menu Delay"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t1_Toggled" />
+                    Name="t1"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Remove Context Menu Delay"
+                    Toggled="t1_Toggled" />
                 <ui:ToggleSwitch
-					Name="t2"
-					Header="Scan with Microsoft Defender"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t2_Toggled" />
+                    Name="t2"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Scan with Microsoft Defender"
+                    Toggled="t2_Toggled" />
                 <ui:ToggleSwitch
-					Name="t3"
-					Header="Open in Terminal"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t3_Toggled" />
+                    Name="t3"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Open in Terminal"
+                    Toggled="t3_Toggled" />
                 <ui:ToggleSwitch
-					Name="t4"
-					Header="Add to Favorites"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t4_Toggled" />
+                    Name="t4"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Add to Favorites"
+                    Toggled="t4_Toggled" />
                 <ui:ToggleSwitch
-					Name="t5"
-					Header="Share"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t5_Toggled" />
+                    Name="t5"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Share"
+                    Toggled="t5_Toggled" />
                 <ui:ToggleSwitch
-					Name="t6"
-					Header="Restore previous versions"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t6_Toggled" />
+                    Name="t6"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Restore previous versions"
+                    Toggled="t6_Toggled" />
                 <ui:ToggleSwitch
-					Name="t7"
-					Header="Add to library"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t7_Toggled" />
+                    Name="t8"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Send to"
+                    Toggled="t8_Toggled" />
                 <ui:ToggleSwitch
-					Name="t8"
-					Header="Send to"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t8_Toggled" />
+                    Name="t10"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Copy as path"
+                    Toggled="t10_Toggled" />
                 <ui:ToggleSwitch
-					Name="t9"
-					Header="Give access to"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t9_Toggled" />
+                    Name="t11"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Pin to Start menu"
+                    Toggled="t11_Toggled" />
                 <ui:ToggleSwitch
-					Name="t10"
-					Header="Copy as path"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t10_Toggled" />
+                    Name="t12"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Pin to Taskbar"
+                    Toggled="t12_Toggled" />
                 <ui:ToggleSwitch
-					Name="t11"
-					Header="Pin to Start menu"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t11_Toggled" />
+                    Name="t13"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Open in new tab"
+                    Toggled="t13_Toggled" />
                 <ui:ToggleSwitch
-					Name="t12"
-					Header="Pin to Taskbar"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t12_Toggled" />
-                <ui:ToggleSwitch
-					Name="t13"
-					Header="Open in new tab"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t13_Toggled" />
-                <ui:ToggleSwitch
-					Name="t14"
-					Header="NVIDIA Control Panel"
-					Margin="24,8,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Height="65"
-					Toggled="t14_Toggled" />
+                    Name="t14"
+                    Height="65"
+                    Margin="24,8,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="NVIDIA Control Panel"
+                    Toggled="t14_Toggled" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

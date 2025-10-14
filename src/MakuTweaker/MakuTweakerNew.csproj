@@ -20,15 +20,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="makutweaker-20new.png" />
+    <None Remove="makutweakerabout.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="MakuTweakerNew.MakuT.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
+    <PackageReference Include="LibreHardwareMonitorLib" Version="0.9.4" />
     <PackageReference Include="MicaWPF" Version="6.3.0" />
     <PackageReference Include="ModernWpf.MessageBox.Mica" Version="0.5.5" />
     <PackageReference Include="ModernWpfUI" Version="0.9.6" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Vortice.DXGI" Version="3.6.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,13 +60,14 @@
 
   <ItemGroup>
 	 <Resource Include="makut.png" />
-	 <Resource Include="makutweaker new.png" />
+	 <Resource Include="makutweaker-20new.png" />
+	 <Resource Include="makutweakerabout.png" />
 	 <Resource Include="makutweakernewnoround.png" />
-	 <EmbeddedResource Include="MakuTweakerNew.BuildLab.txt" LogicalName="MakuTweakerNew.BuildLab.txt"/>
-	 <EmbeddedResource Include="MakuTweakerNew.BuildNumber.txt" LogicalName="MakuTweakerNew.BuildNumber.txt"/>
-	 <EmbeddedResource Include="MakuTweakerNew.HWID.cmd" LogicalName="MakuTweakerNew.HWID.cmd"/>
-	 <EmbeddedResource Include="MakuTweakerNew.MakuT.ico" LogicalName="MakuTweakerNew.MakuT.ico"/>
-	 <EmbeddedResource Include="MakuTweakerNew.Office.cmd" LogicalName="MakuTweakerNew.Office.cmd"/>
+	 <EmbeddedResource Include="MakuTweakerNew.BuildLab.txt" LogicalName="MakuTweakerNew.BuildLab.txt" />
+	 <EmbeddedResource Include="MakuTweakerNew.BuildNumber.txt" LogicalName="MakuTweakerNew.BuildNumber.txt" />
+	 <EmbeddedResource Include="MakuTweakerNew.HWID.cmd" LogicalName="MakuTweakerNew.HWID.cmd" />
+	 <EmbeddedResource Include="MakuTweakerNew.MakuT.ico" LogicalName="MakuTweakerNew.MakuT.ico" />
+	 <EmbeddedResource Include="MakuTweakerNew.Office.cmd" LogicalName="MakuTweakerNew.Office.cmd" />
   </ItemGroup>
 
   <ItemGroup>

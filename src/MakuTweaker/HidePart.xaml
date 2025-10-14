@@ -1,221 +1,213 @@
 ﻿<ui:ContentDialog
-	x:Class="MakuTweakerNew.HidePart" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ui="http://schemas.modernwpf.com/2019"
-	ui:Title="MakuTweaker"
-	ui:PrimaryButtonText="Close"
-	ui:CloseButtonText="Done"
-	ui:DefaultButton="Close" xmlns:makutweakernew="clr-namespace:MakuTweakerNew"
-	PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
-	CloseButtonClick="ContentDialog_CloseButtonClick">
+    x:Class="MakuTweakerNew.HidePart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:makutweakernew="clr-namespace:MakuTweakerNew;assembly=MakuTweaker"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    Title="MakuTweaker"
+    CloseButtonClick="ContentDialog_CloseButtonClick"
+    CloseButtonText="Done"
+    DefaultButton="Close"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    PrimaryButtonText="Close">
+
     <StackPanel
-		Name="stp"
-		VerticalAlignment="Stretch"
-		HorizontalAlignment="Stretch">
+        Name="stp"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch">
         <TextBlock
-			Name="textBlock"
-			TextWrapping="Wrap"
-			MaxWidth="500" />
+            Name="textBlock"
+            MaxWidth="500"
+            TextWrapping="Wrap" />
         <ScrollViewer
-			HorizontalScrollBarVisibility="Auto"
-			VerticalScrollBarVisibility="Auto"
-			Height="269"
-			MaxWidth="500">
-            <Grid
-				Name="checkboxpanel"
-				VerticalAlignment="Center">
+            Height="269"
+            MaxWidth="500"
+            HorizontalScrollBarVisibility="Auto"
+            VerticalScrollBarVisibility="Auto">
+            <Grid Name="checkboxpanel" VerticalAlignment="Center">
                 <Grid.RowDefinitions>
-                    <RowDefinition
-						Height="Auto" />
-                    <RowDefinition
-						Height="Auto" />
-                    <RowDefinition
-						Height="Auto" />
-                    <RowDefinition
-						Height="Auto" />
-                    <RowDefinition
-						Height="Auto" />
-                    <RowDefinition
-						Height="Auto" />
-                    <RowDefinition
-						Height="Auto" />
-                    <RowDefinition
-						Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition
-						Width="Auto" />
-                    <ColumnDefinition
-						Width="Auto" />
-                    <ColumnDefinition
-						Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <CheckBox
-					Name="a"
-					Grid.Row="0"
-					Grid.Column="0"
-					Margin="10,10,0,0"
-					Content="A:"
-					HorizontalAlignment="Left" />
+                    Name="a"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="10,10,0,0"
+                    HorizontalAlignment="Left"
+                    Content="A:" />
                 <CheckBox
-					Name="d"
-					Grid.Row="1"
-					Grid.Column="0"
-					Margin="10,0,0,0"
-					Content="D:"
-					HorizontalAlignment="Left" />
+                    Name="d"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Left"
+                    Content="D:" />
                 <CheckBox
-					Name="e"
-					Grid.Row="2"
-					Grid.Column="0"
-					Margin="10,0,0,0"
-					Content="E:"
-					HorizontalAlignment="Left" />
+                    Name="e"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Left"
+                    Content="E:" />
                 <CheckBox
-					Name="f"
-					Grid.Row="3"
-					Grid.Column="0"
-					Margin="10,0,0,0"
-					Content="F:"
-					HorizontalAlignment="Left" />
+                    Name="f"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Left"
+                    Content="F:" />
                 <CheckBox
-					Name="g"
-					Grid.Row="4"
-					Grid.Column="0"
-					Margin="10,0,0,0"
-					Content="G:"
-					HorizontalAlignment="Left" />
+                    Name="g"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Left"
+                    Content="G:" />
                 <CheckBox
-					Name="h"
-					Grid.Row="5"
-					Grid.Column="0"
-					Margin="10,0,0,0"
-					Content="H:"
-					HorizontalAlignment="Left" />
+                    Name="h"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Left"
+                    Content="H:" />
                 <CheckBox
-					Name="i"
-					Grid.Row="6"
-					Grid.Column="0"
-					Margin="10,0,0,0"
-					Content="I:"
-					HorizontalAlignment="Left" />
+                    Name="i"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Left"
+                    Content="I:" />
                 <CheckBox
-					Name="j"
-					Grid.Row="7"
-					Grid.Column="0"
-					Margin="10,0,0,0"
-					Content="J:"
-					HorizontalAlignment="Left" />
+                    Name="j"
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Left"
+                    Content="J:" />
                 <CheckBox
-					Name="k"
-					Grid.Row="0"
-					Grid.Column="1"
-					Margin="10,10,0,0"
-					Content="K:"
-					HorizontalAlignment="Center" />
+                    Name="k"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="10,10,0,0"
+                    HorizontalAlignment="Center"
+                    Content="K:" />
                 <CheckBox
-					Name="l"
-					Grid.Row="1"
-					Grid.Column="1"
-					Margin="10,0,0,0"
-					Content="L:"
-					HorizontalAlignment="Center" />
+                    Name="l"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center"
+                    Content="L:" />
                 <CheckBox
-					Name="m"
-					Grid.Row="2"
-					Grid.Column="1"
-					Margin="10,0,0,0"
-					Content="M:"
-					HorizontalAlignment="Center" />
+                    Name="m"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center"
+                    Content="M:" />
                 <CheckBox
-					Name="n"
-					Grid.Row="3"
-					Grid.Column="1"
-					Margin="10,0,0,0"
-					Content="N:"
-					HorizontalAlignment="Center" />
+                    Name="n"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center"
+                    Content="N:" />
                 <CheckBox
-					Name="o"
-					Grid.Row="4"
-					Grid.Column="1"
-					Margin="10,0,0,0"
-					Content="O:"
-					HorizontalAlignment="Center" />
+                    Name="o"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center"
+                    Content="O:" />
                 <CheckBox
-					Name="p"
-					Grid.Row="5"
-					Grid.Column="1"
-					Margin="10,0,0,0"
-					Content="P:"
-					HorizontalAlignment="Center" />
+                    Name="p"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center"
+                    Content="P:" />
                 <CheckBox
-					Name="q"
-					Grid.Row="6"
-					Grid.Column="1"
-					Margin="10,0,0,0"
-					Content="Q:"
-					HorizontalAlignment="Center" />
+                    Name="q"
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center"
+                    Content="Q:" />
                 <CheckBox
-					Name="r"
-					Grid.Row="7"
-					Grid.Column="1"
-					Margin="10,0,0,0"
-					Content="R:"
-					HorizontalAlignment="Center" />
+                    Name="r"
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center"
+                    Content="R:" />
                 <CheckBox
-					Name="s"
-					Grid.Row="0"
-					Grid.Column="2"
-					Margin="10,10,0,0"
-					Content="S:"
-					HorizontalAlignment="Right" />
+                    Name="s"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Margin="10,10,0,0"
+                    HorizontalAlignment="Right"
+                    Content="S:" />
                 <CheckBox
-					Name="t"
-					Grid.Row="1"
-					Grid.Column="2"
-					Margin="10,0,0,0"
-					Content="T:"
-					HorizontalAlignment="Right" />
+                    Name="t"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Right"
+                    Content="T:" />
                 <CheckBox
-					Name="u"
-					Grid.Row="2"
-					Grid.Column="2"
-					Margin="10,0,0,0"
-					Content="U:"
-					HorizontalAlignment="Right" />
+                    Name="u"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Right"
+                    Content="U:" />
                 <CheckBox
-					Name="v"
-					Grid.Row="3"
-					Grid.Column="2"
-					Margin="10,0,0,0"
-					Content="V:"
-					HorizontalAlignment="Right" />
+                    Name="v"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Right"
+                    Content="V:" />
                 <CheckBox
-					Name="w"
-					Grid.Row="4"
-					Grid.Column="2"
-					Margin="10,0,0,0"
-					Content="W:"
-					HorizontalAlignment="Right" />
+                    Name="w"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Right"
+                    Content="W:" />
                 <CheckBox
-					Name="x"
-					Grid.Row="5"
-					Grid.Column="2"
-					Margin="10,0,0,0"
-					Content="X:"
-					HorizontalAlignment="Right" />
+                    Name="x"
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Right"
+                    Content="X:" />
                 <CheckBox
-					Name="y"
-					Grid.Row="6"
-					Grid.Column="2"
-					Margin="10,0,0,0"
-					Content="Y:"
-					HorizontalAlignment="Right" />
+                    Name="y"
+                    Grid.Row="6"
+                    Grid.Column="2"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Right"
+                    Content="Y:" />
                 <CheckBox
-					Name="z"
-					Grid.Row="7"
-					Grid.Column="2"
-					Margin="10,0,0,0"
-					Content="Z:"
-					HorizontalAlignment="Right" />
+                    Name="z"
+                    Grid.Row="7"
+                    Grid.Column="2"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Right"
+                    Content="Z:" />
             </Grid>
         </ScrollViewer>
     </StackPanel>

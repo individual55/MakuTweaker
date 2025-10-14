@@ -1,269 +1,190 @@
 ﻿<Page
-	x:Class="MakuTweakerNew.SysAndRec" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:MakuTweakerNew" xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF" xmlns:ui="http://schemas.modernwpf.com/2019"
-	Title="System and Recovery">
+    x:Class="MakuTweakerNew.SysAndRec"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MakuTweakerNew"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    Title="System and Recovery">
+
     <Grid>
-        <ScrollViewer
-			VerticalScrollBarVisibility="Auto"
-			HorizontalScrollBarVisibility="Hidden">
+        <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <TextBlock
-					Name="label"
-					HorizontalAlignment="Left"
-					Margin="24,11,0,0"
-					TextWrapping="Wrap"
-					Text="System and Recovery"
-					VerticalAlignment="Top"
-					FontSize="32"
-					FontFamily="Segoe UI Semibold" />
+                    Name="label"
+                    Margin="24,11,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontFamily="Segoe UI Semibold"
+                    FontSize="32"
+                    Text="System and Recovery"
+                    TextWrapping="Wrap" />
                 <TextBlock
-					Name="l1"
-					HorizontalAlignment="Left"
-					Margin="24,10,0,0"
-					TextWrapping="Wrap"
-					Text="Install DirectPlay"
-					VerticalAlignment="Top"
-					FontSize="16" />
+                    Name="l3"
+                    Margin="24,10,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Text="Repair System Using SFC"
+                    TextWrapping="Wrap" />
                 <controls:Button
-					Name="dp"
-					Margin="24,5,589,0"
-					Content="Install"
-					Height="28"
-					VerticalAlignment="Top"
-					Click="dp_Click" />
+                    Name="sfc"
+                    Height="28"
+                    Margin="24,5,589,0"
+                    VerticalAlignment="Top"
+                    Click="sfc_Click"
+                    Content="Repair" />
                 <TextBlock
-					Name="l2"
-					HorizontalAlignment="Left"
-					Margin="24,10,0,0"
-					TextWrapping="Wrap"
-					Text="Install .NET Framework 2.0, 3.0, 3.5"
-					VerticalAlignment="Top"
-					FontSize="16" />
+                    Name="l4"
+                    Margin="24,10,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Text="Repair System Using DISM"
+                    TextWrapping="Wrap" />
                 <controls:Button
-					Name="dnet"
-					Margin="24,5,589,0"
-					Content="Install"
-					Height="28"
-					VerticalAlignment="Top"
-					Click="dnet_Click" />
+                    Name="dism"
+                    Height="28"
+                    Margin="24,5,589,0"
+                    VerticalAlignment="Top"
+                    Click="dism_Click"
+                    Content="Repair" />
                 <TextBlock
-					Name="l3"
-					HorizontalAlignment="Left"
-					Margin="24,10,0,0"
-					TextWrapping="Wrap"
-					Text="Repair System Using SFC"
-					VerticalAlignment="Top"
-					FontSize="16" />
+                    Name="l6"
+                    Margin="24,10,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Text="Clean TEMP Folder"
+                    TextWrapping="Wrap" />
                 <controls:Button
-					Name="sfc"
-					Margin="24,5,589,0"
-					Content="Repair"
-					Height="28"
-					VerticalAlignment="Top"
-					Click="sfc_Click" />
+                    Name="temp"
+                    Height="28"
+                    Margin="24,5,589,0"
+                    VerticalAlignment="Top"
+                    Click="temp_Click"
+                    Content="Clean" />
                 <TextBlock
-					Name="l4"
-					HorizontalAlignment="Left"
-					Margin="24,10,0,0"
-					TextWrapping="Wrap"
-					Text="Repair System Using DISM"
-					VerticalAlignment="Top"
-					FontSize="16" />
+                    Name="l9"
+                    Margin="24,10,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Text="Make a Report of The Battery Characteristics"
+                    TextWrapping="Wrap" />
                 <controls:Button
-					Name="dism"
-					Margin="24,5,589,0"
-					Content="Repair"
-					Height="28"
-					VerticalAlignment="Top"
-					Click="dism_Click" />
-                <TextBlock
-					Name="l5"
-					HorizontalAlignment="Left"
-					Margin="24,10,0,0"
-					TextWrapping="Wrap"
-					Text="Reset Outdated Components And WinSxS Cache"
-					VerticalAlignment="Top"
-					FontSize="16" />
-                <controls:Button
-					Name="sxs"
-					Margin="24,5,589,0"
-					Content="Reset"
-					Height="28"
-					VerticalAlignment="Top"
-					Click="sxs_Click" />
-                <TextBlock
-					Name="l6"
-					HorizontalAlignment="Left"
-					Margin="24,10,0,0"
-					TextWrapping="Wrap"
-					Text="Clean TEMP Folder"
-					VerticalAlignment="Top"
-					FontSize="16" />
-                <controls:Button
-					Name="temp"
-					Margin="24,5,589,0"
-					Content="Clean"
-					Height="28"
-					VerticalAlignment="Top"
-					Click="temp_Click" />
-                <TextBlock
-					Name="l8"
-					HorizontalAlignment="Left"
-					Margin="24,10,0,0"
-					TextWrapping="Wrap"
-					Text="Enable Old Windows Photo Viewer"
-					VerticalAlignment="Top"
-					FontSize="16" />
-                <controls:Button
-					Name="pv"
-					Margin="24,5,589,0"
-					Content="Enable"
-					Height="28"
-					VerticalAlignment="Top"
-					Click="pv_Click" />
-                <TextBlock
-					Name="sr8L"
-					HorizontalAlignment="Left"
-					Margin="24,10,0,0"
-					TextWrapping="Wrap"
-					Visibility="Collapsed"
-					Text="Enable Local Group Policy Editor"
-					VerticalAlignment="Top"
-					FontSize="16" />
-                <controls:Button
-					Name="lgp"
-					Margin="24,5,589,0"
-					Content="Enable"
-					Height="28"
-					VerticalAlignment="Top"
-					Visibility="Collapsed"
-					Click="lgp_Click" />
-                <TextBlock
-					Name="l9"
-					HorizontalAlignment="Left"
-					Margin="24,10,0,0"
-					TextWrapping="Wrap"
-					Text="Make a Report of The Battery Characteristics"
-					VerticalAlignment="Top"
-					FontSize="16" />
-                <controls:Button
-					Name="report"
-					Margin="24,5,589,0"
-					Content="Report"
-					Height="28"
-					VerticalAlignment="Top"
-					Click="report_Click" />
-                <TextBlock
-					Name="l10"
-					HorizontalAlignment="Left"
-					Margin="24,10,0,0"
-					TextWrapping="Wrap"
-					Text="Enable Third-Party PowerShell Scripts"
-					VerticalAlignment="Top"
-					FontSize="16" />
-                <controls:Button
-					Name="pwsh"
-					Margin="24,5,589,0"
-					Content="Enable"
-					Height="28"
-					VerticalAlignment="Top"
-					Click="pwsh_Click" />
+                    Name="report"
+                    Height="28"
+                    Margin="24,5,589,0"
+                    VerticalAlignment="Top"
+                    Click="report_Click"
+                    Content="Report" />
                 <ui:ToggleSwitch
-					Name="t14"
-					Header="Disable SmartScreen"
-					FontSize="16"
-					VerticalAlignment="Top"
-					Margin="24,10,0,0"
-					Toggled="t14_Toggled" />
+                    Name="t16"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Disable Sticky Keys"
+                    Toggled="t16_Toggled" />
                 <ui:ToggleSwitch
-					Name="t15"
-					Header="Disable User Account Control"
-					FontSize="16"
-					VerticalAlignment="Top"
-					Margin="24,10,0,0"
-					Toggled="t15_Toggled" />
+                    Name="t10"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Disable Core Isolation / Memory Integrity"
+                    Toggled="t10_Toggled" />
                 <ui:ToggleSwitch
-					Name="sr1"
-					Header="Enable Old OS Bootloader"
-					Margin="24,10,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="sr1_Toggled" />
+                    Name="t15"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Disable User Account Control"
+                    Toggled="t15_Toggled" />
                 <ui:ToggleSwitch
-					Name="sr4"
-					Header="Additional Options on Each Boot"
-					Margin="24,10,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="sr4_Toggled" />
+                    Name="t14"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Disable SmartScreen"
+                    Toggled="t14_Toggled" />
                 <ui:ToggleSwitch
-					Name="sr5"
-					Header="Apply CompactOS System Compression"
-					Margin="24,10,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="sr5_Toggled" />
+                    Name="t11"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Disable Hibernation"
+                    Toggled="t11_Toggled" />
                 <ui:ToggleSwitch
-					Name="sr6"
-					Header="Disable BitLocker Automatic Encryption"
-					Margin="24,10,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="sr6_Toggled" />
+                    Name="t13"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Disable Sleep Timeout"
+                    Toggled="t13_Toggled" />
                 <ui:ToggleSwitch
-					Name="t9"
-					Header="Set Chkdsk Timeout to 1 Minute"
-					Margin="24,10,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t9_Toggled" />
+                    Name="st5"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Disable Online Search in Start Menu via Bing"
+                    Toggled="st5_Toggled" />
                 <ui:ToggleSwitch
-					Name="t10"
-					Header="Disable Core Isolation / Memory Integrity"
-					FontSize="16"
-					VerticalAlignment="Top"
-					Margin="24,10,0,0"
-					Toggled="t10_Toggled" />
+                    Name="t18"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Disable Virtualization-based Security"
+                    Toggled="t18_Toggled" />
                 <ui:ToggleSwitch
-					Name="t18"
-					Header="Disable Virtualization-based Security"
-					FontSize="16"
-					VerticalAlignment="Top"
-					Margin="24,10,0,0"
-					Toggled="t18_Toggled" />
+                    Name="t12"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Disable Swap File"
+                    Toggled="t12_Toggled" />
                 <ui:ToggleSwitch
-					Name="t11"
-					Header="Disable Hibernation"
-					FontSize="16"
-					VerticalAlignment="Top"
-					Margin="24,10,0,0"
-					Toggled="t11_Toggled" />
+                    Name="sr1"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Enable Old OS Bootloader"
+                    Toggled="sr1_Toggled" />
                 <ui:ToggleSwitch
-					Name="t13"
-					Header="Disable Sleep Timeout"
-					FontSize="16"
-					VerticalAlignment="Top"
-					Margin="24,10,0,0"
-					Toggled="t13_Toggled" />
+                    Name="sr4"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Additional Options on Each Boot"
+                    Toggled="sr4_Toggled" />
                 <ui:ToggleSwitch
-					Name="t12"
-					Header="Disable Swap File"
-					FontSize="16"
-					VerticalAlignment="Top"
-					Margin="24,10,0,0"
-					Toggled="t12_Toggled" />
+                    Name="t9"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Set Chkdsk Timeout to 1 Minute"
+                    Toggled="t9_Toggled" />
                 <ui:ToggleSwitch
-					Name="t16"
-					Header="Disable Sticky Keys"
-					Margin="24,10,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="t16_Toggled" />
+                    Name="sr5"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Apply CompactOS System Compression"
+                    Toggled="sr5_Toggled" />
+                <ui:ToggleSwitch
+                    Name="sr6"
+                    Margin="24,10,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Disable BitLocker Automatic Encryption"
+                    Toggled="sr6_Toggled" />
                 <Rectangle
-					HorizontalAlignment="Left"
-					Height="17"
-					Margin="3,0,0,0"
-					VerticalAlignment="Top"
-					Width="67" />
+                    Width="67"
+                    Height="17"
+                    Margin="3,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

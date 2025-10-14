@@ -8,31 +8,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.modernwpf.com/2019"
     Title="Explorer">
+
     <Grid>
+
         <!--  fixed bitmap scaling mode  -->
 
         <Image
-            Width="489"
+            Width="498"
             Height="100"
             Margin="0,166,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            MouseLeftButtonUp="Image_MouseLeftButtonUp_1"
-            MouseRightButtonUp="Image_MouseRightButtonUp"
             RenderOptions.BitmapScalingMode="HighQuality"
-            Source="/MakuTweaker NEW.png" />
-        <TextBlock
-            Margin="240,238,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            FontFamily="Segoe UI Semibold"
-            FontSize="18"
-            Foreground="#FF966AFF"
-            Text="v4.3.0 (Paid code, right? - individual55)"
-            TextWrapping="Wrap" />
+            Source="MakuTweakerAbout.png" />
         <TextBlock
             Name="credL"
-            Margin="30,290,0,0"
+            Margin="30,285,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontFamily="Segoe UI Semibold"
@@ -42,7 +33,7 @@
         <TextBlock
             Name="credN"
             Width="1098"
-            Margin="380,290,0,0"
+            Margin="380,285,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontFamily="Segoe UI Semibold"
@@ -79,31 +70,59 @@
             <ComboBoxItem Content=" English [EN]" />
             <ComboBoxItem Content=" Русский [RU]" />
             <ComboBoxItem Content=" Українська [UA]" />
-            <ComboBoxItem Content=" Español [ES]" />
-            <ComboBoxItem Content=" Português [PT]" />
-            <ComboBoxItem Content=" Deutsch [DE]" />
-            <ComboBoxItem Content=" Қазақ тілі [KZ]" />
-            <ComboBoxItem Content=" 日本語 [JP]" />
-            <ComboBoxItem Content=" 中文 [CN]" />
-            <ComboBoxItem Content=" हिन्दी [HI]" />
         </ComboBox>
         <TextBlock
             Name="copyleft"
-            Margin="30,430,0,0"
+            Margin="30,551,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontFamily="Segoe UI Semilight"
             FontSize="24"
-            Text="Mark Adderly, Nikitori / 2023 - 2025"
+            Text="Mark Adderly / 2023 - 2025"
             TextWrapping="Wrap" />
         <TextBlock
-            Name="build"
-            Margin="30,417,0,0"
+            Name="themeL"
+            Margin="220,70,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontFamily="Segoe UI"
-            FontSize="12"
-            Text="build:"
+            FontSize="16"
+            Text="Theme"
             TextWrapping="Wrap" />
+        <ComboBox
+            Name="theme"
+            Width="177"
+            MinWidth="177"
+            MaxWidth="177"
+            Margin="220,100,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="14"
+            SelectionChanged="theme_SelectionChanged">
+            <ComboBoxItem Name="l" Content=" Light" />
+            <ComboBoxItem Name="d" Content=" Dark" />
+        </ComboBox>
+        <TextBlock
+            Name="styleL"
+            Margin="410,70,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="16"
+            Text="Style"
+            TextWrapping="Wrap" />
+        <ComboBox
+            Name="style"
+            Width="177"
+            MinWidth="177"
+            MaxWidth="177"
+            Margin="410,100,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="14"
+            SelectionChanged="style_SelectionChanged">
+            <ComboBoxItem Content=" Mica" />
+            <ComboBoxItem Content=" Mica Alt (Default)" />
+            <ComboBoxItem Content=" Acrylic" />
+            <ComboBoxItem Name="off" Content=" Off" />
+        </ComboBox>
     </Grid>
 </Page>

@@ -1,119 +1,123 @@
 ﻿<Page
-	x:Class="MakuTweakerNew.Explorer" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:MakuTweakerNew" xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF" xmlns:ui="http://schemas.modernwpf.com/2019"
-	Title="Explorer">
+    x:Class="MakuTweakerNew.Explorer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MakuTweakerNew"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    Title="Explorer">
+
     <Grid>
-        <ScrollViewer
-			VerticalScrollBarVisibility="Auto"
-			HorizontalScrollBarVisibility="Hidden">
+        <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <TextBlock
-					Name="lab"
-					HorizontalAlignment="Left"
-					Margin="24,11,0,7"
-					TextWrapping="Wrap"
-					Text="Explorer and Desktop"
-					VerticalAlignment="Top"
-					FontSize="32"
-					FontFamily="Segoe UI Semibold" />
+                    Name="lab"
+                    Margin="24,11,0,7"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontFamily="Segoe UI Semibold"
+                    FontSize="32"
+                    Text="Explorer and Desktop"
+                    TextWrapping="Wrap" />
                 <ui:ToggleSwitch
-					Name="e1"
-					Header="Hide Non-Removable Library Folders"
-					Margin="24,7,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="ToggleSwitch_Toggled" />
+                    Name="e1"
+                    Margin="24,7,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Hide Non-Removable Library Folders"
+                    Toggled="ToggleSwitch_Toggled" />
                 <ui:ToggleSwitch
-					Name="e2"
-					Header="Show Hidden Files and Folders"
-					Margin="24,7,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="e2_Toggled" />
+                    Name="e2"
+                    Margin="24,7,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Show Hidden Files and Folders"
+                    Toggled="e2_Toggled" />
                 <ui:ToggleSwitch
-					Name="e3"
-					Header="Show File Extensions"
-					Margin="24,7,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="e3_Toggled" />
+                    Name="e3"
+                    Margin="24,7,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Show File Extensions"
+                    Toggled="e3_Toggled" />
                 <ui:ToggleSwitch
-					Name="e4"
-					Header="Open the This PC Page in Explorer instead of Home"
-					Margin="24,7,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="e4_Toggled" />
+                    Name="e4"
+                    Margin="24,7,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Open the This PC Page in Explorer instead of Home"
+                    Toggled="e4_Toggled" />
                 <ui:ToggleSwitch
-					Name="e5"
-					Header="Hide the Gallery Section"
-					Margin="24,7,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="e5_Toggled" />
+                    Name="e5"
+                    Margin="24,7,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Hide the Gallery Section"
+                    Toggled="e5_Toggled" />
                 <ui:ToggleSwitch
-					Name="e6"
-					Header="Show 'This PC' on the Desktop"
-					Margin="24,7,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="e6_Toggled" />
+                    Name="e6"
+                    Margin="24,7,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Show 'This PC' on the Desktop"
+                    Toggled="e6_Toggled" />
                 <ui:ToggleSwitch
-					Name="e7"
-					Header="Remove the '- Shortcut' Ending From New Shortcuts"
-					Margin="24,7,0,0"
-					VerticalAlignment="Top"
-					FontSize="16"
-					Toggled="e7_Toggled" />
+                    Name="e7"
+                    Margin="24,7,0,0"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Header="Remove the '- Shortcut' Ending From New Shortcuts"
+                    Toggled="e7_Toggled" />
                 <TextBlock
-					Name="e8"
-					HorizontalAlignment="Left"
-					Margin="24,7,0,0"
-					TextWrapping="Wrap"
-					Text="Fix Dublicate Drives in Explorer"
-					VerticalAlignment="Top"
-					FontSize="16" />
+                    Name="e9"
+                    Margin="24,7,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Text="Hide Drives in This PC"
+                    TextWrapping="Wrap" />
                 <controls:Button
-					Name="fix"
-					Margin="24,5,613,5"
-					Content="Fix"
-					Height="28"
-					MinWidth="110"
-					MaxWidth="110"
-					HorizontalAlignment="Left"
-					Width="110"
-					Click="fix_Click" />
+                    Name="hide"
+                    Width="110"
+                    Height="28"
+                    MinWidth="110"
+                    MaxWidth="110"
+                    Margin="24,5,613,0"
+                    HorizontalAlignment="Left"
+                    Click="hide_Click"
+                    Content="Choose" />
+                <controls:Button
+                    Name="showall"
+                    Width="135"
+                    Height="28"
+                    MinWidth="135"
+                    MaxWidth="135"
+                    Margin="144,-28,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="showall_Click"
+                    Content="Show All" />
                 <TextBlock
-					Name="e9"
-					HorizontalAlignment="Left"
-					Margin="24,7,0,0"
-					TextWrapping="Wrap"
-					Text="Hide Drives in This PC"
-					VerticalAlignment="Top"
-					FontSize="16" />
+                    Name="e8"
+                    Margin="24,7,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Text="Fix Dublicate Drives in Explorer"
+                    TextWrapping="Wrap" />
                 <controls:Button
-					Name="hide"
-					Margin="24,5,613,0"
-					Content="Choose"
-					Height="28"
-					MinWidth="110"
-					MaxWidth="110"
-					HorizontalAlignment="Left"
-					Width="110"
-					Click="hide_Click" />
-                <controls:Button
-					Name="showall"
-					Content="Show All"
-					Height="28"
-					MinWidth="135"
-					MaxWidth="135"
-					Width="135"
-					HorizontalAlignment="Left"
-					VerticalAlignment="Top"
-					Margin="144,-28,0,0"
-					Click="showall_Click" />
-                <Rectangle
-					Height="15"
-					Width="100" />
+                    Name="fix"
+                    Width="110"
+                    Height="28"
+                    MinWidth="110"
+                    MaxWidth="110"
+                    Margin="24,5,613,5"
+                    HorizontalAlignment="Left"
+                    Click="fix_Click"
+                    Content="Fix" />
+                <Rectangle Width="100" Height="15" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

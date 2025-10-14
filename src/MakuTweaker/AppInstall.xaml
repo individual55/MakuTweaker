@@ -1,0 +1,356 @@
+﻿<Page
+    x:Class="MakuTweakerNew.AppInstall"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MakuTweakerNew"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    Title="AppInstall"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock
+                    Name="label"
+                    Margin="24,11,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontFamily="Segoe UI Semibold"
+                    FontSize="32"
+                    Text="App Installation "
+                    TextWrapping="Wrap" />
+                <ui:ToggleSwitch
+                    Name="a1"
+                    Grid.Row="1"
+                    Margin="24,10,32,0"
+                    HorizontalAlignment="Left"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Google Chrome"
+                    OnContent="Google Chrome"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a2"
+                    Grid.Row="1"
+                    Margin="24,0,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Telegram Desktop"
+                    OnContent="Telegram Desktop"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a3"
+                    Grid.Row="1"
+                    Margin="24,0,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="7-Zip"
+                    OnContent="7-Zip"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a4"
+                    Grid.Row="1"
+                    Margin="24,0,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Steam"
+                    OnContent="Steam"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a5"
+                    Grid.Row="1"
+                    Margin="24,0,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Discord"
+                    OnContent="Discord"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a6"
+                    Grid.Row="1"
+                    Margin="24,0,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="OBS Studio"
+                    OnContent="OBS Studio"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a7"
+                    Grid.Row="1"
+                    Margin="24,0,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="VLC"
+                    OnContent="VLC"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a8"
+                    Grid.Row="1"
+                    Margin="24,0,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="MPC-HC"
+                    OnContent="MPC-HC"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a9"
+                    Grid.Row="1"
+                    Margin="24,0,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Everything"
+                    OnContent="Everything"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a10"
+                    Grid.Row="1"
+                    Margin="24,0,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Spotify"
+                    OnContent="Spotify"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a11"
+                    Grid.Row="1"
+                    Margin="24,0,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Paint.NET"
+                    OnContent="Paint.NET"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a12"
+                    Grid.Row="1"
+                    Margin="24,0,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="qBitTorrent"
+                    OnContent="qBitTorrent"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a13"
+                    Grid.Row="1"
+                    Margin="224,-384,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Mozilla Firefox"
+                    OnContent="Mozilla Firefox"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a14"
+                    Grid.Row="1"
+                    Margin="224,-352,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Vivaldi"
+                    OnContent="Vivaldi"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a15"
+                    Grid.Row="1"
+                    Margin="224,-320,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="4K Video Downloader Plus"
+                    OnContent="4K Video Downloader Plus"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a16"
+                    Grid.Row="1"
+                    Margin="224,-288,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="HandBrake"
+                    OnContent="HandBrake"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a17"
+                    Grid.Row="1"
+                    Margin="224,-256,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="CapCut"
+                    OnContent="CapCut"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a18"
+                    Grid.Row="1"
+                    Margin="224,-224,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Audacity"
+                    OnContent="Audacity"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a19"
+                    Grid.Row="1"
+                    Margin="224,-192,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="AnyDesk"
+                    OnContent="AnyDesk"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a20"
+                    Grid.Row="1"
+                    Margin="224,-160,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="ShareX"
+                    OnContent="ShareX"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a21"
+                    Grid.Row="1"
+                    Margin="224,-128,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Windhawk"
+                    OnContent="Windhawk"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a22"
+                    Grid.Row="1"
+                    Margin="224,-96,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="CrystalDiskInfo"
+                    OnContent="CrystalDiskInfo"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a23"
+                    Grid.Row="1"
+                    Margin="224,-64,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Prism Launcher"
+                    OnContent="Prism Launcher"
+                    Opacity="1" />
+                <ui:ToggleSwitch
+                    Name="a24"
+                    Grid.Row="1"
+                    Margin="224,-32,32,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="True"
+                    IsTabStop="False"
+                    OffContent="Notepad++"
+                    OnContent="Notepad++"
+                    Opacity="1" />
+            </StackPanel>
+        </ScrollViewer>
+        <TextBlock
+            Name="t"
+            Grid.Row="1"
+            Margin="24,0,0,30"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            FontFamily="Segoe UI"
+            FontSize="12"
+            Opacity="0"
+            Text="Installing selected apps... | Google Chrome | 0/24"
+            TextWrapping="Wrap" />
+        <ui:ProgressBar
+            Name="p"
+            Grid.Row="1"
+            Width="475"
+            Height="12"
+            Margin="24,0,0,15"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Maximum="27"
+            Opacity="0" />
+        <controls:Button
+            Name="start"
+            Width="200"
+            Height="33"
+            Margin="0,0,25,15"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Panel.ZIndex="1"
+            Click="start_Click"
+            Content="Start Installation" />
+        <controls:Button
+            Name="stop"
+            Width="200"
+            Height="33"
+            Margin="0,0,25,15"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Panel.ZIndex="1"
+            Click="stop_Click"
+            Content="Stop Installation"
+            Visibility="Collapsed" />
+        <controls:Button
+            Name="winget"
+            Width="200"
+            Height="33"
+            Margin="0,0,25,53"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Panel.ZIndex="1"
+            Click="winget_Click"
+            Content="Install WinGet" />
+        <controls:Button
+            Name="skip"
+            Width="200"
+            Height="33"
+            Margin="0,0,25,53"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Panel.ZIndex="1"
+            Click="skip_Click"
+            Content="Skip this App"
+            Visibility="Collapsed" />
+    </Grid>
+</Page>

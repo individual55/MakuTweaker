@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Forms;
+using System.Windows.Markup;
 using MakuTweakerNew.Properties;
 using Microsoft.Win32;
+using ModernWpf.Controls;
 
 namespace MakuTweakerNew
 {
-    public partial class Personalization : Page
+    public partial class Personalization : System.Windows.Controls.Page, IComponentConnector
     {
-        private bool isLoaded;
+        private bool isLoaded = false;
 
         private MainWindow mw = (MainWindow)System.Windows.Application.Current.MainWindow;
 
@@ -59,7 +51,8 @@ namespace MakuTweakerNew
 
         private void apN_Click(object sender, RoutedEventArgs e)
         {
-            Dictionary<string, Dictionary<string, string>> per = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "per");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> per = MainWindow.Localization.LoadLocalization(languageCode, "per");
             Settings.Default.p2 = newname.Text;
             string folderName = newname.Text;
             string command = "reg add HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\NamingTemplates /v RenameNameTemplate /t REG_SZ /d \"" + folderName + "\" /f";
@@ -69,7 +62,8 @@ namespace MakuTweakerNew
 
         private void stN_Click(object sender, RoutedEventArgs e)
         {
-            Dictionary<string, Dictionary<string, string>> per = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "per");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> per = MainWindow.Localization.LoadLocalization(languageCode, "per");
             Settings.Default.p2 = string.Empty;
             newname.Text = string.Empty;
             string command = "reg delete HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\NamingTemplates /v RenameNameTemplate /f";
@@ -96,7 +90,8 @@ namespace MakuTweakerNew
 
         private void apC_Click(object sender, RoutedEventArgs e)
         {
-            Dictionary<string, Dictionary<string, string>> per = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "per");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> per = MainWindow.Localization.LoadLocalization(languageCode, "per");
             Settings.Default.p3 = color.SelectedIndex;
             string regPath = "Control Panel\\Colors";
             string highlightValue = "";
@@ -188,11 +183,11 @@ namespace MakuTweakerNew
 
         private void LoadLang()
         {
-            string language = Settings.Default.lang ?? "en";
-            Dictionary<string, Dictionary<string, string>> per = MainWindow.Localization.LoadLocalization(language, "per");
-            Dictionary<string, Dictionary<string, string>> basel = MainWindow.Localization.LoadLocalization(language, "base");
-            Dictionary<string, Dictionary<string, string>> sr = MainWindow.Localization.LoadLocalization(language, "sr");
-            Dictionary<string, Dictionary<string, string>> oth = MainWindow.Localization.LoadLocalization(language, "oth");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> per = MainWindow.Localization.LoadLocalization(languageCode, "per");
+            Dictionary<string, Dictionary<string, string>> basel = MainWindow.Localization.LoadLocalization(languageCode, "base");
+            Dictionary<string, Dictionary<string, string>> sr = MainWindow.Localization.LoadLocalization(languageCode, "sr");
+            Dictionary<string, Dictionary<string, string>> oth = MainWindow.Localization.LoadLocalization(languageCode, "oth");
             label.Text = per["main"]["label"];
             l1.Text = per["main"]["p1l"];
             newname.Watermark = per["main"]["newname"];
@@ -214,6 +209,7 @@ namespace MakuTweakerNew
             p4.Header = per["main"]["p7"];
             p5.Header = per["main"]["p8"];
             p6.Header = oth["main"]["o5"];
+            p7.Header = sr["main"]["etask"];
             sr2.Header = sr["main"]["sr2"];
             sr3.Header = sr["main"]["sr3"];
             p1.OffContent = basel["def"]["off"];
@@ -224,6 +220,7 @@ namespace MakuTweakerNew
             sr2.OffContent = basel["def"]["off"];
             sr3.OffContent = basel["def"]["off"];
             p6.OffContent = basel["def"]["off"];
+            p7.OffContent = basel["def"]["off"];
             p1.OnContent = basel["def"]["on"];
             p2.OnContent = basel["def"]["on"];
             p3.OnContent = basel["def"]["on"];
@@ -232,15 +229,16 @@ namespace MakuTweakerNew
             sr2.OnContent = basel["def"]["on"];
             sr3.OnContent = basel["def"]["on"];
             p6.OnContent = basel["def"]["on"];
+            p7.OnContent = basel["def"]["on"];
         }
 
         private void checkReg()
         {
             newname.Text = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\NamingTemplates")?.GetValue("RenameNameTemplate")?.ToString();
-            ModernWpf.Controls.ToggleSwitch toggleSwitch = p1;
+            ToggleSwitch toggleSwitch = p1;
             RegistryKey? registryKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\Education");
             toggleSwitch.IsOn = registryKey != null && registryKey.GetValue("EnableEduThemes")?.Equals(1) == true;
-            ModernWpf.Controls.ToggleSwitch toggleSwitch2 = p2;
+            ToggleSwitch toggleSwitch2 = p2;
             RegistryKey? registryKey2 = Registry.CurrentUser.OpenSubKey("Control Panel\\Desktop\\WindowMetrics");
             int isOn;
             if (registryKey2 == null || registryKey2.GetValue("CaptionHeight")?.Equals(-270) != true)
@@ -253,16 +251,19 @@ namespace MakuTweakerNew
                 isOn = 1;
             }
             toggleSwitch2.IsOn = (byte)isOn != 0;
-            ModernWpf.Controls.ToggleSwitch toggleSwitch3 = p3;
+            ToggleSwitch toggleSwitch3 = p3;
             RegistryKey? registryKey4 = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Policies\\Microsoft\\Windows\\System");
             toggleSwitch3.IsOn = registryKey4 != null && registryKey4.GetValue("DisableAcrylicBackgroundOnLogon")?.Equals(1) == true;
-            ModernWpf.Controls.ToggleSwitch toggleSwitch4 = p4;
+            ToggleSwitch toggleSwitch4 = p4;
             RegistryKey? registryKey5 = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize");
             toggleSwitch4.IsOn = registryKey5 != null && registryKey5.GetValue("EnableTransparency")?.Equals(0) == true;
-            ModernWpf.Controls.ToggleSwitch toggleSwitch5 = p5;
+            ToggleSwitch toggleSwitch5 = p5;
             object obj = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize")?.GetValue("AppsUseLightTheme");
             toggleSwitch5.IsOn = obj is int && (int)obj == 0 && Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize")?.GetValue("SystemUsesLightTheme") is int b && b == 0;
             p6.IsOn = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System")?.GetValue("verbosestatus")?.Equals(1) == true;
+            p7.IsOn = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\TaskbarDeveloperSettings")?.GetValue("TaskbarEndTask") is int v && v == 1;
+            Settings.Default.sr9 = p7.IsOn;
+            Settings.Default.Save();
         }
 
         private void p4_Toggled(object sender, RoutedEventArgs e)
@@ -343,6 +344,22 @@ namespace MakuTweakerNew
                 else
                 {
                     Process.Start("cmd.exe", "/c \"bcdedit /set \"{globalsettings}\" custom:16000069 false\"");
+                }
+            }
+        }
+
+        private void p7_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (isLoaded)
+            {
+                Settings.Default.sr9 = p7.IsOn;
+                if (p7.IsOn)
+                {
+                    Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\TaskbarDeveloperSettings").SetValue("TaskbarEndTask", 1);
+                }
+                else
+                {
+                    Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\TaskbarDeveloperSettings").SetValue("TaskbarEndTask", 0);
                 }
             }
         }

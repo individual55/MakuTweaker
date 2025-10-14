@@ -1,0 +1,135 @@
+﻿<Page
+    x:Class="MakuTweakerNew.WindowsComponents"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MakuTweakerNew"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    Title="Desktop"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock
+                Name="label"
+                Margin="24,11,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontFamily="Segoe UI Semibold"
+                FontSize="32"
+                Text="Windows Components"
+                TextWrapping="Wrap" />
+            <TextBlock
+                Name="l1"
+                Margin="24,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="16"
+                Text="Install DirectPlay"
+                TextWrapping="Wrap" />
+            <controls:Button
+                Name="dp"
+                Height="28"
+                Margin="24,5,589,0"
+                VerticalAlignment="Top"
+                Click="dp_Click"
+                Content="Install" />
+            <TextBlock
+                Name="l2"
+                Margin="24,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="16"
+                Text="Install .NET Framework 2.0, 3.0, 3.5"
+                TextWrapping="Wrap" />
+            <controls:Button
+                Name="dnet"
+                Height="28"
+                Margin="24,5,589,0"
+                VerticalAlignment="Top"
+                Click="dnet_Click"
+                Content="Install" />
+            <TextBlock
+                Name="l8"
+                Margin="24,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="16"
+                Text="Enable Old Windows Photo Viewer"
+                TextWrapping="Wrap" />
+            <controls:Button
+                Name="pv"
+                Height="28"
+                Margin="24,5,589,0"
+                VerticalAlignment="Top"
+                Click="pv_Click"
+                Content="Enable" />
+            <TextBlock
+                Name="sr8L"
+                Margin="24,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="16"
+                Text="Enable Local Group Policy Editor"
+                TextWrapping="Wrap"
+                Visibility="Collapsed" />
+            <controls:Button
+                Name="lgp"
+                Height="28"
+                Margin="24,5,589,0"
+                VerticalAlignment="Top"
+                Click="lgp_Click"
+                Content="Enable"
+                Visibility="Collapsed" />
+            <TextBlock
+                Name="l5"
+                Margin="24,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="16"
+                Text="Reset Outdated Components And WinSxS Cache"
+                TextWrapping="Wrap" />
+            <controls:Button
+                Name="sxs"
+                Height="28"
+                Margin="24,5,589,0"
+                VerticalAlignment="Top"
+                Click="sxs_Click"
+                Content="Reset" />
+            <TextBlock
+                Name="l10"
+                Margin="24,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="16"
+                Text="Enable Third-Party PowerShell Scripts"
+                TextWrapping="Wrap" />
+            <controls:Button
+                Name="pwsh"
+                Height="28"
+                Margin="24,5,589,0"
+                VerticalAlignment="Top"
+                Click="pwsh_Click"
+                Content="Enable" />
+            <TextBlock
+                Name="l11"
+                Margin="24,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="16"
+                Text="Disable Xbox DVR Requirement"
+                TextWrapping="Wrap" />
+            <controls:Button
+                Name="dvr"
+                Height="28"
+                Margin="24,5,589,0"
+                VerticalAlignment="Top"
+                Click="dvr_Click"
+                Content="Apply" />
+        </StackPanel>
+    </Grid>
+</Page>

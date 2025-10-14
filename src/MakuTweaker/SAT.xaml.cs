@@ -2,34 +2,27 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using MakuTweakerNew.Properties;
+using System.Windows.Markup;
 using System.Windows.Threading;
+using MakuTweakerNew.Properties;
 
 namespace MakuTweakerNew
 {
     public partial class SAT : Page
     {
-        private bool isLoaded;
+        private bool isLoaded = false;
 
         public SAT()
         {
             InitializeComponent();
             LoadLang();
-            satstart.IsOn = Settings.Default.satstart;
-            Dictionary<string, Dictionary<string, string>> satl = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "sat");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> satl = MainWindow.Localization.LoadLocalization(languageCode, "sat");
             int.TryParse(mins.Text, out var number);
-            hours.Text = satl["main"]["minho"] + Math.Round((double)number / 60.0, 2);
+            hours.Text = satl["main"]["minho"] + Math.Round(number / 60.0, 2);
             isLoaded = true;
         }
 
@@ -45,7 +38,8 @@ namespace MakuTweakerNew
 
         private void mins_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Dictionary<string, Dictionary<string, string>> satl = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "sat");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> satl = MainWindow.Localization.LoadLocalization(languageCode, "sat");
             int.TryParse(mins.Text, out var number);
             hours.Text = satl["main"]["minho"] + Math.Round((double)number / 60.0, 2);
         }
@@ -56,14 +50,6 @@ namespace MakuTweakerNew
             {
                 mins.SelectAll();
             }, DispatcherPriority.Input);
-        }
-
-        private void satstart_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (isLoaded)
-            {
-                Settings.Default.satstart = satstart.IsOn;
-            }
         }
 
         private void tenM_Click(object sender, RoutedEventArgs e)
@@ -110,7 +96,8 @@ namespace MakuTweakerNew
 
         private void LoadLang()
         {
-            Dictionary<string, Dictionary<string, string>> satl = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "sat");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> satl = MainWindow.Localization.LoadLocalization(languageCode, "sat");
             label.Text = satl["main"]["label"];
             sat.Text = satl["main"]["info"];
             hours.Text = satl["main"]["minho"];
@@ -124,8 +111,6 @@ namespace MakuTweakerNew
             sixH.Content = satl["main"]["sixH"];
             shut.Content = satl["main"]["b1"];
             cancel.Content = satl["main"]["b2"];
-            satstart.OnContent = satl["main"]["set"];
-            satstart.OffContent = satl["main"]["set"];
         }
     }
 }

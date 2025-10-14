@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MakuTweakerNew.Properties;
 using ModernWpf.Controls;
 
@@ -23,7 +18,8 @@ namespace MakuTweakerNew
         public HidePart()
         {
             InitializeComponent();
-            Dictionary<string, Dictionary<string, string>> expl = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "expl");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> expl = MainWindow.Localization.LoadLocalization(languageCode, "expl");
             Run run1 = new Run
             {
                 Text = expl["status"]["hdInfo1"],

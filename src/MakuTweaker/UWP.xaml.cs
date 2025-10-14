@@ -4,25 +4,22 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Media;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
+using System.Windows.Markup;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MakuTweakerNew.Properties;
+using ModernWpf.Controls;
+using MessageBox = System.Windows.MessageBox;
 
 namespace MakuTweakerNew
 {
-    public partial class UWP : Page
+    public partial class UWP : System.Windows.Controls.Page
     {
-        private bool isSkipped;
+        private bool isSkipped = false;
 
         private CancellationTokenSource cancellationTokenSource;
 
@@ -42,11 +39,11 @@ namespace MakuTweakerNew
             string languageCode = Settings.Default.lang ?? "en";
             Dictionary<string, Dictionary<string, string>> uwp = MainWindow.Localization.LoadLocalization(languageCode, "uwp");
             t.Text = uwp["main"]["chk"];
-            string[] appIds = new string[28]
+            string[] appIds = new string[]
             {
-            "Microsoft.ZuneVideo", "Microsoft.ZuneMusic", "Microsoft.MicrosoftStickyNotes", "Microsoft.MixedReality.Portal", "Microsoft.MicrosoftSolitaireCollection", "Microsoft.Messaging", "Microsoft.WindowsFeedbackHub", "microsoft.windowscommunicationsapps", "Microsoft.BingNews", "Microsoft.Microsoft3DViewer",
-            "Microsoft.BingWeather", "Microsoft.549981C3F5F10", "Microsoft.XboxApp", "Microsoft.GetHelp", "Microsoft.WindowsCamera", "Microsoft.WindowsMaps", "Microsoft.Office.OneNote", "Microsoft.YourPhone", "Microsoft.Windows.DevHome", "Clipchamp.Clipchamp",
-            "Microsoft.PowerAutomateDesktop", "Microsoft.Getstarted", "Microsoft.WindowsSoundRecorder", "Microsoft.WindowsStore", "Microsoft.People", "Microsoft.SkypeApp", "Microsoft.WindowsAlarms", "Microsoft.OutlookForWindows"
+                "Microsoft.ZuneVideo", "Microsoft.ZuneMusic", "Microsoft.MicrosoftStickyNotes", "Microsoft.MixedReality.Portal", "Microsoft.MicrosoftSolitaireCollection", "Microsoft.Messaging", "Microsoft.WindowsFeedbackHub", "microsoft.windowscommunicationsapps", "Microsoft.BingNews", "Microsoft.Microsoft3DViewer",
+                "Microsoft.BingWeather", "Microsoft.549981C3F5F10", "Microsoft.XboxApp", "Microsoft.GetHelp", "Microsoft.WindowsCamera", "Microsoft.WindowsMaps", "Microsoft.Office.OneNote", "Microsoft.YourPhone", "Microsoft.Windows.DevHome", "Clipchamp.Clipchamp",
+                "Microsoft.PowerAutomateDesktop", "Microsoft.Getstarted", "Microsoft.WindowsSoundRecorder", "Microsoft.WindowsStore", "Microsoft.People", "Microsoft.SkypeApp", "Microsoft.WindowsAlarms", "Microsoft.OutlookForWindows"
             };
             cancellationTokenSource = new CancellationTokenSource();
             CancellationToken token = cancellationTokenSource.Token;
@@ -59,32 +56,40 @@ namespace MakuTweakerNew
                     if (token.IsCancellationRequested)
                     {
                         t.Text = uwp["main"]["skipped"];
-                        foreach (ModernWpf.Controls.ToggleSwitch item in new List<ModernWpf.Controls.ToggleSwitch>
-                    {
-                        u1, u2, u3, u4, u5, u6, u7, u8, u9, u10,
-                        u11, u12, u13, u14, u15, u16, u17, u18, u19, u20,
-                        u21, u22, u23, u24, u25, u26, u27, u28
-                    })
+                        List<ToggleSwitch> checkBoxes = new List<ToggleSwitch>
                         {
-                            item.IsEnabled = true;
-                        }
-                        foreach (ModernWpf.Controls.ToggleSwitch item2 in new List<ModernWpf.Controls.ToggleSwitch>
-                    {
-                        u1, u2, u3, u4, u5, u6, u7, u8, u10, u11,
-                        u12, u13, u14, u21, u25, u26, u20, u18, u19, u22,
-                        u27, u28
-                    })
+                            u1, u2, u3, u4, u5, u6, u7, u8, u9, u10,
+                            u11, u12, u13, u14, u15, u16, u17, u18, u19, u20,
+                            u21, u22, u23, u24, u25, u26, u27, u28
+                        };
+
+                        foreach (ToggleSwitch checkBox in checkBoxes)
                         {
-                            item2.IsOn = true;
+                            checkBox.IsEnabled = true;
                         }
+
+                        List<ToggleSwitch> toggles = new List<ToggleSwitch>
+                        {
+                            u1, u2, u3, u4, u5, u6, u7, u8, u10, u11,
+                            u12, u13, u14, u21, u25, u26, u20, u18, u19, u22,
+                            u27, u28
+                        };
+
+                        foreach (ToggleSwitch checkBox2 in toggles)
+                        {
+                            checkBox2.IsOn = true;
+                        }
+
                         if (anim)
                         {
                             FadeInBloat();
                             FadeOutAll1();
                         }
+
                         b.IsEnabled = true;
                         return;
                     }
+
                     bool isInstalled = await Task.Run(() => IsAppInstalled(appId), token);
                     switch (appId)
                     {
@@ -194,6 +199,7 @@ namespace MakuTweakerNew
                     u23.IsEnabled = true;
                     u24.IsEnabled = true;
                 }
+
                 isCompleted = true;
                 t.Text = uwp["main"]["comp"];
                 if (anim)
@@ -201,6 +207,7 @@ namespace MakuTweakerNew
                     FadeInBloat();
                     FadeOutAll1();
                 }
+
                 b.IsEnabled = true;
             }
         }
@@ -209,7 +216,8 @@ namespace MakuTweakerNew
         {
             try
             {
-                return GetInstalledUWPApps().Contains(appId);
+                List<string> installedApps = GetInstalledUWPApps();
+                return installedApps.Contains(appId);
             }
             catch (Exception ex)
             {
@@ -224,14 +232,15 @@ namespace MakuTweakerNew
             try
             {
                 string script = "\r\n                    Get-AppxPackage | Select-Object -ExpandProperty Name\r\n                ";
-                using Process process = Process.Start(new ProcessStartInfo
+                ProcessStartInfo processStartInfo = new ProcessStartInfo
                 {
                     FileName = "powershell.exe",
                     Arguments = "-Command \"" + script + "\"",
                     RedirectStandardOutput = true,
                     UseShellExecute = false,
                     CreateNoWindow = true
-                });
+                };
+                using Process process = Process.Start(processStartInfo);
                 using StreamReader reader = process.StandardOutput;
                 string output = reader.ReadToEnd();
                 if (string.IsNullOrEmpty(output))
@@ -247,6 +256,7 @@ namespace MakuTweakerNew
             {
                 MessageBox.Show("Error executing PowerShell: " + ex.Message, "PowerShell Error", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
+
             return installedApps;
         }
 
@@ -399,13 +409,13 @@ namespace MakuTweakerNew
             string languageCode = Settings.Default.lang ?? "en";
             Dictionary<string, Dictionary<string, string>> uwp = MainWindow.Localization.LoadLocalization(languageCode, "uwp");
             int count = 0;
-            ModernWpf.Controls.ToggleSwitch[] array = new ModernWpf.Controls.ToggleSwitch[28]
+            ToggleSwitch[] array = new ToggleSwitch[28]
             {
             u1, u2, u3, u4, u5, u6, u7, u8, u9, u10,
             u11, u12, u13, u14, u15, u16, u17, u18, u19, u20,
             u21, u22, u23, u24, u25, u26, u27, u28
             };
-            foreach (ModernWpf.Controls.ToggleSwitch toggle in array)
+            foreach (ToggleSwitch toggle in array)
             {
                 if (!toggle.IsOn)
                 {
@@ -427,9 +437,9 @@ namespace MakuTweakerNew
                 }
                 else if (toggle == u24)
                 {
-                    ILOVEMAKUTWEAKERDialog dialog = new ILOVEMAKUTWEAKERDialog("Xbox");
-                    await dialog.ShowAsync();
-                    if (await dialog.TaskCompletionSource.Task == 0)
+                    ILOVEMAKUTWEAKERDialog dialog2 = new ILOVEMAKUTWEAKERDialog("Xbox");
+                    await dialog2.ShowAsync();
+                    if (await dialog2.TaskCompletionSource.Task == 0)
                     {
                         return;
                     }
@@ -464,7 +474,7 @@ namespace MakuTweakerNew
                 }
                 await Task.Delay(300);
                 b.Visibility = Visibility.Collapsed;
-                (ModernWpf.Controls.ToggleSwitch, string)[] appPackages = new (ModernWpf.Controls.ToggleSwitch, string)[35]
+                (ToggleSwitch toggle, string packageName)[] appPackages = new (ToggleSwitch, string)[35]
                 {
                 (u1, "Microsoft.MixedReality.Portal"),
                 (u2, "Microsoft.MicrosoftSolitaireCollection"),
@@ -502,10 +512,10 @@ namespace MakuTweakerNew
                 (u27, "Microsoft.WindowsAlarms"),
                 (u28, "Microsoft.OutlookForWindows")
                 };
-                (ModernWpf.Controls.ToggleSwitch toggle, string packageName)[] array2 = appPackages;
-                for (int i = 0; i < array2.Length; i++)
+                (ToggleSwitch toggle, string packageName)[] array2 = appPackages;
+                for (int j = 0; j < array2.Length; j++)
                 {
-                    var (toggle2, packageName) = array2[i];
+                    var (toggle2, packageName) = array2[j];
                     if (toggle2.IsOn)
                     {
                         await RemovePackageAsync(packageName);
@@ -769,7 +779,8 @@ namespace MakuTweakerNew
 
         private void LoadLang()
         {
-            Dictionary<string, Dictionary<string, string>> uwp = MainWindow.Localization.LoadLocalization(Settings.Default.lang ?? "en", "uwp");
+            string languageCode = Settings.Default.lang ?? "en";
+            Dictionary<string, Dictionary<string, string>> uwp = MainWindow.Localization.LoadLocalization(languageCode, "uwp");
             label.Text = uwp["main"]["label"];
             info1.Text = uwp["main"]["info1"];
             info2.Text = uwp["main"]["info2"];
