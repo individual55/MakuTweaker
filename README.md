@@ -34,7 +34,7 @@ used for commercial gain.
 ## Screenshots
 
 <img src="images/screenshots/1.png" alt="1">
-<img src="iamges/screenshots/2.png" alt="2">
+<img src="images/screenshots/2.png" alt="2">
 <img src="images/screenshots/3.png" alt="3">
 
 ## 🔨 Building from Source
