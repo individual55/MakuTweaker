@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://github.com/individual55/MakuTweaker/blob/main/images/logo.png" alt="MakuTweaker">
+<img src="images/logo.png" alt="MakuTweaker">
 
 <a href="https://github.com/individual55/MakuTweaker/releases">![Releases](https://img.shields.io/github/v/release/individual55/MakuTweaker?style=flat)</a>
 
